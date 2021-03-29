@@ -57,8 +57,8 @@ namespace InventoryManagementSystem
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStripMain.SuspendLayout();
@@ -311,6 +311,12 @@ namespace InventoryManagementSystem
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
+            // toolStripMenuExit
+            // 
+            this.toolStripMenuExit.Name = "toolStripMenuExit";
+            this.toolStripMenuExit.Size = new System.Drawing.Size(146, 22);
+            this.toolStripMenuExit.Text = "Exit";
+            // 
             // menuStripMain
             // 
             this.menuStripMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
@@ -322,12 +328,6 @@ namespace InventoryManagementSystem
             this.menuStripMain.TabIndex = 7;
             this.menuStripMain.Text = "menuStrip1";
             this.menuStripMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripMain_ItemClicked);
-            // 
-            // toolStripMenuExit
-            // 
-            this.toolStripMenuExit.Name = "toolStripMenuExit";
-            this.toolStripMenuExit.Size = new System.Drawing.Size(146, 22);
-            this.toolStripMenuExit.Text = "Exit";
             // 
             // Main
             // 
@@ -345,7 +345,7 @@ namespace InventoryManagementSystem
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Main";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

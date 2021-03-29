@@ -14,5 +14,15 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonOutsourced_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
