@@ -41,7 +41,7 @@ namespace InventoryManagementSystem
                 ap.MdiParent = this;
                 ap.FormClosed += new FormClosedEventHandler(ap_FormClosed);
                 ap.Show();
-                //this.Hide(); Causes the entire program to disappear. Likely cause nothing is on the AddParts Form yet.
+                this.Hide(); //Causes the entire program to disappear. Likely cause nothing is on the AddParts Form yet.
             }
             else
                 ap.Activate();
