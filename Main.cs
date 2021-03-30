@@ -33,15 +33,14 @@ namespace InventoryManagementSystem
 
         }
 
-        private void buttonAddParts_Click(object sender, EventArgs e)
+        private void buttonAddParts_Click(object sender, EventArgs e) //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
         {
             if (ap == null)
             {
                 ap = new AddParts();
-                ap.MdiParent = this;
                 ap.FormClosed += new FormClosedEventHandler(ap_FormClosed);
                 ap.Show();
-                this.Hide(); //Causes the entire program to disappear. Likely cause nothing is on the AddParts Form yet.
+                //this.Hide(); //Causes the entire program to disappear. Likely cause nothing is on the AddParts Form yet.
             }
             else
                 ap.Activate();

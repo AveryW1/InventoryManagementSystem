@@ -342,7 +342,6 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.menuStripMain);
             this.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "Main";
             this.Text = "Main";

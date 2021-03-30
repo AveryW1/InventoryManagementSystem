@@ -43,25 +43,25 @@ namespace InventoryManagementSystem
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAddParts = new System.Windows.Forms.Panel();
+            this.textBoxPartMin = new System.Windows.Forms.TextBox();
+            this.textBoxPartMax = new System.Windows.Forms.TextBox();
+            this.textBoxPartMachineID = new System.Windows.Forms.TextBox();
+            this.textBoxPartPriceCost = new System.Windows.Forms.TextBox();
+            this.textBoxPartName = new System.Windows.Forms.TextBox();
+            this.textBoxPartInventory = new System.Windows.Forms.TextBox();
+            this.textBoxPartID = new System.Windows.Forms.TextBox();
+            this.radioButtonPartOutsourced = new System.Windows.Forms.RadioButton();
+            this.radioButtonPartInHouse = new System.Windows.Forms.RadioButton();
+            this.labelPartMacIDComNA = new System.Windows.Forms.Label();
+            this.labelPartMin = new System.Windows.Forms.Label();
+            this.labelPartMax = new System.Windows.Forms.Label();
+            this.labelPartPriceCost = new System.Windows.Forms.Label();
+            this.labelPartInventory = new System.Windows.Forms.Label();
+            this.labelPartName = new System.Windows.Forms.Label();
+            this.labelPartID = new System.Windows.Forms.Label();
             this.labelAddPart = new System.Windows.Forms.Label();
-            this.labelID = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelInventory = new System.Windows.Forms.Label();
-            this.labelPriceCost = new System.Windows.Forms.Label();
-            this.labelMax = new System.Windows.Forms.Label();
-            this.labelMin = new System.Windows.Forms.Label();
-            this.labelMacIDComNA = new System.Windows.Forms.Label();
-            this.radioButtonInHouse = new System.Windows.Forms.RadioButton();
-            this.radioButtonOutsourced = new System.Windows.Forms.RadioButton();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.textBoxInventory = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxPriceCost = new System.Windows.Forms.TextBox();
-            this.textBoxMachineID = new System.Windows.Forms.TextBox();
-            this.textBoxMax = new System.Windows.Forms.TextBox();
-            this.textBoxMin = new System.Windows.Forms.TextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonPartSave = new System.Windows.Forms.Button();
+            this.buttonPartCancel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelAddParts.SuspendLayout();
             this.SuspendLayout();
@@ -162,26 +162,170 @@ namespace InventoryManagementSystem
             // 
             // panelAddParts
             // 
-            this.panelAddParts.Controls.Add(this.textBoxMin);
-            this.panelAddParts.Controls.Add(this.textBoxMax);
-            this.panelAddParts.Controls.Add(this.textBoxMachineID);
-            this.panelAddParts.Controls.Add(this.textBoxPriceCost);
-            this.panelAddParts.Controls.Add(this.textBoxName);
-            this.panelAddParts.Controls.Add(this.textBoxInventory);
-            this.panelAddParts.Controls.Add(this.textBoxID);
-            this.panelAddParts.Controls.Add(this.radioButtonOutsourced);
-            this.panelAddParts.Controls.Add(this.radioButtonInHouse);
-            this.panelAddParts.Controls.Add(this.labelMacIDComNA);
-            this.panelAddParts.Controls.Add(this.labelMin);
-            this.panelAddParts.Controls.Add(this.labelMax);
-            this.panelAddParts.Controls.Add(this.labelPriceCost);
-            this.panelAddParts.Controls.Add(this.labelInventory);
-            this.panelAddParts.Controls.Add(this.labelName);
-            this.panelAddParts.Controls.Add(this.labelID);
+            this.panelAddParts.Controls.Add(this.textBoxPartMin);
+            this.panelAddParts.Controls.Add(this.textBoxPartMax);
+            this.panelAddParts.Controls.Add(this.textBoxPartMachineID);
+            this.panelAddParts.Controls.Add(this.textBoxPartPriceCost);
+            this.panelAddParts.Controls.Add(this.textBoxPartName);
+            this.panelAddParts.Controls.Add(this.textBoxPartInventory);
+            this.panelAddParts.Controls.Add(this.textBoxPartID);
+            this.panelAddParts.Controls.Add(this.radioButtonPartOutsourced);
+            this.panelAddParts.Controls.Add(this.radioButtonPartInHouse);
+            this.panelAddParts.Controls.Add(this.labelPartMacIDComNA);
+            this.panelAddParts.Controls.Add(this.labelPartMin);
+            this.panelAddParts.Controls.Add(this.labelPartMax);
+            this.panelAddParts.Controls.Add(this.labelPartPriceCost);
+            this.panelAddParts.Controls.Add(this.labelPartInventory);
+            this.panelAddParts.Controls.Add(this.labelPartName);
+            this.panelAddParts.Controls.Add(this.labelPartID);
             this.panelAddParts.Location = new System.Drawing.Point(28, 78);
             this.panelAddParts.Name = "panelAddParts";
             this.panelAddParts.Size = new System.Drawing.Size(347, 222);
             this.panelAddParts.TabIndex = 1;
+            // 
+            // textBoxPartMin
+            // 
+            this.textBoxPartMin.Location = new System.Drawing.Point(242, 163);
+            this.textBoxPartMin.Name = "textBoxPartMin";
+            this.textBoxPartMin.Size = new System.Drawing.Size(62, 23);
+            this.textBoxPartMin.TabIndex = 15;
+            // 
+            // textBoxPartMax
+            // 
+            this.textBoxPartMax.Location = new System.Drawing.Point(124, 164);
+            this.textBoxPartMax.Name = "textBoxPartMax";
+            this.textBoxPartMax.Size = new System.Drawing.Size(62, 23);
+            this.textBoxPartMax.TabIndex = 14;
+            // 
+            // textBoxPartMachineID
+            // 
+            this.textBoxPartMachineID.Location = new System.Drawing.Point(124, 192);
+            this.textBoxPartMachineID.Name = "textBoxPartMachineID";
+            this.textBoxPartMachineID.Size = new System.Drawing.Size(180, 23);
+            this.textBoxPartMachineID.TabIndex = 13;
+            // 
+            // textBoxPartPriceCost
+            // 
+            this.textBoxPartPriceCost.Location = new System.Drawing.Point(124, 132);
+            this.textBoxPartPriceCost.Name = "textBoxPartPriceCost";
+            this.textBoxPartPriceCost.Size = new System.Drawing.Size(180, 23);
+            this.textBoxPartPriceCost.TabIndex = 12;
+            // 
+            // textBoxPartName
+            // 
+            this.textBoxPartName.Location = new System.Drawing.Point(124, 74);
+            this.textBoxPartName.Name = "textBoxPartName";
+            this.textBoxPartName.Size = new System.Drawing.Size(180, 23);
+            this.textBoxPartName.TabIndex = 11;
+            // 
+            // textBoxPartInventory
+            // 
+            this.textBoxPartInventory.Location = new System.Drawing.Point(124, 103);
+            this.textBoxPartInventory.Name = "textBoxPartInventory";
+            this.textBoxPartInventory.Size = new System.Drawing.Size(180, 23);
+            this.textBoxPartInventory.TabIndex = 10;
+            // 
+            // textBoxPartID
+            // 
+            this.textBoxPartID.Location = new System.Drawing.Point(124, 45);
+            this.textBoxPartID.Name = "textBoxPartID";
+            this.textBoxPartID.Size = new System.Drawing.Size(180, 23);
+            this.textBoxPartID.TabIndex = 9;
+            // 
+            // radioButtonPartOutsourced
+            // 
+            this.radioButtonPartOutsourced.AutoSize = true;
+            this.radioButtonPartOutsourced.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonPartOutsourced.Location = new System.Drawing.Point(215, 10);
+            this.radioButtonPartOutsourced.Name = "radioButtonPartOutsourced";
+            this.radioButtonPartOutsourced.Size = new System.Drawing.Size(108, 23);
+            this.radioButtonPartOutsourced.TabIndex = 8;
+            this.radioButtonPartOutsourced.TabStop = true;
+            this.radioButtonPartOutsourced.Text = "Outsourced";
+            this.radioButtonPartOutsourced.UseVisualStyleBackColor = true;
+            this.radioButtonPartOutsourced.CheckedChanged += new System.EventHandler(this.radioButtonOutsourced_CheckedChanged);
+            // 
+            // radioButtonPartInHouse
+            // 
+            this.radioButtonPartInHouse.AutoSize = true;
+            this.radioButtonPartInHouse.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonPartInHouse.Location = new System.Drawing.Point(124, 10);
+            this.radioButtonPartInHouse.Name = "radioButtonPartInHouse";
+            this.radioButtonPartInHouse.Size = new System.Drawing.Size(87, 23);
+            this.radioButtonPartInHouse.TabIndex = 7;
+            this.radioButtonPartInHouse.TabStop = true;
+            this.radioButtonPartInHouse.Text = "In-House";
+            this.radioButtonPartInHouse.UseVisualStyleBackColor = true;
+            // 
+            // labelPartMacIDComNA
+            // 
+            this.labelPartMacIDComNA.AutoSize = true;
+            this.labelPartMacIDComNA.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartMacIDComNA.Location = new System.Drawing.Point(22, 196);
+            this.labelPartMacIDComNA.Name = "labelPartMacIDComNA";
+            this.labelPartMacIDComNA.Size = new System.Drawing.Size(84, 19);
+            this.labelPartMacIDComNA.TabIndex = 6;
+            this.labelPartMacIDComNA.Text = "Machine ID";
+            // 
+            // labelPartMin
+            // 
+            this.labelPartMin.AutoSize = true;
+            this.labelPartMin.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartMin.Location = new System.Drawing.Point(202, 168);
+            this.labelPartMin.Name = "labelPartMin";
+            this.labelPartMin.Size = new System.Drawing.Size(35, 19);
+            this.labelPartMin.TabIndex = 5;
+            this.labelPartMin.Text = "Min";
+            // 
+            // labelPartMax
+            // 
+            this.labelPartMax.AutoSize = true;
+            this.labelPartMax.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartMax.Location = new System.Drawing.Point(67, 168);
+            this.labelPartMax.Name = "labelPartMax";
+            this.labelPartMax.Size = new System.Drawing.Size(39, 19);
+            this.labelPartMax.TabIndex = 4;
+            this.labelPartMax.Text = "Max";
+            // 
+            // labelPartPriceCost
+            // 
+            this.labelPartPriceCost.AutoSize = true;
+            this.labelPartPriceCost.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartPriceCost.Location = new System.Drawing.Point(29, 136);
+            this.labelPartPriceCost.Name = "labelPartPriceCost";
+            this.labelPartPriceCost.Size = new System.Drawing.Size(77, 19);
+            this.labelPartPriceCost.TabIndex = 3;
+            this.labelPartPriceCost.Text = "Price/Cost";
+            // 
+            // labelPartInventory
+            // 
+            this.labelPartInventory.AutoSize = true;
+            this.labelPartInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartInventory.Location = new System.Drawing.Point(31, 107);
+            this.labelPartInventory.Name = "labelPartInventory";
+            this.labelPartInventory.Size = new System.Drawing.Size(75, 19);
+            this.labelPartInventory.TabIndex = 2;
+            this.labelPartInventory.Text = "Inventory";
+            // 
+            // labelPartName
+            // 
+            this.labelPartName.AutoSize = true;
+            this.labelPartName.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartName.Location = new System.Drawing.Point(57, 78);
+            this.labelPartName.Name = "labelPartName";
+            this.labelPartName.Size = new System.Drawing.Size(49, 19);
+            this.labelPartName.TabIndex = 1;
+            this.labelPartName.Text = "Name";
+            // 
+            // labelPartID
+            // 
+            this.labelPartID.AutoSize = true;
+            this.labelPartID.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartID.Location = new System.Drawing.Point(83, 49);
+            this.labelPartID.Name = "labelPartID";
+            this.labelPartID.Size = new System.Drawing.Size(23, 19);
+            this.labelPartID.TabIndex = 0;
+            this.labelPartID.Text = "ID";
             // 
             // labelAddPart
             // 
@@ -196,169 +340,25 @@ namespace InventoryManagementSystem
             this.labelAddPart.Text = "Add Part";
             this.labelAddPart.Click += new System.EventHandler(this.label1_Click);
             // 
-            // labelID
+            // buttonPartSave
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelID.Location = new System.Drawing.Point(83, 49);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(23, 19);
-            this.labelID.TabIndex = 0;
-            this.labelID.Text = "ID";
+            this.buttonPartSave.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPartSave.Location = new System.Drawing.Point(219, 317);
+            this.buttonPartSave.Name = "buttonPartSave";
+            this.buttonPartSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonPartSave.TabIndex = 3;
+            this.buttonPartSave.Text = "Save";
+            this.buttonPartSave.UseVisualStyleBackColor = true;
             // 
-            // labelName
+            // buttonPartCancel
             // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName.Location = new System.Drawing.Point(57, 78);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(49, 19);
-            this.labelName.TabIndex = 1;
-            this.labelName.Text = "Name";
-            // 
-            // labelInventory
-            // 
-            this.labelInventory.AutoSize = true;
-            this.labelInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelInventory.Location = new System.Drawing.Point(31, 107);
-            this.labelInventory.Name = "labelInventory";
-            this.labelInventory.Size = new System.Drawing.Size(75, 19);
-            this.labelInventory.TabIndex = 2;
-            this.labelInventory.Text = "Inventory";
-            // 
-            // labelPriceCost
-            // 
-            this.labelPriceCost.AutoSize = true;
-            this.labelPriceCost.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPriceCost.Location = new System.Drawing.Point(29, 136);
-            this.labelPriceCost.Name = "labelPriceCost";
-            this.labelPriceCost.Size = new System.Drawing.Size(77, 19);
-            this.labelPriceCost.TabIndex = 3;
-            this.labelPriceCost.Text = "Price/Cost";
-            // 
-            // labelMax
-            // 
-            this.labelMax.AutoSize = true;
-            this.labelMax.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMax.Location = new System.Drawing.Point(67, 168);
-            this.labelMax.Name = "labelMax";
-            this.labelMax.Size = new System.Drawing.Size(39, 19);
-            this.labelMax.TabIndex = 4;
-            this.labelMax.Text = "Max";
-            // 
-            // labelMin
-            // 
-            this.labelMin.AutoSize = true;
-            this.labelMin.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMin.Location = new System.Drawing.Point(202, 168);
-            this.labelMin.Name = "labelMin";
-            this.labelMin.Size = new System.Drawing.Size(35, 19);
-            this.labelMin.TabIndex = 5;
-            this.labelMin.Text = "Min";
-            // 
-            // labelMacIDComNA
-            // 
-            this.labelMacIDComNA.AutoSize = true;
-            this.labelMacIDComNA.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMacIDComNA.Location = new System.Drawing.Point(22, 196);
-            this.labelMacIDComNA.Name = "labelMacIDComNA";
-            this.labelMacIDComNA.Size = new System.Drawing.Size(84, 19);
-            this.labelMacIDComNA.TabIndex = 6;
-            this.labelMacIDComNA.Text = "Machine ID";
-            // 
-            // radioButtonInHouse
-            // 
-            this.radioButtonInHouse.AutoSize = true;
-            this.radioButtonInHouse.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonInHouse.Location = new System.Drawing.Point(124, 10);
-            this.radioButtonInHouse.Name = "radioButtonInHouse";
-            this.radioButtonInHouse.Size = new System.Drawing.Size(87, 23);
-            this.radioButtonInHouse.TabIndex = 7;
-            this.radioButtonInHouse.TabStop = true;
-            this.radioButtonInHouse.Text = "In-House";
-            this.radioButtonInHouse.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOutsourced
-            // 
-            this.radioButtonOutsourced.AutoSize = true;
-            this.radioButtonOutsourced.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonOutsourced.Location = new System.Drawing.Point(215, 10);
-            this.radioButtonOutsourced.Name = "radioButtonOutsourced";
-            this.radioButtonOutsourced.Size = new System.Drawing.Size(108, 23);
-            this.radioButtonOutsourced.TabIndex = 8;
-            this.radioButtonOutsourced.TabStop = true;
-            this.radioButtonOutsourced.Text = "Outsourced";
-            this.radioButtonOutsourced.UseVisualStyleBackColor = true;
-            this.radioButtonOutsourced.CheckedChanged += new System.EventHandler(this.radioButtonOutsourced_CheckedChanged);
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(124, 45);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(180, 23);
-            this.textBoxID.TabIndex = 9;
-            // 
-            // textBoxInventory
-            // 
-            this.textBoxInventory.Location = new System.Drawing.Point(124, 103);
-            this.textBoxInventory.Name = "textBoxInventory";
-            this.textBoxInventory.Size = new System.Drawing.Size(180, 23);
-            this.textBoxInventory.TabIndex = 10;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(124, 74);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(180, 23);
-            this.textBoxName.TabIndex = 11;
-            // 
-            // textBoxPriceCost
-            // 
-            this.textBoxPriceCost.Location = new System.Drawing.Point(124, 132);
-            this.textBoxPriceCost.Name = "textBoxPriceCost";
-            this.textBoxPriceCost.Size = new System.Drawing.Size(180, 23);
-            this.textBoxPriceCost.TabIndex = 12;
-            // 
-            // textBoxMachineID
-            // 
-            this.textBoxMachineID.Location = new System.Drawing.Point(124, 192);
-            this.textBoxMachineID.Name = "textBoxMachineID";
-            this.textBoxMachineID.Size = new System.Drawing.Size(180, 23);
-            this.textBoxMachineID.TabIndex = 13;
-            // 
-            // textBoxMax
-            // 
-            this.textBoxMax.Location = new System.Drawing.Point(124, 164);
-            this.textBoxMax.Name = "textBoxMax";
-            this.textBoxMax.Size = new System.Drawing.Size(62, 23);
-            this.textBoxMax.TabIndex = 14;
-            // 
-            // textBoxMin
-            // 
-            this.textBoxMin.Location = new System.Drawing.Point(242, 163);
-            this.textBoxMin.Name = "textBoxMin";
-            this.textBoxMin.Size = new System.Drawing.Size(62, 23);
-            this.textBoxMin.TabIndex = 15;
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSave.Location = new System.Drawing.Point(190, 317);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonSave.TabIndex = 3;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancel.Location = new System.Drawing.Point(289, 317);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 4;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonPartCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPartCancel.Location = new System.Drawing.Point(300, 317);
+            this.buttonPartCancel.Name = "buttonPartCancel";
+            this.buttonPartCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonPartCancel.TabIndex = 4;
+            this.buttonPartCancel.Text = "Cancel";
+            this.buttonPartCancel.UseVisualStyleBackColor = true;
             // 
             // AddParts
             // 
@@ -366,8 +366,8 @@ namespace InventoryManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(406, 352);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonPartCancel);
+            this.Controls.Add(this.buttonPartSave);
             this.Controls.Add(this.labelAddPart);
             this.Controls.Add(this.panelAddParts);
             this.Controls.Add(this.menuStrip1);
@@ -399,23 +399,23 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Panel panelAddParts;
         private System.Windows.Forms.Label labelAddPart;
-        private System.Windows.Forms.Label labelInventory;
-        private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.TextBox textBoxMin;
-        private System.Windows.Forms.TextBox textBoxMax;
-        private System.Windows.Forms.TextBox textBoxMachineID;
-        private System.Windows.Forms.TextBox textBoxPriceCost;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TextBox textBoxInventory;
-        private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.RadioButton radioButtonOutsourced;
-        private System.Windows.Forms.RadioButton radioButtonInHouse;
-        private System.Windows.Forms.Label labelMacIDComNA;
-        private System.Windows.Forms.Label labelMin;
-        private System.Windows.Forms.Label labelMax;
-        private System.Windows.Forms.Label labelPriceCost;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Label labelPartInventory;
+        private System.Windows.Forms.Label labelPartName;
+        private System.Windows.Forms.Label labelPartID;
+        private System.Windows.Forms.TextBox textBoxPartMin;
+        private System.Windows.Forms.TextBox textBoxPartMax;
+        private System.Windows.Forms.TextBox textBoxPartMachineID;
+        private System.Windows.Forms.TextBox textBoxPartPriceCost;
+        private System.Windows.Forms.TextBox textBoxPartName;
+        private System.Windows.Forms.TextBox textBoxPartInventory;
+        private System.Windows.Forms.TextBox textBoxPartID;
+        private System.Windows.Forms.RadioButton radioButtonPartOutsourced;
+        private System.Windows.Forms.RadioButton radioButtonPartInHouse;
+        private System.Windows.Forms.Label labelPartMacIDComNA;
+        private System.Windows.Forms.Label labelPartMin;
+        private System.Windows.Forms.Label labelPartMax;
+        private System.Windows.Forms.Label labelPartPriceCost;
+        private System.Windows.Forms.Button buttonPartSave;
+        private System.Windows.Forms.Button buttonPartCancel;
     }
 }
