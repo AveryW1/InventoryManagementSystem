@@ -29,10 +29,8 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyParts));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.labelModifyPart = new System.Windows.Forms.Label();
-            this.panelModifyParts = new System.Windows.Forms.Panel();
+            this.panelModifyParts1 = new System.Windows.Forms.Panel();
             this.textBoxModifyMin = new System.Windows.Forms.TextBox();
             this.textBoxModifyMax = new System.Windows.Forms.TextBox();
             this.textBoxModifyMachineID = new System.Windows.Forms.TextBox();
@@ -51,30 +49,10 @@ namespace InventoryManagementSystem
             this.labelModifyID = new System.Windows.Forms.Label();
             this.buttonModifySave = new System.Windows.Forms.Button();
             this.buttonModifyCancel = new System.Windows.Forms.Button();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
-            this.panelModifyParts.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelModifyParts1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(406, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // labelModifyPart
             // 
@@ -82,34 +60,34 @@ namespace InventoryManagementSystem
             this.labelModifyPart.BackColor = System.Drawing.Color.Silver;
             this.labelModifyPart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelModifyPart.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyPart.Location = new System.Drawing.Point(12, 35);
+            this.labelModifyPart.Location = new System.Drawing.Point(12, 9);
             this.labelModifyPart.Name = "labelModifyPart";
             this.labelModifyPart.Size = new System.Drawing.Size(110, 26);
             this.labelModifyPart.TabIndex = 3;
             this.labelModifyPart.Text = "Modify Part";
             // 
-            // panelModifyParts
+            // panelModifyParts1
             // 
-            this.panelModifyParts.Controls.Add(this.textBoxModifyMin);
-            this.panelModifyParts.Controls.Add(this.textBoxModifyMax);
-            this.panelModifyParts.Controls.Add(this.textBoxModifyMachineID);
-            this.panelModifyParts.Controls.Add(this.textBoxModifyPriceCost);
-            this.panelModifyParts.Controls.Add(this.textBoxModifyName);
-            this.panelModifyParts.Controls.Add(this.textBoxModifyInventory);
-            this.panelModifyParts.Controls.Add(this.textBoxModifyID);
-            this.panelModifyParts.Controls.Add(this.radioButtonModifyOutsourced);
-            this.panelModifyParts.Controls.Add(this.radioButtonModifyInHouse);
-            this.panelModifyParts.Controls.Add(this.labelModifyMacIDComNA);
-            this.panelModifyParts.Controls.Add(this.labelModifyMin);
-            this.panelModifyParts.Controls.Add(this.labelModifyMax);
-            this.panelModifyParts.Controls.Add(this.labelModifyPriceCost);
-            this.panelModifyParts.Controls.Add(this.labelModifyInventory);
-            this.panelModifyParts.Controls.Add(this.labelModifyName);
-            this.panelModifyParts.Controls.Add(this.labelModifyID);
-            this.panelModifyParts.Location = new System.Drawing.Point(28, 78);
-            this.panelModifyParts.Name = "panelModifyParts";
-            this.panelModifyParts.Size = new System.Drawing.Size(347, 222);
-            this.panelModifyParts.TabIndex = 4;
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyMin);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyMax);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyMachineID);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyPriceCost);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyName);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyInventory);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyID);
+            this.panelModifyParts1.Controls.Add(this.radioButtonModifyOutsourced);
+            this.panelModifyParts1.Controls.Add(this.radioButtonModifyInHouse);
+            this.panelModifyParts1.Controls.Add(this.labelModifyMacIDComNA);
+            this.panelModifyParts1.Controls.Add(this.labelModifyMin);
+            this.panelModifyParts1.Controls.Add(this.labelModifyMax);
+            this.panelModifyParts1.Controls.Add(this.labelModifyPriceCost);
+            this.panelModifyParts1.Controls.Add(this.labelModifyInventory);
+            this.panelModifyParts1.Controls.Add(this.labelModifyName);
+            this.panelModifyParts1.Controls.Add(this.labelModifyID);
+            this.panelModifyParts1.Location = new System.Drawing.Point(26, 50);
+            this.panelModifyParts1.Name = "panelModifyParts1";
+            this.panelModifyParts1.Size = new System.Drawing.Size(347, 222);
+            this.panelModifyParts1.TabIndex = 4;
             // 
             // textBoxModifyMin
             // 
@@ -256,107 +234,34 @@ namespace InventoryManagementSystem
             // 
             // buttonModifySave
             // 
-            this.buttonModifySave.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonModifySave.Location = new System.Drawing.Point(219, 317);
+            this.buttonModifySave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonModifySave.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonModifySave.Location = new System.Drawing.Point(4, 0);
             this.buttonModifySave.Name = "buttonModifySave";
-            this.buttonModifySave.Size = new System.Drawing.Size(75, 23);
+            this.buttonModifySave.Size = new System.Drawing.Size(75, 25);
             this.buttonModifySave.TabIndex = 5;
             this.buttonModifySave.Text = "Save";
             this.buttonModifySave.UseVisualStyleBackColor = true;
             // 
             // buttonModifyCancel
             // 
-            this.buttonModifyCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonModifyCancel.Location = new System.Drawing.Point(300, 317);
+            this.buttonModifyCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonModifyCancel.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonModifyCancel.Location = new System.Drawing.Point(90, 0);
             this.buttonModifyCancel.Name = "buttonModifyCancel";
-            this.buttonModifyCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonModifyCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonModifyCancel.TabIndex = 6;
             this.buttonModifyCancel.Text = "Cancel";
             this.buttonModifyCancel.UseVisualStyleBackColor = true;
             // 
-            // fileToolStripMenuItem
+            // panel1
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.toolStripSeparator,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.newToolStripMenuItem.Text = "&New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 6);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.panel1.Controls.Add(this.buttonModifySave);
+            this.panel1.Controls.Add(this.buttonModifyCancel);
+            this.panel1.Location = new System.Drawing.Point(196, 278);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 33);
+            this.panel1.TabIndex = 7;
             // 
             // ModifyParts
             // 
@@ -364,28 +269,22 @@ namespace InventoryManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(406, 352);
-            this.Controls.Add(this.buttonModifyCancel);
-            this.Controls.Add(this.buttonModifySave);
-            this.Controls.Add(this.panelModifyParts);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelModifyParts1);
             this.Controls.Add(this.labelModifyPart);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "ModifyParts";
             this.Text = "ModifyParts";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panelModifyParts.ResumeLayout(false);
-            this.panelModifyParts.PerformLayout();
+            this.panelModifyParts1.ResumeLayout(false);
+            this.panelModifyParts1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label labelModifyPart;
-        private System.Windows.Forms.Panel panelModifyParts;
+        private System.Windows.Forms.Panel panelModifyParts1;
         private System.Windows.Forms.TextBox textBoxModifyMin;
         private System.Windows.Forms.TextBox textBoxModifyMax;
         private System.Windows.Forms.TextBox textBoxModifyMachineID;
@@ -404,16 +303,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Label labelModifyID;
         private System.Windows.Forms.Button buttonModifySave;
         private System.Windows.Forms.Button buttonModifyCancel;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }

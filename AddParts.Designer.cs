@@ -29,19 +29,6 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddParts));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAddParts = new System.Windows.Forms.Panel();
             this.textBoxPartMin = new System.Windows.Forms.TextBox();
             this.textBoxPartMax = new System.Windows.Forms.TextBox();
@@ -62,103 +49,8 @@ namespace InventoryManagementSystem
             this.labelAddPart = new System.Windows.Forms.Label();
             this.buttonPartSave = new System.Windows.Forms.Button();
             this.buttonPartCancel = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.panelAddParts.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(406, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.toolStripSeparator,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.newToolStripMenuItem.Text = "&New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(140, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(140, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // panelAddParts
             // 
@@ -178,7 +70,7 @@ namespace InventoryManagementSystem
             this.panelAddParts.Controls.Add(this.labelPartInventory);
             this.panelAddParts.Controls.Add(this.labelPartName);
             this.panelAddParts.Controls.Add(this.labelPartID);
-            this.panelAddParts.Location = new System.Drawing.Point(28, 78);
+            this.panelAddParts.Location = new System.Drawing.Point(28, 55);
             this.panelAddParts.Name = "panelAddParts";
             this.panelAddParts.Size = new System.Drawing.Size(347, 222);
             this.panelAddParts.TabIndex = 1;
@@ -333,7 +225,7 @@ namespace InventoryManagementSystem
             this.labelAddPart.BackColor = System.Drawing.Color.Silver;
             this.labelAddPart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelAddPart.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAddPart.Location = new System.Drawing.Point(12, 35);
+            this.labelAddPart.Location = new System.Drawing.Point(12, 9);
             this.labelAddPart.Name = "labelAddPart";
             this.labelAddPart.Size = new System.Drawing.Size(85, 26);
             this.labelAddPart.TabIndex = 2;
@@ -342,20 +234,22 @@ namespace InventoryManagementSystem
             // 
             // buttonPartSave
             // 
-            this.buttonPartSave.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPartSave.Location = new System.Drawing.Point(219, 317);
+            this.buttonPartSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonPartSave.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPartSave.Location = new System.Drawing.Point(219, 283);
             this.buttonPartSave.Name = "buttonPartSave";
-            this.buttonPartSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonPartSave.Size = new System.Drawing.Size(75, 25);
             this.buttonPartSave.TabIndex = 3;
             this.buttonPartSave.Text = "Save";
             this.buttonPartSave.UseVisualStyleBackColor = true;
             // 
             // buttonPartCancel
             // 
-            this.buttonPartCancel.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPartCancel.Location = new System.Drawing.Point(300, 317);
+            this.buttonPartCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonPartCancel.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPartCancel.Location = new System.Drawing.Point(300, 283);
             this.buttonPartCancel.Name = "buttonPartCancel";
-            this.buttonPartCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonPartCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonPartCancel.TabIndex = 4;
             this.buttonPartCancel.Text = "Cancel";
             this.buttonPartCancel.UseVisualStyleBackColor = true;
@@ -370,12 +264,8 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.buttonPartSave);
             this.Controls.Add(this.labelAddPart);
             this.Controls.Add(this.panelAddParts);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "AddParts";
             this.Text = "AddParts";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panelAddParts.ResumeLayout(false);
             this.panelAddParts.PerformLayout();
             this.ResumeLayout(false);
@@ -384,19 +274,6 @@ namespace InventoryManagementSystem
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Panel panelAddParts;
         private System.Windows.Forms.Label labelAddPart;
         private System.Windows.Forms.Label labelPartInventory;
