@@ -12,9 +12,22 @@ namespace InventoryManagementSystem
 {
     public partial class Main : Form
     {
+        //This function creates the Binding List for Parts.
+        private void buildBindingParts()
+        {
+            Inventory.PartBL.Clear();
+        }
+
+        private void buildBindingProducts()
+        {
+            Inventory.ProductBL.Clear();
+        }
+
         public Main()
         {
             InitializeComponent();
+            buildBindingParts();
+            buildBindingProducts();
         }
 
         AddParts ap;
