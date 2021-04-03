@@ -148,6 +148,7 @@ namespace InventoryManagementSystem
             this.radioButtonPartInHouse.TabStop = true;
             this.radioButtonPartInHouse.Text = "In-House";
             this.radioButtonPartInHouse.UseVisualStyleBackColor = true;
+            this.radioButtonPartInHouse.CheckedChanged += new System.EventHandler(this.radioButtonPartInHouse_CheckedChanged);
             // 
             // labelPartMacIDComNA
             // 
@@ -242,6 +243,7 @@ namespace InventoryManagementSystem
             this.buttonPartSave.TabIndex = 3;
             this.buttonPartSave.Text = "Save";
             this.buttonPartSave.UseVisualStyleBackColor = true;
+            this.buttonPartSave.Click += new System.EventHandler(this.buttonPartSave_Click);
             // 
             // buttonPartCancel
             // 

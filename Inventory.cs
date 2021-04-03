@@ -11,6 +11,13 @@ namespace InventoryManagementSystem
         public static BindingList<Product> ProductBL = new BindingList<Product>();
         public static BindingList<Part> PartBL = new BindingList<Part>();
 
+        //Remember this method needs to be static since you're acting on the only, global inventory class and not an instance.
+        public static void addPart(Part part)
+        {
+            PartBL.Add(part);
+        }
+
+
     }
 
 }

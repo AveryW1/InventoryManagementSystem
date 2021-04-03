@@ -17,7 +17,7 @@ namespace InventoryManagementSystem
         public int Min { get; set; }
         public int Max { get; set; }
         //Constructor. Variable names coordinate with the properties of base class Part.
-        public Product(int productID, string name, decimal price, int inStock, int min, int max) : base(partID, name, price, inStock, min, max)
+        public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
             ProductID = productID;
             Name = name;
@@ -26,9 +26,10 @@ namespace InventoryManagementSystem
             Min = min;
             Max = max;
         }
-        public void addAssociatedPart(Part)
+       /*
+        public void addAssociatedPart(Part part) //Should use partID as reference
         {
-
+            AssociatedParts.Add(new());
         }
         public bool removeAssociatedPart(int s)
         {
@@ -39,5 +40,6 @@ namespace InventoryManagementSystem
         {
 
         }
+        */
     }
 }
