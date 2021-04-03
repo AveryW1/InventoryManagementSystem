@@ -30,7 +30,7 @@ namespace InventoryManagementSystem
             buildBindingProducts();
         }
 
-        AddParts ap;
+        
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -46,6 +46,7 @@ namespace InventoryManagementSystem
 
         }
 
+        AddParts ap; //This variable serves as a control for the add parts button click event
         private void buttonAddParts_Click(object sender, EventArgs e) //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
         {
             if (ap == null)
