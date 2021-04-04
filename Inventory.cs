@@ -23,7 +23,7 @@ namespace InventoryManagementSystem
             PartBL.Add(part);
         }
 
-        public static bool deletePart(Part part) //Checks if part is in list, removes if true, reutrns message if not.
+        public static bool deletePart(Part part) //Checks if part is in list, removes if true, reutrns message if not. TRY FINDING BY PART ID instead of currentIdx
         {
             if (PartBL.Contains(part))//Delete is not finding the current part.
             {
@@ -36,7 +36,12 @@ namespace InventoryManagementSystem
             }
         }
 
+        public static void updatePart(int index, Part part) //Can call property of part and update them individually.
+        {
+            //part.
+        }
 
+        
     }
 
 }

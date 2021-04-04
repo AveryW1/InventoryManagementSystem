@@ -40,7 +40,7 @@ namespace InventoryManagementSystem
             this.buttonModifyParts = new System.Windows.Forms.Button();
             this.buttonAddParts = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.buttonSearchProducts = new System.Windows.Forms.Button();
             this.textBoxSearchProducts01 = new System.Windows.Forms.TextBox();
             this.buttonDeleteProducts = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@ namespace InventoryManagementSystem
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParts)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMainScreen
@@ -82,7 +82,7 @@ namespace InventoryManagementSystem
             this.labelProductsDGV.AutoSize = true;
             this.labelProductsDGV.BackColor = System.Drawing.Color.Silver;
             this.labelProductsDGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelProductsDGV.Location = new System.Drawing.Point(293, 15);
+            this.labelProductsDGV.Location = new System.Drawing.Point(298, 15);
             this.labelProductsDGV.Name = "labelProductsDGV";
             this.labelProductsDGV.Size = new System.Drawing.Size(80, 24);
             this.labelProductsDGV.TabIndex = 2;
@@ -116,7 +116,7 @@ namespace InventoryManagementSystem
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(20, 398);
+            this.button1.Location = new System.Drawing.Point(20, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 27);
             this.button1.TabIndex = 7;
@@ -125,7 +125,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxSearchParts01
             // 
-            this.textBoxSearchParts01.Location = new System.Drawing.Point(123, 396);
+            this.textBoxSearchParts01.Location = new System.Drawing.Point(101, 394);
             this.textBoxSearchParts01.Name = "textBoxSearchParts01";
             this.textBoxSearchParts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchParts01.TabIndex = 6;
@@ -150,6 +150,7 @@ namespace InventoryManagementSystem
             this.buttonModifyParts.TabIndex = 3;
             this.buttonModifyParts.Text = "Modify";
             this.buttonModifyParts.UseVisualStyleBackColor = true;
+            this.buttonModifyParts.Click += new System.EventHandler(this.buttonModifyParts_Click);
             // 
             // buttonAddParts
             // 
@@ -164,7 +165,7 @@ namespace InventoryManagementSystem
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dataGridViewProducts);
             this.panel2.Controls.Add(this.buttonSearchProducts);
             this.panel2.Controls.Add(this.textBoxSearchProducts01);
             this.panel2.Controls.Add(this.buttonDeleteProducts);
@@ -176,19 +177,19 @@ namespace InventoryManagementSystem
             this.panel2.Size = new System.Drawing.Size(700, 450);
             this.panel2.TabIndex = 4;
             // 
-            // dataGridView1
+            // dataGridViewProducts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 11;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(18, 54);
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.RowTemplate.Height = 25;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(655, 336);
+            this.dataGridViewProducts.TabIndex = 11;
             // 
             // buttonSearchProducts
             // 
             this.buttonSearchProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearchProducts.Location = new System.Drawing.Point(10, 396);
+            this.buttonSearchProducts.Location = new System.Drawing.Point(18, 394);
             this.buttonSearchProducts.Name = "buttonSearchProducts";
             this.buttonSearchProducts.Size = new System.Drawing.Size(75, 27);
             this.buttonSearchProducts.TabIndex = 10;
@@ -197,7 +198,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxSearchProducts01
             // 
-            this.textBoxSearchProducts01.Location = new System.Drawing.Point(91, 396);
+            this.textBoxSearchProducts01.Location = new System.Drawing.Point(99, 394);
             this.textBoxSearchProducts01.Name = "textBoxSearchProducts01";
             this.textBoxSearchProducts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchProducts01.TabIndex = 9;
@@ -261,7 +262,7 @@ namespace InventoryManagementSystem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParts)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,7 +287,7 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonSearchProducts;
         private System.Windows.Forms.DataGridView dataGridViewParts;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewProducts;
     }
 }
 
