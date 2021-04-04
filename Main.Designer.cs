@@ -33,20 +33,24 @@ namespace InventoryManagementSystem
             this.labelPartsDGV = new System.Windows.Forms.Label();
             this.labelProductsDGV = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridViewParts = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxSearchParts01 = new System.Windows.Forms.TextBox();
             this.buttonDeleteParts = new System.Windows.Forms.Button();
             this.buttonModifyParts = new System.Windows.Forms.Button();
             this.buttonAddParts = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonSearchProducts = new System.Windows.Forms.Button();
             this.textBoxSearchProducts01 = new System.Windows.Forms.TextBox();
             this.buttonDeleteProducts = new System.Windows.Forms.Button();
             this.buttonModifyProducts = new System.Windows.Forms.Button();
             this.buttonAddProducts = new System.Windows.Forms.Button();
             this.buttonExitFromMain = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParts)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMainScreen
@@ -87,6 +91,7 @@ namespace InventoryManagementSystem
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dataGridViewParts);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBoxSearchParts01);
             this.panel1.Controls.Add(this.buttonDeleteParts);
@@ -98,10 +103,20 @@ namespace InventoryManagementSystem
             this.panel1.Size = new System.Drawing.Size(700, 450);
             this.panel1.TabIndex = 3;
             // 
+            // dataGridViewParts
+            // 
+            this.dataGridViewParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewParts.Location = new System.Drawing.Point(20, 54);
+            this.dataGridViewParts.Name = "dataGridViewParts";
+            this.dataGridViewParts.RowTemplate.Height = 25;
+            this.dataGridViewParts.Size = new System.Drawing.Size(655, 336);
+            this.dataGridViewParts.TabIndex = 8;
+            this.dataGridViewParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParts_CellContentClick);
+            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(10, 398);
+            this.button1.Location = new System.Drawing.Point(20, 398);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 27);
             this.button1.TabIndex = 7;
@@ -110,7 +125,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxSearchParts01
             // 
-            this.textBoxSearchParts01.Location = new System.Drawing.Point(91, 396);
+            this.textBoxSearchParts01.Location = new System.Drawing.Point(123, 396);
             this.textBoxSearchParts01.Name = "textBoxSearchParts01";
             this.textBoxSearchParts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchParts01.TabIndex = 6;
@@ -124,6 +139,7 @@ namespace InventoryManagementSystem
             this.buttonDeleteParts.TabIndex = 4;
             this.buttonDeleteParts.Text = "Delete";
             this.buttonDeleteParts.UseVisualStyleBackColor = true;
+            this.buttonDeleteParts.Click += new System.EventHandler(this.buttonDeleteParts_Click);
             // 
             // buttonModifyParts
             // 
@@ -148,7 +164,8 @@ namespace InventoryManagementSystem
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.buttonSearchProducts);
             this.panel2.Controls.Add(this.textBoxSearchProducts01);
             this.panel2.Controls.Add(this.buttonDeleteProducts);
             this.panel2.Controls.Add(this.buttonModifyProducts);
@@ -159,15 +176,24 @@ namespace InventoryManagementSystem
             this.panel2.Size = new System.Drawing.Size(700, 450);
             this.panel2.TabIndex = 4;
             // 
-            // button2
+            // dataGridView1
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(10, 396);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(48, 83);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // buttonSearchProducts
+            // 
+            this.buttonSearchProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearchProducts.Location = new System.Drawing.Point(10, 396);
+            this.buttonSearchProducts.Name = "buttonSearchProducts";
+            this.buttonSearchProducts.Size = new System.Drawing.Size(75, 27);
+            this.buttonSearchProducts.TabIndex = 10;
+            this.buttonSearchProducts.Text = "Search";
+            this.buttonSearchProducts.UseVisualStyleBackColor = true;
             // 
             // textBoxSearchProducts01
             // 
@@ -232,8 +258,10 @@ namespace InventoryManagementSystem
             this.Text = "Main";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewParts)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +284,9 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.TextBox textBoxSearchParts01;
         private System.Windows.Forms.TextBox textBoxSearchProducts01;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSearchProducts;
+        private System.Windows.Forms.DataGridView dataGridViewParts;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

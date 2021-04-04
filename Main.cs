@@ -15,12 +15,14 @@ namespace InventoryManagementSystem
         //This function creates the Binding List for Parts.
         private void buildBindingParts()
         {
-            Inventory.PartBL.Clear();
+            //Inventory.PartBL.Clear(); This method call will clear your DGV of any prepopulated data.
+            dataGridViewParts.DataSource = Inventory.PartBL;
         }
 
         private void buildBindingProducts()
         {
-            Inventory.ProductBL.Clear();
+            //Inventory.ProductBL.Clear();
+
         }
 
         public Main()
@@ -65,23 +67,41 @@ namespace InventoryManagementSystem
             ap = null;
         }
 
-        private void menuStripMain_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        //These variables are used by the program to "remember" what is selected in the DGV.
+        int currentIdx = 0;
+        Part currentObj = null; //Had to use Type part due to conversion issues
+        private void dataGridViewParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //This could be a bug if needed to do sorting due to index changing in DGV vs the list.
+            currentIdx = dataGridViewParts.CurrentCell.RowIndex;
+            currentObj = Inventory.PartBL[currentIdx];
+        }
+        
 
+        private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void buttonDeleteParts_Click(object sender, EventArgs e) //Delete is not finding current part.
+        {
+            var result = Inventory.deletePart(currentObj);
+            if(result == true)
+            {
+                string message = "Part has been removed.";
+                string caption = "Remove Success";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult messageResult;
+                messageResult = MessageBox.Show(message, caption, buttons);
+            }
+            else
+            {
+                string message = "Part not found. Current index is: " + currentIdx;
+                string caption = "Remove Failed";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult messageResult;
+                messageResult = MessageBox.Show(message, caption, buttons);
+            }
         }
     }
 }
-
-
-
-
-
-
-
-/*
- * The code snippet below is to add child forms to the "Main" parent form. Add this code to an event handler, such as a button push.
- * Reference the parent form using "this" keyword. Replace child keyword with name of child form
-ChildFormClass childForm = New ChildFormClass();
-childForm.MdiParent = parentForm;
-childForm.Show();
- */

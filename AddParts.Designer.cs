@@ -255,6 +255,7 @@ namespace InventoryManagementSystem
             this.buttonPartCancel.TabIndex = 4;
             this.buttonPartCancel.Text = "Cancel";
             this.buttonPartCancel.UseVisualStyleBackColor = true;
+            this.buttonPartCancel.Click += new System.EventHandler(this.buttonPartCancel_Click);
             // 
             // AddParts
             // 

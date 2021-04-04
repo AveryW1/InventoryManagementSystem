@@ -40,9 +40,17 @@ namespace InventoryManagementSystem
             }
             catch(FormatException)
             {
-
-                Form dlgex1 = new Form();
-                dlgex1.ShowDialog();
+                //Example from microsoft documentation.
+                string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers. Name is a string.";
+                string caption = "Input Format Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                /*Use this if you want to close the add Part window as a reponse to the OK press.
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.Close();
+                }*/
             }
         }
 
@@ -50,6 +58,11 @@ namespace InventoryManagementSystem
         {
             labelPartMacIDComNA.Text = "Machine ID";
 
+        }
+
+        private void buttonPartCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
