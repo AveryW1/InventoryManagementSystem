@@ -50,7 +50,8 @@ namespace InventoryManagementSystem
         }
 
         //This variable serves as a control for the add parts button click event
-        AddParts ap; 
+        AddParts ap;
+        ModifyParts mp;
 
         //Helper function: Shows Add Part screen.
         public void showAddParts()
@@ -64,6 +65,19 @@ namespace InventoryManagementSystem
             else
                 ap.Activate();
         }
+
+        //Helper function: Shows Modify Parts screen.
+        public void showModifyParts()
+        {
+            if (mp == null)
+            {
+                mp = new ModifyParts();
+                mp.FormClosed += new FormClosedEventHandler(mp_FormClosed);
+                mp.Show();
+            }
+            else
+                mp.Activate();
+        }
         private void buttonAddParts_Click(object sender, EventArgs e) //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
         {
             showAddParts();
@@ -74,18 +88,31 @@ namespace InventoryManagementSystem
             ap = null;
         }
 
+        void mp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mp = null;
+        }
+
         //These variables are used by the program to "remember" what is selected in the DGV.
         int currentIdx = 0;
         Part currentObj = null; //Had to use Type part due to conversion issues
-        //string partID = null; //Attempt to find by partID
+        int partID = 0; //Attempt to find by partID
         private void dataGridViewParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //This could be a bug if needed to do sorting due to index changing in DGV vs the list.
             //Look for the corresponding column index for PartId to the row index. Then find the int and use it to delete from the list
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
+            //partID = dataGridViewParts.Rows[dataGridViewParts.CurrentRow.Index].Cells[].Value.ToString();
             currentObj = Inventory.PartBL[currentIdx]; //Look for value of the data of data in the first column
+            //Try to use partID as the key to link your dgv to your BL.
+            //Try: row.Cells[1].Value.ToString()
+            //string message = "";
+            //string caption = "Selected Data: REMOVE";
+            //MessageBoxButtons buttons = MessageBoxButtons.OK;
+            //DialogResult messageResult;
+            //messageResult = MessageBox.Show(message, caption, buttons);
         }
-        
+
 
         private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -116,7 +143,7 @@ namespace InventoryManagementSystem
         private void buttonModifyParts_Click(object sender, EventArgs e) //Add parts shows, data of currentObj shows, edit data, ask confirm, update list obj.property = newData, 
         {
             Inventory.updatePart(currentIdx, currentObj);
-            showAddParts();
+            showModifyParts();
         }
     }
 }
