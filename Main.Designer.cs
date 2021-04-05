@@ -109,6 +109,7 @@ namespace InventoryManagementSystem
             this.dataGridViewParts.Location = new System.Drawing.Point(20, 54);
             this.dataGridViewParts.Name = "dataGridViewParts";
             this.dataGridViewParts.RowTemplate.Height = 25;
+            this.dataGridViewParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewParts.Size = new System.Drawing.Size(655, 336);
             this.dataGridViewParts.TabIndex = 8;
             this.dataGridViewParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParts_CellContentClick);
@@ -183,6 +184,7 @@ namespace InventoryManagementSystem
             this.dataGridViewProducts.Location = new System.Drawing.Point(18, 54);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.RowTemplate.Height = 25;
+            this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(655, 336);
             this.dataGridViewProducts.TabIndex = 11;
             // 

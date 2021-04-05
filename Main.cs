@@ -83,9 +83,7 @@ namespace InventoryManagementSystem
             //This could be a bug if needed to do sorting due to index changing in DGV vs the list.
             //Look for the corresponding column index for PartId to the row index. Then find the int and use it to delete from the list
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
-            //systemId = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells["SystemId"].Value.ToString();
-            //partID = dataGridViewParts.Rows[dataGridViewParts.CurrentRow.Index].Cells["PartID"].Value.ToString(); Doesn't work
-            currentObj = Inventory.PartBL[currentIdx];
+            currentObj = Inventory.PartBL[currentIdx]; //Look for value of the data of data in the first column
         }
         
 
