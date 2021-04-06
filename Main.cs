@@ -103,7 +103,7 @@ namespace InventoryManagementSystem
             //Look for the corresponding column index for PartId to the row index. Then find the int and use it to delete from the list
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
             //partID = dataGridViewParts.Rows[dataGridViewParts.CurrentRow.Index].Cells[].Value.ToString();
-            currentObj = Inventory.PartBL[currentIdx]; //Look for value of the data of data in the first column
+            //currentObj = Inventory.PartBL[currentIdx]; //Look for value of the data of data in the first column
             //Try to use partID as the key to link your dgv to your BL.
             //Try: row.Cells[1].Value.ToString()
             //string message = "";
