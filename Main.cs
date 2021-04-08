@@ -77,6 +77,7 @@ namespace InventoryManagementSystem
             }
             else
                 mp.Activate();
+
         }
         private void buttonAddParts_Click(object sender, EventArgs e) //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
         {
@@ -95,60 +96,39 @@ namespace InventoryManagementSystem
 
         //These variables are used by the program to "remember" what is selected in the DGV.
         int currentIdx = 0;
-        Part currentObj = null; //Had to use Type part due to conversion issue
 
         private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
-            currentObj = Inventory.PartBL[currentIdx];
-            //Confirms row index and dgv partid reads
-            //string message = "CurrentIdx= " + currentIdx + "PartID from DGV = " + (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value;
-            //string caption = "Remove Success";
-            //MessageBoxButtons buttons = MessageBoxButtons.OK;
-            //DialogResult messageResult;
-            //messageResult = MessageBox.Show(message, caption, buttons);
+            Inventory.currentPartID = (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value; //Lets Inventory know the selected part ID
         }
 
 
-        private void buttonDeleteParts_Click(object sender, EventArgs e) //Delete is not finding current part.
+        private void buttonDeleteParts_Click(object sender, EventArgs e) //Need to add checks for unique part IDs
         {
-            //From webinar
+            //From webinar with modifications to send type Part
             if(currentIdx >= 0)
             {
                 for (int i = 0; i <Inventory.PartBL.Count; i++)
                 {
                     if (Inventory.PartBL[i].PartID == (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value)
                     {
-                        Inventory.deletePart(Inventory.PartBL[i]);
-                            
+                        Inventory.deletePart(Inventory.PartBL[i]);   
                     }
                 }
                 currentIdx=-1;
             }
-            //var result = Inventory.deletePart(currentObj);
-            //
-            //if(result == true)
-            //{
-            //    string message = "Part has been removed.";
-            //    string caption = "Remove Success";
-            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
-            //    DialogResult messageResult;
-            //    messageResult = MessageBox.Show(message, caption, buttons);
-            //}
-            //else
-            //{
-            //    string message = "Part not found. Current index is: " + currentIdx;
-            //    string caption = "Remove Failed";
-            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
-            //    DialogResult messageResult;
-            //    messageResult = MessageBox.Show(message, caption, buttons);
-            //}
         }
 
         private void buttonModifyParts_Click(object sender, EventArgs e) //Add parts shows, data of currentObj shows, edit data, ask confirm, update list obj.property = newData, 
         {
-            Inventory.updatePart(currentIdx, currentObj);
             showModifyParts();
+            
+        }
+
+        private void buttonExitFromMain_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

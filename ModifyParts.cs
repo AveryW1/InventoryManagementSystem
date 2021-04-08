@@ -13,6 +13,8 @@ namespace InventoryManagementSystem
         public ModifyParts()
         {
             InitializeComponent();
+            textBoxModifyID.Text = Inventory.currentPart.PartID.ToString();
+
         }
 
         private void buttonModifyCancel_Click(object sender, EventArgs e)

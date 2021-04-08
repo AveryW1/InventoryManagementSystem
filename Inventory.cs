@@ -6,13 +6,19 @@ using System.Windows.Forms;
 
 
 namespace InventoryManagementSystem
-{//Needs fields Part ID, Name, Inventory, Price, Min, Max. Create a privte variable for binding list<Part> object creation. 
+{//Needs checks for unique part and product IDs 
     //Static methods
     static class Inventory
     {
         public static BindingList<Product> ProductBL = new BindingList<Product>();
         public static BindingList<Part> PartBL = new BindingList<Part>();
+        //public static BindingList<Part> Parts { get { return PartBL; } set { PartBL = value; } }
 
+        //These properties are used to access the current(selected) part.
+        public static Part currentPart { get; set; }
+        public static int currentPartID { get; set; }
+        //public static int currentIndex { get; set; }
+       
         public static void InitializeBLs()
         {
             
@@ -34,24 +40,12 @@ namespace InventoryManagementSystem
             PartBL.Add(part);
         }
 
-        public static void deletePart(Part part) //Checks if part is in list, removes if true, reutrns message if not. TRY FINDING BY PART ID instead of currentIdx
+        public static void deletePart(Part part)
         {
             PartBL.Remove(part);
-            
-            //if (PartBL.Contains(part))//Delete is not finding the current part.
-            //{
-            //    PartBL.Remove(part);
-            //    
-            //    
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
         }
 
-        public static void updatePart(int index, Part part) //Can call property of part and update them individually.
+        public static void updatePart(int idx, Part part) //Can call property of part and update them individually.
         {
             //part.
         }

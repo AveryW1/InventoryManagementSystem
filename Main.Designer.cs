@@ -249,6 +249,7 @@ namespace InventoryManagementSystem
             this.buttonExitFromMain.TabIndex = 5;
             this.buttonExitFromMain.Text = "Exit";
             this.buttonExitFromMain.UseVisualStyleBackColor = true;
+            this.buttonExitFromMain.Click += new System.EventHandler(this.buttonExitFromMain_Click);
             // 
             // Main
             // 
