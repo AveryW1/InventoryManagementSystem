@@ -105,14 +105,18 @@ namespace InventoryManagementSystem
             // 
             // dataGridViewParts
             // 
+            this.dataGridViewParts.AllowUserToAddRows = false;
+            this.dataGridViewParts.AllowUserToDeleteRows = false;
             this.dataGridViewParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewParts.Location = new System.Drawing.Point(20, 54);
             this.dataGridViewParts.Name = "dataGridViewParts";
+            this.dataGridViewParts.RowHeadersVisible = false;
             this.dataGridViewParts.RowTemplate.Height = 25;
             this.dataGridViewParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewParts.Size = new System.Drawing.Size(655, 336);
             this.dataGridViewParts.TabIndex = 8;
-            this.dataGridViewParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParts_CellContentClick);
+            this.dataGridViewParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParts_CellClick);
             // 
             // button1
             // 
@@ -183,6 +187,7 @@ namespace InventoryManagementSystem
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts.Location = new System.Drawing.Point(18, 54);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.RowHeadersVisible = false;
             this.dataGridViewProducts.RowTemplate.Height = 25;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(655, 336);

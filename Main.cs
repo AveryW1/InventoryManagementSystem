@@ -95,49 +95,54 @@ namespace InventoryManagementSystem
 
         //These variables are used by the program to "remember" what is selected in the DGV.
         int currentIdx = 0;
-        Part currentObj = null; //Had to use Type part due to conversion issues
-        int partID = 0; //Attempt to find by partID
-        private void dataGridViewParts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        Part currentObj = null; //Had to use Type part due to conversion issue
+
+        private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //This could be a bug if needed to do sorting due to index changing in DGV vs the list.
-            //Look for the corresponding column index for PartId to the row index. Then find the int and use it to delete from the list
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
-            //partID = dataGridViewParts.Rows[dataGridViewParts.CurrentRow.Index].Cells[].Value.ToString();
-            currentObj = Inventory.PartBL[currentIdx]; //Look for value of the data of data in the first column
-            //Try to use partID as the key to link your dgv to your BL.
-            //Try: row.Cells[1].Value.ToString()
-            //string message = "";
-            //string caption = "Selected Data: REMOVE";
+            currentObj = Inventory.PartBL[currentIdx];
+            //Confirms row index and dgv partid reads
+            //string message = "CurrentIdx= " + currentIdx + "PartID from DGV = " + (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value;
+            //string caption = "Remove Success";
             //MessageBoxButtons buttons = MessageBoxButtons.OK;
             //DialogResult messageResult;
             //messageResult = MessageBox.Show(message, caption, buttons);
         }
 
 
-        private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void buttonDeleteParts_Click(object sender, EventArgs e) //Delete is not finding current part.
         {
-            var result = Inventory.deletePart(currentObj);
-            if(result == true)
+            //From webinar
+            if(currentIdx >= 0)
             {
-                string message = "Part has been removed.";
-                string caption = "Remove Success";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult messageResult;
-                messageResult = MessageBox.Show(message, caption, buttons);
+                for (int i = 0; i <Inventory.PartBL.Count; i++)
+                {
+                    if (Inventory.PartBL[i].PartID == (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value)
+                    {
+                        Inventory.deletePart(Inventory.PartBL[i]);
+                            
+                    }
+                }
+                currentIdx=-1;
             }
-            else
-            {
-                string message = "Part not found. Current index is: " + currentIdx;
-                string caption = "Remove Failed";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult messageResult;
-                messageResult = MessageBox.Show(message, caption, buttons);
-            }
+            //var result = Inventory.deletePart(currentObj);
+            //
+            //if(result == true)
+            //{
+            //    string message = "Part has been removed.";
+            //    string caption = "Remove Success";
+            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
+            //    DialogResult messageResult;
+            //    messageResult = MessageBox.Show(message, caption, buttons);
+            //}
+            //else
+            //{
+            //    string message = "Part not found. Current index is: " + currentIdx;
+            //    string caption = "Remove Failed";
+            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
+            //    DialogResult messageResult;
+            //    messageResult = MessageBox.Show(message, caption, buttons);
+            //}
         }
 
         private void buttonModifyParts_Click(object sender, EventArgs e) //Add parts shows, data of currentObj shows, edit data, ask confirm, update list obj.property = newData, 
