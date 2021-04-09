@@ -130,5 +130,10 @@ namespace InventoryManagementSystem
         {
             Application.Exit();
         }
+
+        private void buttonSearchParts_Click(object sender, EventArgs e)
+        {
+            Inventory.lookupPart(Int32.Parse(textBoxSearchParts01.Text));
+        }
     }
 }

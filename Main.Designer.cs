@@ -34,7 +34,7 @@ namespace InventoryManagementSystem
             this.labelProductsDGV = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewParts = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSearchParts = new System.Windows.Forms.Button();
             this.textBoxSearchParts01 = new System.Windows.Forms.TextBox();
             this.buttonDeleteParts = new System.Windows.Forms.Button();
             this.buttonModifyParts = new System.Windows.Forms.Button();
@@ -92,7 +92,7 @@ namespace InventoryManagementSystem
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridViewParts);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonSearchParts);
             this.panel1.Controls.Add(this.textBoxSearchParts01);
             this.panel1.Controls.Add(this.buttonDeleteParts);
             this.panel1.Controls.Add(this.buttonModifyParts);
@@ -118,20 +118,22 @@ namespace InventoryManagementSystem
             this.dataGridViewParts.TabIndex = 8;
             this.dataGridViewParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParts_CellClick);
             // 
-            // button1
+            // buttonSearchParts
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(20, 396);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSearchParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSearchParts.Location = new System.Drawing.Point(20, 396);
+            this.buttonSearchParts.Name = "buttonSearchParts";
+            this.buttonSearchParts.Size = new System.Drawing.Size(75, 27);
+            this.buttonSearchParts.TabIndex = 7;
+            this.buttonSearchParts.Text = "Search";
+            this.buttonSearchParts.UseVisualStyleBackColor = true;
+            this.buttonSearchParts.Click += new System.EventHandler(this.buttonSearchParts_Click);
             // 
             // textBoxSearchParts01
             // 
             this.textBoxSearchParts01.Location = new System.Drawing.Point(101, 394);
             this.textBoxSearchParts01.Name = "textBoxSearchParts01";
+            this.textBoxSearchParts01.PlaceholderText = "Search by Part ID here";
             this.textBoxSearchParts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchParts01.TabIndex = 6;
             // 
@@ -292,7 +294,7 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Button buttonExitFromMain;
         private System.Windows.Forms.TextBox textBoxSearchParts01;
         private System.Windows.Forms.TextBox textBoxSearchProducts01;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSearchParts;
         private System.Windows.Forms.Button buttonSearchProducts;
         private System.Windows.Forms.DataGridView dataGridViewParts;
         private System.Windows.Forms.DataGridView dataGridViewProducts;

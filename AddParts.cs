@@ -40,17 +40,12 @@ namespace InventoryManagementSystem
             }
             catch(FormatException)
             {
-                //Example from microsoft documentation.
+                //Example message box from microsoft documentation.
                 string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers. Name is a string.";
                 string caption = "Input Format Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
-                /*Use this if you want to close the add Part window as a reponse to the OK press.
-                if (result == System.Windows.Forms.DialogResult.OK)
-                {
-                    this.Close();
-                }*/
             }
         }
 

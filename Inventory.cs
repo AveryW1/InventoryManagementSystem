@@ -50,6 +50,31 @@ namespace InventoryManagementSystem
             //part.
         }
 
+        public static Part lookupPart(int partID)
+        {
+            try
+            {
+                //compare input partID(int) with all part IDs in PartBL. Return Part
+                for (int i = 0; i <= PartBL.Count; i++)
+                {
+                    if (PartBL[i].PartID == partID)
+                    {
+                        return PartBL[i];
+                    }
+                }
+                return null;
+            }
+            catch
+            {
+                string message = "Part was not found by given part ID.";
+                string caption = "Part not found";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                return null;
+            }
+        }
+
         
     }
 
