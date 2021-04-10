@@ -10,10 +10,15 @@ namespace InventoryManagementSystem
 {
     public partial class ModifyParts : Form
     {
-        public ModifyParts()
+        public static Part currentPart { get; set; }
+        public static int currentPartID { get; set; }
+
+
+        //Use variable for current part selected
+        public ModifyParts() 
         {
             InitializeComponent();
-            textBoxModifyID.Text = Inventory.currentPart.PartID.ToString();
+            textBoxModifyID.Text = currentPart.PartID.ToString();
 
         }
 

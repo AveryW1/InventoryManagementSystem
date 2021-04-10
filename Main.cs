@@ -79,7 +79,9 @@ namespace InventoryManagementSystem
                 mp.Activate();
 
         }
-        private void buttonAddParts_Click(object sender, EventArgs e) //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
+
+        //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
+        private void buttonAddParts_Click(object sender, EventArgs e)
         {
             showAddParts();
         }
@@ -96,17 +98,40 @@ namespace InventoryManagementSystem
 
         //These variables are used by the program to "remember" what is selected in the DGV.
         int currentIdx = 0;
+        Part currentObj = null;
 
+        //Using partID to link currentIdx with the desired object from PartBL.
         private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
-            Inventory.currentPartID = (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value; //Lets Inventory know the selected part ID
+            for (int i = 0; i < Inventory.PartBL.Count; i++)
+            {
+                if (Inventory.PartBL[i].PartID == (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value)
+                {
+                    currentObj = Inventory.PartBL[i];
+                    break;
+                }
+            }
+            //The code below should never have to run due to the break function but if so we get a popup for it.
+            //Alt, throw an exception so that it can be traced in the log for the developer to check.
+            if (currentObj == null)
+            {
+                string message = "Part was not found within the bounds of the PartBL array.";
+                string caption = "Part not found";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+            }
+
+            //Lets ModifyParts know the selected part to edit for update Parts
+            ModifyParts.currentPartID = (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value;
+            ModifyParts.currentPart = currentObj;
         }
 
-
-        private void buttonDeleteParts_Click(object sender, EventArgs e) //Need to add checks for unique part IDs
+        //Need to add checks for unique part IDs
+        private void buttonDeleteParts_Click(object sender, EventArgs e) 
         {
-            //From webinar with modifications to send type Part
             if(currentIdx >= 0)
             {
                 for (int i = 0; i <Inventory.PartBL.Count; i++)
@@ -120,10 +145,11 @@ namespace InventoryManagementSystem
             }
         }
 
-        private void buttonModifyParts_Click(object sender, EventArgs e) //Add parts shows, data of currentObj shows, edit data, ask confirm, update list obj.property = newData, 
+        //Add parts shows, data of currentObj shows, edit data, ask confirm, update list obj.property = newData, 
+        private void buttonModifyParts_Click(object sender, EventArgs e) 
         {
             showModifyParts();
-            
+            Inventory.updatePart(currentIdx, currentObj);
         }
 
         private void buttonExitFromMain_Click(object sender, EventArgs e)
@@ -131,9 +157,18 @@ namespace InventoryManagementSystem
             Application.Exit();
         }
 
+        //Button click takes in partID, returns part, checks the list where id matches result, and highlights result.
         private void buttonSearchParts_Click(object sender, EventArgs e)
         {
-            Inventory.lookupPart(Int32.Parse(textBoxSearchParts01.Text));
+            Part searchResult = Inventory.lookupPart(Int32.Parse(textBoxSearchParts01.Text));
+            for (int i = 0; i < Inventory.PartBL.Count; i++)
+            {
+                if (Inventory.PartBL[i] == searchResult)
+                {
+                    dataGridViewParts.ClearSelection();
+                    dataGridViewParts.Rows[i].Selected = true;
+                }
+            }
         }
     }
 }

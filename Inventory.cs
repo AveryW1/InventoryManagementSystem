@@ -15,9 +15,7 @@ namespace InventoryManagementSystem
         //public static BindingList<Part> Parts { get { return PartBL; } set { PartBL = value; } }
 
         //These properties are used to access the current(selected) part.
-        public static Part currentPart { get; set; }
-        public static int currentPartID { get; set; }
-        //public static int currentIndex { get; set; }
+       
        
         public static void InitializeBLs()
         {
@@ -27,6 +25,8 @@ namespace InventoryManagementSystem
             addPart(new Outsourced(003, "bolt1", 13.2M, 5, 0, 10, "Tesla"));
             addPart(new Inhouse(004, "bolt2", 1.23M, 5, 0, 10, 11003));
             addPart(new Outsourced(005, "bolt3", 1.12M, 5, 0, 10, "Rain"));
+            addPart(new Outsourced(055, "bolt4", 1.52M, 5, 0, 10, "Snow"));
+            addPart(new Outsourced(505, "bolt5", 1.3M, 5, 0, 10, "Sleet"));
         }
 
         //This method will have to find someway to add the associated parts
@@ -34,6 +34,7 @@ namespace InventoryManagementSystem
         {
             ProductBL.Add(product);
         }
+        
         //Remember this method needs to be static since you're acting on the only, global inventory class and not an instance.
         public static void addPart(Part part)
         {
@@ -45,16 +46,17 @@ namespace InventoryManagementSystem
             PartBL.Remove(part);
         }
 
-        public static void updatePart(int idx, Part part) //Can call property of part and update them individually.
+        //Can call property of part and update them individually.
+        public static void updatePart(int idx, Part part)
         {
-            //part.
+            
         }
 
+        //With exception handling, this method compares input partID(int) with all part IDs in PartBL. Return Part
         public static Part lookupPart(int partID)
         {
             try
             {
-                //compare input partID(int) with all part IDs in PartBL. Return Part
                 for (int i = 0; i <= PartBL.Count; i++)
                 {
                     if (PartBL[i].PartID == partID)
