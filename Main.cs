@@ -153,7 +153,6 @@ namespace InventoryManagementSystem
         private void buttonModifyParts_Click(object sender, EventArgs e) 
         {
             showModifyParts();
-            Inventory.updatePart(currentIdx, currentObj);
         }
 
         private void buttonExitFromMain_Click(object sender, EventArgs e)

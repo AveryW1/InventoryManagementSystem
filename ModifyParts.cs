@@ -46,10 +46,21 @@ namespace InventoryManagementSystem
         private void buttonModifyCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
+        //Not working. Updates are not being saved.
         private void buttonModifySave_Click(object sender, EventArgs e)
         {
+            if (currentPart is Inhouse)
+            {
+                Inventory.PartBL[currentModIdx] = new Inhouse(Convert.ToInt32(textBoxModifyID.Text), textBoxModifyName.Text, Convert.ToDecimal(textBoxModifyPriceCost.Text), Convert.ToInt32(textBoxModifyInventory.Text), Convert.ToInt32(textBoxModifyMax.Text), Convert.ToInt32(textBoxModifyMin.Text), Convert.ToInt32(textBoxModifyMachineID.Text));
+            }
+            else
+            {
+                Inventory.PartBL[currentModIdx] = new Outsourced(Convert.ToInt32(textBoxModifyID.Text), textBoxModifyName.Text, Convert.ToDecimal(textBoxModifyPriceCost.Text), Convert.ToInt32(textBoxModifyInventory.Text), Convert.ToInt32(textBoxModifyMax.Text), Convert.ToInt32(textBoxModifyMin.Text), textBoxModifyMachineID.Text);
+            }
+            
             Inventory.updatePart(currentModIdx, currentPart);
         }
     }

@@ -46,6 +46,10 @@ namespace InventoryManagementSystem
         public static void updatePart(int idx, Part part)
         {
             
+            
+            
+            
+            PartBL[idx] = part;
         }
 
         //With exception handling, this method compares input partID(int) with all part IDs in PartBL. Return Part

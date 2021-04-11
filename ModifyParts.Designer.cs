@@ -71,9 +71,10 @@ namespace InventoryManagementSystem
             this.panelModifyParts1.Controls.Add(this.textBoxModifyMin);
             this.panelModifyParts1.Controls.Add(this.textBoxModifyMax);
             this.panelModifyParts1.Controls.Add(this.textBoxModifyMachineID);
+            this.panelModifyParts1.Controls.Add(this.textBoxModifyInventory);
+            this.panelModifyParts1.Controls.Add(this.labelModifyInventory);
             this.panelModifyParts1.Controls.Add(this.textBoxModifyPriceCost);
             this.panelModifyParts1.Controls.Add(this.textBoxModifyName);
-            this.panelModifyParts1.Controls.Add(this.textBoxModifyInventory);
             this.panelModifyParts1.Controls.Add(this.textBoxModifyID);
             this.panelModifyParts1.Controls.Add(this.radioButtonModifyOutsourced);
             this.panelModifyParts1.Controls.Add(this.radioButtonModifyInHouse);
@@ -81,7 +82,6 @@ namespace InventoryManagementSystem
             this.panelModifyParts1.Controls.Add(this.labelModifyMin);
             this.panelModifyParts1.Controls.Add(this.labelModifyMax);
             this.panelModifyParts1.Controls.Add(this.labelModifyPriceCost);
-            this.panelModifyParts1.Controls.Add(this.labelModifyInventory);
             this.panelModifyParts1.Controls.Add(this.labelModifyName);
             this.panelModifyParts1.Controls.Add(this.labelModifyID);
             this.panelModifyParts1.Location = new System.Drawing.Point(26, 50);
@@ -91,14 +91,14 @@ namespace InventoryManagementSystem
             // 
             // textBoxModifyMin
             // 
-            this.textBoxModifyMin.Location = new System.Drawing.Point(242, 163);
+            this.textBoxModifyMin.Location = new System.Drawing.Point(242, 161);
             this.textBoxModifyMin.Name = "textBoxModifyMin";
             this.textBoxModifyMin.Size = new System.Drawing.Size(62, 23);
             this.textBoxModifyMin.TabIndex = 15;
             // 
             // textBoxModifyMax
             // 
-            this.textBoxModifyMax.Location = new System.Drawing.Point(124, 164);
+            this.textBoxModifyMax.Location = new System.Drawing.Point(124, 161);
             this.textBoxModifyMax.Name = "textBoxModifyMax";
             this.textBoxModifyMax.Size = new System.Drawing.Size(62, 23);
             this.textBoxModifyMax.TabIndex = 14;
@@ -112,7 +112,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxModifyPriceCost
             // 
-            this.textBoxModifyPriceCost.Location = new System.Drawing.Point(124, 132);
+            this.textBoxModifyPriceCost.Location = new System.Drawing.Point(124, 103);
             this.textBoxModifyPriceCost.Name = "textBoxModifyPriceCost";
             this.textBoxModifyPriceCost.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyPriceCost.TabIndex = 12;
@@ -126,7 +126,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxModifyInventory
             // 
-            this.textBoxModifyInventory.Location = new System.Drawing.Point(124, 103);
+            this.textBoxModifyInventory.Location = new System.Drawing.Point(124, 132);
             this.textBoxModifyInventory.Name = "textBoxModifyInventory";
             this.textBoxModifyInventory.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyInventory.TabIndex = 10;
@@ -176,7 +176,7 @@ namespace InventoryManagementSystem
             // 
             this.labelModifyMin.AutoSize = true;
             this.labelModifyMin.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyMin.Location = new System.Drawing.Point(202, 168);
+            this.labelModifyMin.Location = new System.Drawing.Point(201, 165);
             this.labelModifyMin.Name = "labelModifyMin";
             this.labelModifyMin.Size = new System.Drawing.Size(35, 19);
             this.labelModifyMin.TabIndex = 5;
@@ -186,7 +186,7 @@ namespace InventoryManagementSystem
             // 
             this.labelModifyMax.AutoSize = true;
             this.labelModifyMax.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyMax.Location = new System.Drawing.Point(67, 168);
+            this.labelModifyMax.Location = new System.Drawing.Point(69, 165);
             this.labelModifyMax.Name = "labelModifyMax";
             this.labelModifyMax.Size = new System.Drawing.Size(39, 19);
             this.labelModifyMax.TabIndex = 4;
@@ -196,7 +196,7 @@ namespace InventoryManagementSystem
             // 
             this.labelModifyPriceCost.AutoSize = true;
             this.labelModifyPriceCost.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyPriceCost.Location = new System.Drawing.Point(29, 136);
+            this.labelModifyPriceCost.Location = new System.Drawing.Point(31, 107);
             this.labelModifyPriceCost.Name = "labelModifyPriceCost";
             this.labelModifyPriceCost.Size = new System.Drawing.Size(77, 19);
             this.labelModifyPriceCost.TabIndex = 3;
@@ -206,7 +206,7 @@ namespace InventoryManagementSystem
             // 
             this.labelModifyInventory.AutoSize = true;
             this.labelModifyInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyInventory.Location = new System.Drawing.Point(31, 107);
+            this.labelModifyInventory.Location = new System.Drawing.Point(31, 136);
             this.labelModifyInventory.Name = "labelModifyInventory";
             this.labelModifyInventory.Size = new System.Drawing.Size(75, 19);
             this.labelModifyInventory.TabIndex = 2;
