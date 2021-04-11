@@ -12,11 +12,7 @@ namespace InventoryManagementSystem
     {
         public static BindingList<Product> ProductBL = new BindingList<Product>();
         public static BindingList<Part> PartBL = new BindingList<Part>();
-        //public static BindingList<Part> Parts { get { return PartBL; } set { PartBL = value; } }
 
-        //These properties are used to access the current(selected) part.
-       
-       
         public static void InitializeBLs()
         {
             
@@ -46,7 +42,7 @@ namespace InventoryManagementSystem
             PartBL.Remove(part);
         }
 
-        //Can call property of part and update them individually.
+        //Takes info from all textboxes, saves as new part, replaces old part in same index.
         public static void updatePart(int idx, Part part)
         {
             

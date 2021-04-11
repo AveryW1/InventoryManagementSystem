@@ -27,7 +27,7 @@ namespace InventoryManagementSystem
 
         private void buttonPartSave_Click(object sender, EventArgs e)
         {
-            try //Attempting error handling with a dialog popup
+            try
             {
                 if (radioButtonPartInHouse.Checked)
                 {
@@ -39,8 +39,7 @@ namespace InventoryManagementSystem
                 }
             }
             catch(FormatException)
-            {
-                //Example message box from microsoft documentation.
+            { 
                 string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers. Name is a string.";
                 string caption = "Input Format Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;

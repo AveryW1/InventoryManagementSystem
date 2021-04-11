@@ -100,6 +100,8 @@ namespace InventoryManagementSystem
         int currentIdx = 0;
         Part currentObj = null;
 
+        
+
         //Using partID to link currentIdx with the desired object from PartBL.
         private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -112,6 +114,7 @@ namespace InventoryManagementSystem
                     break;
                 }
             }
+
             //The code below should never have to run due to the break function but if so we get a popup for it.
             //Alt, throw an exception so that it can be traced in the log for the developer to check.
             if (currentObj == null)
@@ -127,6 +130,7 @@ namespace InventoryManagementSystem
             //Lets ModifyParts know the selected part to edit for update Parts
             ModifyParts.currentPartID = (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value;
             ModifyParts.currentPart = currentObj;
+            ModifyParts.currentModIdx = currentIdx;
         }
 
         //Need to add checks for unique part IDs

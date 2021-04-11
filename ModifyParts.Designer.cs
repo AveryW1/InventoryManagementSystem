@@ -166,7 +166,7 @@ namespace InventoryManagementSystem
             // 
             this.labelModifyMacIDComNA.AutoSize = true;
             this.labelModifyMacIDComNA.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyMacIDComNA.Location = new System.Drawing.Point(22, 196);
+            this.labelModifyMacIDComNA.Location = new System.Drawing.Point(12, 196);
             this.labelModifyMacIDComNA.Name = "labelModifyMacIDComNA";
             this.labelModifyMacIDComNA.Size = new System.Drawing.Size(84, 19);
             this.labelModifyMacIDComNA.TabIndex = 6;
@@ -242,6 +242,7 @@ namespace InventoryManagementSystem
             this.buttonModifySave.TabIndex = 5;
             this.buttonModifySave.Text = "Save";
             this.buttonModifySave.UseVisualStyleBackColor = true;
+            this.buttonModifySave.Click += new System.EventHandler(this.buttonModifySave_Click);
             // 
             // buttonModifyCancel
             // 
