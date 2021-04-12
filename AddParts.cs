@@ -41,12 +41,12 @@ namespace InventoryManagementSystem
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
             }
+            this.Close();
         }
 
         private void radioButtonPartInHouse_CheckedChanged(object sender, EventArgs e)
         {
             labelPartMacIDComNA.Text = "Machine ID";
-
         }
 
         private void buttonPartCancel_Click(object sender, EventArgs e)
