@@ -23,9 +23,13 @@ namespace InventoryManagementSystem
             addPart(new Outsourced(005, "bolt3", 1.12M, 5, 0, 10, "Rain"));
             addPart(new Outsourced(055, "bolt4", 1.52M, 5, 0, 10, "Snow"));
             addPart(new Outsourced(505, "bolt5", 1.3M, 5, 0, 10, "Sleet"));
+            addProduct(new Product(001, "Swing", 4.3M, 10, 0, 10));
+            addProduct(new Product(002, "Tent", 1.3M, 10, 0, 15));
+            addProduct(new Product(003, "Goal", 5.3M, 8, 0, 20));
+            addProduct(new Product(004, "Bow", 4.6M, 3, 0, 14));
+            addProduct(new Product(005, "Fishing Rod", 2.3M, 67, 0, 120));
         }
 
-        //This method will have to find someway to add the associated parts
         public static void addProduct(Product product)
         {
             ProductBL.Add(product);
@@ -42,14 +46,11 @@ namespace InventoryManagementSystem
             PartBL.Remove(part);
         }
 
-        //Takes info from all textboxes, saves as new part, replaces old part in same index.
+        //Exchanges the newly updated part with the old one in the PartBL list.
         public static void updatePart(int idx, Part part)
         {
-            
-            
-            
-            
-            PartBL[idx] = part;
+            PartBL.RemoveAt(idx);
+            PartBL.Insert(idx, part);
         }
 
         //With exception handling, this method compares input partID(int) with all part IDs in PartBL. Return Part
@@ -75,9 +76,7 @@ namespace InventoryManagementSystem
                 result = MessageBox.Show(message, caption, buttons);
                 return null;
             }
-        }
-
-        
+        }        
     }
 
 }

@@ -75,7 +75,6 @@ namespace InventoryManagementSystem
             this.labelPartsDGV.Size = new System.Drawing.Size(51, 24);
             this.labelPartsDGV.TabIndex = 1;
             this.labelPartsDGV.Text = "Parts";
-            this.labelPartsDGV.Click += new System.EventHandler(this.labelPartsDGV_Click);
             // 
             // labelProductsDGV
             // 
@@ -87,7 +86,6 @@ namespace InventoryManagementSystem
             this.labelProductsDGV.Size = new System.Drawing.Size(80, 24);
             this.labelProductsDGV.TabIndex = 2;
             this.labelProductsDGV.Text = "Products";
-            this.labelProductsDGV.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
@@ -109,7 +107,7 @@ namespace InventoryManagementSystem
             this.dataGridViewParts.AllowUserToDeleteRows = false;
             this.dataGridViewParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewParts.Location = new System.Drawing.Point(20, 54);
+            this.dataGridViewParts.Location = new System.Drawing.Point(85, 54);
             this.dataGridViewParts.Name = "dataGridViewParts";
             this.dataGridViewParts.RowHeadersVisible = false;
             this.dataGridViewParts.RowTemplate.Height = 25;
@@ -186,7 +184,10 @@ namespace InventoryManagementSystem
             // 
             // dataGridViewProducts
             // 
+            this.dataGridViewProducts.AllowUserToAddRows = false;
+            this.dataGridViewProducts.AllowUserToDeleteRows = false;
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewProducts.Location = new System.Drawing.Point(18, 54);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.RowHeadersVisible = false;
@@ -241,6 +242,7 @@ namespace InventoryManagementSystem
             this.buttonAddProducts.TabIndex = 5;
             this.buttonAddProducts.Text = "Add";
             this.buttonAddProducts.UseVisualStyleBackColor = true;
+            this.buttonAddProducts.Click += new System.EventHandler(this.buttonAddProducts_Click);
             // 
             // buttonExitFromMain
             // 

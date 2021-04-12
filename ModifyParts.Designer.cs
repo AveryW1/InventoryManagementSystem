@@ -34,9 +34,10 @@ namespace InventoryManagementSystem
             this.textBoxModifyMin = new System.Windows.Forms.TextBox();
             this.textBoxModifyMax = new System.Windows.Forms.TextBox();
             this.textBoxModifyMachineID = new System.Windows.Forms.TextBox();
+            this.textBoxModifyInventory = new System.Windows.Forms.TextBox();
+            this.labelModifyInventory = new System.Windows.Forms.Label();
             this.textBoxModifyPriceCost = new System.Windows.Forms.TextBox();
             this.textBoxModifyName = new System.Windows.Forms.TextBox();
-            this.textBoxModifyInventory = new System.Windows.Forms.TextBox();
             this.textBoxModifyID = new System.Windows.Forms.TextBox();
             this.radioButtonModifyOutsourced = new System.Windows.Forms.RadioButton();
             this.radioButtonModifyInHouse = new System.Windows.Forms.RadioButton();
@@ -44,7 +45,6 @@ namespace InventoryManagementSystem
             this.labelModifyMin = new System.Windows.Forms.Label();
             this.labelModifyMax = new System.Windows.Forms.Label();
             this.labelModifyPriceCost = new System.Windows.Forms.Label();
-            this.labelModifyInventory = new System.Windows.Forms.Label();
             this.labelModifyName = new System.Windows.Forms.Label();
             this.labelModifyID = new System.Windows.Forms.Label();
             this.buttonModifySave = new System.Windows.Forms.Button();
@@ -110,6 +110,23 @@ namespace InventoryManagementSystem
             this.textBoxModifyMachineID.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyMachineID.TabIndex = 13;
             // 
+            // textBoxModifyInventory
+            // 
+            this.textBoxModifyInventory.Location = new System.Drawing.Point(124, 132);
+            this.textBoxModifyInventory.Name = "textBoxModifyInventory";
+            this.textBoxModifyInventory.Size = new System.Drawing.Size(180, 23);
+            this.textBoxModifyInventory.TabIndex = 10;
+            // 
+            // labelModifyInventory
+            // 
+            this.labelModifyInventory.AutoSize = true;
+            this.labelModifyInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelModifyInventory.Location = new System.Drawing.Point(31, 136);
+            this.labelModifyInventory.Name = "labelModifyInventory";
+            this.labelModifyInventory.Size = new System.Drawing.Size(75, 19);
+            this.labelModifyInventory.TabIndex = 2;
+            this.labelModifyInventory.Text = "Inventory";
+            // 
             // textBoxModifyPriceCost
             // 
             this.textBoxModifyPriceCost.Location = new System.Drawing.Point(124, 103);
@@ -123,13 +140,6 @@ namespace InventoryManagementSystem
             this.textBoxModifyName.Name = "textBoxModifyName";
             this.textBoxModifyName.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyName.TabIndex = 11;
-            // 
-            // textBoxModifyInventory
-            // 
-            this.textBoxModifyInventory.Location = new System.Drawing.Point(124, 132);
-            this.textBoxModifyInventory.Name = "textBoxModifyInventory";
-            this.textBoxModifyInventory.Size = new System.Drawing.Size(180, 23);
-            this.textBoxModifyInventory.TabIndex = 10;
             // 
             // textBoxModifyID
             // 
@@ -201,16 +211,6 @@ namespace InventoryManagementSystem
             this.labelModifyPriceCost.Size = new System.Drawing.Size(77, 19);
             this.labelModifyPriceCost.TabIndex = 3;
             this.labelModifyPriceCost.Text = "Price/Cost";
-            // 
-            // labelModifyInventory
-            // 
-            this.labelModifyInventory.AutoSize = true;
-            this.labelModifyInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyInventory.Location = new System.Drawing.Point(31, 136);
-            this.labelModifyInventory.Name = "labelModifyInventory";
-            this.labelModifyInventory.Size = new System.Drawing.Size(75, 19);
-            this.labelModifyInventory.TabIndex = 2;
-            this.labelModifyInventory.Text = "Inventory";
             // 
             // labelModifyName
             // 

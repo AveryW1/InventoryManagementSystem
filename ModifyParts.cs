@@ -18,50 +18,63 @@ namespace InventoryManagementSystem
         //Use variable for current part selected
         public ModifyParts() 
         {
-            InitializeComponent();
-            textBoxModifyID.Text = currentPart.PartID.ToString();
-            textBoxModifyName.Text = currentPart.Name;
-            textBoxModifyInventory.Text = currentPart.InStock.ToString();
-            textBoxModifyPriceCost.Text = currentPart.Price.ToString();
-            textBoxModifyMax.Text = currentPart.Max.ToString();
-            textBoxModifyMin.Text = currentPart.Min.ToString();
-            
-            //Checks if part is inhouse/outsourced.
-            //Creates temporary part that cast current part as derived type to access the derived type properties.
-            if (currentPart is Inhouse)
+            //Delete this try/catch once program open auto select is completed.
+            try
             {
-                Inhouse tempPart = (Inhouse)currentPart;
-                textBoxModifyMachineID.Text = tempPart.MachineID.ToString();
-                radioButtonModifyInHouse.Checked = true;
+                InitializeComponent();
+                textBoxModifyID.Text = currentPart.PartID.ToString();
+                textBoxModifyName.Text = currentPart.Name;
+                textBoxModifyInventory.Text = currentPart.InStock.ToString();
+                textBoxModifyPriceCost.Text = currentPart.Price.ToString();
+                textBoxModifyMax.Text = currentPart.Max.ToString();
+                textBoxModifyMin.Text = currentPart.Min.ToString();
+
+                //Checks if part is inhouse/outsourced.
+                //Creates temporary part that cast current part as derived type to access the derived type properties.
+                if (currentPart is Inhouse)
+                {
+                    Inhouse tempPart = (Inhouse)currentPart;
+                    textBoxModifyMachineID.Text = tempPart.MachineID.ToString();
+                    radioButtonModifyInHouse.Checked = true;
+                }
+                else
+                {
+                    Outsourced tempPart = (Outsourced)currentPart;
+                    textBoxModifyMachineID.Text = tempPart.CompanyName;
+                    radioButtonModifyOutsourced.Checked = true;
+                    labelModifyMacIDComNA.Text = "Company Name";
+                }
             }
-            else
+            catch (NullReferenceException ex)
             {
-                Outsourced tempPart = (Outsourced)currentPart;
-                textBoxModifyMachineID.Text = tempPart.CompanyName;
-                radioButtonModifyOutsourced.Checked = true;
-                labelModifyMacIDComNA.Text = "Company Name";
+                string message = "Please click on a part to edit from the list./n"+ ex.Message;
+                string caption = "No Part Selected";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
 
         private void buttonModifyCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
-        //Not working. Updates are not being saved.
+        //Checks part type, creates new part, calls fx to exchange parts.
         private void buttonModifySave_Click(object sender, EventArgs e)
         {
             if (currentPart is Inhouse)
             {
-                Inventory.PartBL[currentModIdx] = new Inhouse(Convert.ToInt32(textBoxModifyID.Text), textBoxModifyName.Text, Convert.ToDecimal(textBoxModifyPriceCost.Text), Convert.ToInt32(textBoxModifyInventory.Text), Convert.ToInt32(textBoxModifyMax.Text), Convert.ToInt32(textBoxModifyMin.Text), Convert.ToInt32(textBoxModifyMachineID.Text));
+                currentPart = new Inhouse(Convert.ToInt32(textBoxModifyID.Text), textBoxModifyName.Text, Convert.ToDecimal(textBoxModifyPriceCost.Text), Convert.ToInt32(textBoxModifyInventory.Text), Convert.ToInt32(textBoxModifyMax.Text), Convert.ToInt32(textBoxModifyMin.Text), Convert.ToInt32(textBoxModifyMachineID.Text));
+                Inventory.updatePart(currentModIdx, currentPart);
+                this.Close();
             }
             else
             {
-                Inventory.PartBL[currentModIdx] = new Outsourced(Convert.ToInt32(textBoxModifyID.Text), textBoxModifyName.Text, Convert.ToDecimal(textBoxModifyPriceCost.Text), Convert.ToInt32(textBoxModifyInventory.Text), Convert.ToInt32(textBoxModifyMax.Text), Convert.ToInt32(textBoxModifyMin.Text), textBoxModifyMachineID.Text);
+                currentPart = new Outsourced(Convert.ToInt32(textBoxModifyID.Text), textBoxModifyName.Text, Convert.ToDecimal(textBoxModifyPriceCost.Text), Convert.ToInt32(textBoxModifyInventory.Text), Convert.ToInt32(textBoxModifyMax.Text), Convert.ToInt32(textBoxModifyMin.Text), textBoxModifyMachineID.Text);
+                Inventory.updatePart(currentModIdx, currentPart);
+                this.Close();
             }
-            
-            Inventory.updatePart(currentModIdx, currentPart);
         }
     }
 }

@@ -12,46 +12,36 @@ namespace InventoryManagementSystem
 {
     public partial class Main : Form
     {
-        //This function creates the Binding List for Parts.
+        //This variable serves as a control for the add parts button click event
+        AddParts ap;
+        ModifyParts mp;
+        AddProducts apr;
+
+        //These variables are used by the program to "remember" what is selected in the DGV.
+        int currentIdx = 0;
+        Part currentObj = null;
+
+        //This function creates the Binding List for Parts /w prepopulated data from Inventory.
         private void buildBindingParts()
         {
-            //Inventory.PartBL.Clear(); This method call will clear your DGV of any prepopulated data.
             dataGridViewParts.DataSource = Inventory.PartBL;
         }
 
         private void buildBindingProducts()
         {
-            //Inventory.ProductBL.Clear();
             dataGridViewProducts.DataSource = Inventory.ProductBL;
         }
-
 
         public Main()
         {
             InitializeComponent();
             buildBindingParts();
             buildBindingProducts();
+            
+            //This "temporary" fix for setting currentPart at load to prevent null selection modify exception.
+            //Delete after solving DGV selection changed.
+            ModifyParts.currentPart = Inventory.PartBL[0];
         }
-
-        
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelPartsDGV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //This variable serves as a control for the add parts button click event
-        AddParts ap;
-        ModifyParts mp;
 
         //Helper function: Shows Add Part screen.
         public void showAddParts()
@@ -77,13 +67,18 @@ namespace InventoryManagementSystem
             }
             else
                 mp.Activate();
-
         }
 
-        //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
-        private void buttonAddParts_Click(object sender, EventArgs e)
+        public void showAddProducts()
         {
-            showAddParts();
+            if (apr == null)
+            {
+                apr = new AddProducts();
+                apr.FormClosed += new FormClosedEventHandler(apr_FormClosed);
+                apr.Show();
+            }
+            else
+                apr.Activate();
         }
 
         void ap_FormClosed(object sender, FormClosedEventArgs e)
@@ -96,11 +91,16 @@ namespace InventoryManagementSystem
             mp = null;
         }
 
-        //These variables are used by the program to "remember" what is selected in the DGV.
-        int currentIdx = 0;
-        Part currentObj = null;
+        void apr_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            apr = null;
+        }
 
-        
+        //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
+        private void buttonAddParts_Click(object sender, EventArgs e)
+        {
+            showAddParts();
+        }
 
         //Using partID to link currentIdx with the desired object from PartBL.
         private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -123,7 +123,6 @@ namespace InventoryManagementSystem
                 string caption = "Part not found";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
-
                 result = MessageBox.Show(message, caption, buttons);
             }
 
@@ -132,6 +131,7 @@ namespace InventoryManagementSystem
             ModifyParts.currentPart = currentObj;
             ModifyParts.currentModIdx = currentIdx;
         }
+
 
         //Need to add checks for unique part IDs
         private void buttonDeleteParts_Click(object sender, EventArgs e) 
@@ -154,7 +154,6 @@ namespace InventoryManagementSystem
         {
             showModifyParts();
         }
-
         private void buttonExitFromMain_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -172,6 +171,11 @@ namespace InventoryManagementSystem
                     dataGridViewParts.Rows[i].Selected = true;
                 }
             }
+        }
+
+        private void buttonAddProducts_Click(object sender, EventArgs e)
+        {
+            showAddProducts();
         }
     }
 }

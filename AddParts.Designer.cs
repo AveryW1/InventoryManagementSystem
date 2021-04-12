@@ -231,7 +231,6 @@ namespace InventoryManagementSystem
             this.labelAddPart.Size = new System.Drawing.Size(85, 26);
             this.labelAddPart.TabIndex = 2;
             this.labelAddPart.Text = "Add Part";
-            this.labelAddPart.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonPartSave
             // 
