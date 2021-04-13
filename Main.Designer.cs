@@ -107,7 +107,7 @@ namespace InventoryManagementSystem
             this.dataGridViewParts.AllowUserToDeleteRows = false;
             this.dataGridViewParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewParts.Location = new System.Drawing.Point(85, 54);
+            this.dataGridViewParts.Location = new System.Drawing.Point(20, 54);
             this.dataGridViewParts.Name = "dataGridViewParts";
             this.dataGridViewParts.RowHeadersVisible = false;
             this.dataGridViewParts.RowTemplate.Height = 25;
