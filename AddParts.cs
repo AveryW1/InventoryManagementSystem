@@ -14,7 +14,7 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
-
+        
         private void radioButtonOutsourced_CheckedChanged(object sender, EventArgs e)
         {
             labelPartMacIDComNA.Text = "Company Name";

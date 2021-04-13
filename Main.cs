@@ -17,9 +17,11 @@ namespace InventoryManagementSystem
         ModifyParts mp;
         AddProducts apr;
 
-        //These variables are used by the program to "remember" what is selected in the DGV.
+        //These variables are used by the program to "remember" what is selected in the DGVs.
         int currentIdx = 0;
+        int currentPIdx = 0;
         Part currentObj = null;
+        Product currentPObj = null;
 
         //This function creates the Binding List for Parts /w prepopulated data from Inventory.
         private void buildBindingParts()
@@ -106,6 +108,7 @@ namespace InventoryManagementSystem
         private void dataGridViewParts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentIdx = dataGridViewParts.CurrentCell.RowIndex;
+            
             for (int i = 0; i < Inventory.PartBL.Count; i++)
             {
                 if (Inventory.PartBL[i].PartID == (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value)
@@ -114,9 +117,10 @@ namespace InventoryManagementSystem
                     break;
                 }
             }
-
+            
             //The code below should never have to run due to the break function but if so we get a popup for it.
             //Alt, throw an exception so that it can be traced in the log for the developer to check.
+            //Might need to do similar for products.
             if (currentObj == null)
             {
                 string message = "Part was not found within the bounds of the PartBL array.";
@@ -126,26 +130,33 @@ namespace InventoryManagementSystem
                 result = MessageBox.Show(message, caption, buttons);
             }
 
-            //Lets ModifyParts know the selected part to edit for update Parts
+            //Lets ModifyParts know the selected part to edit for update Parts.
+            //Might need to do similar for products.
             ModifyParts.currentPartID = (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value;
             ModifyParts.currentPart = currentObj;
             ModifyParts.currentModIdx = currentIdx;
         }
 
-
-        //Need to add checks for unique part IDs
         private void buttonDeleteParts_Click(object sender, EventArgs e) 
         {
-            if(currentIdx >= 0)
+            string message = "Are you sure you want to delete this part?";
+            string caption = "Delete Part?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                for (int i = 0; i <Inventory.PartBL.Count; i++)
+                if (currentIdx >= 0)
                 {
-                    if (Inventory.PartBL[i].PartID == (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value)
+                    for (int i = 0; i < Inventory.PartBL.Count; i++)
                     {
-                        Inventory.deletePart(Inventory.PartBL[i]);   
+                        if (Inventory.PartBL[i].PartID == (int)dataGridViewParts.Rows[currentIdx].Cells[0].Value)
+                        {
+                            Inventory.deletePart(Inventory.PartBL[i]);
+                        }
                     }
+                    currentIdx = -1;
                 }
-                currentIdx=-1;
             }
         }
 
@@ -154,6 +165,7 @@ namespace InventoryManagementSystem
         {
             showModifyParts();
         }
+
         private void buttonExitFromMain_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -177,5 +189,55 @@ namespace InventoryManagementSystem
         {
             showAddProducts();
         }
+
+        private void buttonDeleteProducts_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to delete this product?";
+            string caption = "Delete Product?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (currentPIdx >= 0)
+                {
+                    for (int i = 0; i < Inventory.ProductBL.Count; i++)
+                    {
+                        if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentIdx].Cells[0].Value)
+                        {
+                            Inventory.removeProduct(i);
+                        }
+                    }
+                    currentPIdx = -1;
+                }
+            }
+        }
     }
+
+
+
+
+
+
+
+
+
+
+    /* This is code to use for DGV products for deleting products.
+     * 
+     * for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            {
+                if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value)
+                {
+                    currentPObj = Inventory.ProductBL[i];
+                    break;
+                }
+            }
+
+    currentPIdx = dataGridViewProducts.CurrentCell.RowIndex;
+
+
+    Need to make a cell click event for products DGv then add this code to handle the event.
+     
+     */
 }

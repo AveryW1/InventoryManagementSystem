@@ -222,6 +222,7 @@ namespace InventoryManagementSystem
             this.buttonDeleteProducts.TabIndex = 7;
             this.buttonDeleteProducts.Text = "Delete";
             this.buttonDeleteProducts.UseVisualStyleBackColor = true;
+            this.buttonDeleteProducts.Click += new System.EventHandler(this.buttonDeleteProducts_Click);
             // 
             // buttonModifyProducts
             // 

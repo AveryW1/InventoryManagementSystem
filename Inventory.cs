@@ -41,9 +41,38 @@ namespace InventoryManagementSystem
             PartBL.Add(part);
         }
 
-        public static void deletePart(Part part)
+        //Needs to be return bool with confirm delete
+        public static bool deletePart(Part part)
         {
-            PartBL.Remove(part);
+            if (PartBL.Remove(part))
+            {
+                string message = "Part has been successfully removed.";
+                string caption = "Success!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        //Uses remove at since it takes ints. Must return a bool.
+        public static bool removeProduct(int product)
+        {
+            ProductBL.RemoveAt(product);
+            return true;
+            //if ()
+            //{
+            //    string message = "Part has been successfully removed.";
+            //    string caption = "Success!";
+            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
+            //    DialogResult result;
+            //    result = MessageBox.Show(message, caption, buttons);
+            //    return true;
+            //}
+            //else
+            //    return false;
         }
 
         //Exchanges the newly updated part with the old one in the PartBL list.
