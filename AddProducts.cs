@@ -17,7 +17,7 @@ namespace InventoryManagementSystem
         }
         public void buildCandidatePartsDGV()
         {
-            dataGridViewCParts.DataSource = Inventory.PartBL;
+            dataGridViewAProducts.DataSource = Inventory.PartBL;
         }
 
         private void buttonAddProductsSave01_Click(object sender, EventArgs e)

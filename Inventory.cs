@@ -62,17 +62,6 @@ namespace InventoryManagementSystem
         {
             ProductBL.RemoveAt(product);
             return true;
-            //if ()
-            //{
-            //    string message = "Part has been successfully removed.";
-            //    string caption = "Success!";
-            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
-            //    DialogResult result;
-            //    result = MessageBox.Show(message, caption, buttons);
-            //    return true;
-            //}
-            //else
-            //    return false;
         }
 
         //Exchanges the newly updated part with the old one in the PartBL list.
@@ -80,6 +69,12 @@ namespace InventoryManagementSystem
         {
             PartBL.RemoveAt(idx);
             PartBL.Insert(idx, part);
+        }
+
+        public static void updateProduct(int idx, Product product)
+        {
+            ProductBL.RemoveAt(idx);
+            ProductBL.Insert(idx, product);
         }
 
         //With exception handling, this method compares input partID(int) with all part IDs in PartBL. Return Part

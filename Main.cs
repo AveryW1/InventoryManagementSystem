@@ -16,6 +16,7 @@ namespace InventoryManagementSystem
         AddParts ap;
         ModifyParts mp;
         AddProducts apr;
+        ModifyProducts mpr;
 
         //These variables are used by the program to "remember" what is selected in the DGVs.
         int currentIdx = 0;
@@ -58,6 +59,11 @@ namespace InventoryManagementSystem
                 ap.Activate();
         }
 
+        void ap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ap = null;
+        }
+
         //Helper function: Shows Modify Parts screen.
         public void showModifyParts()
         {
@@ -69,6 +75,10 @@ namespace InventoryManagementSystem
             }
             else
                 mp.Activate();
+        }
+        void mp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mp = null;
         }
 
         public void showAddProducts()
@@ -83,19 +93,25 @@ namespace InventoryManagementSystem
                 apr.Activate();
         }
 
-        void ap_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ap = null;
-        }
-
-        void mp_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            mp = null;
-        }
-
         void apr_FormClosed(object sender, FormClosedEventArgs e)
         {
             apr = null;
+        }
+
+        public void showModifyProducts()
+        {
+            if (mpr == null)
+            {
+                mpr = new ModifyProducts();
+                mpr.FormClosed += new FormClosedEventHandler(mpr_FormClosed);
+                mpr.Show();
+            }
+            else
+                mpr.Activate();
+        }
+        void mpr_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mpr = null;
         }
 
         //Brings up only 1 instance of Add part window. Option to hide main if wanted. NO MDI needed.
@@ -163,7 +179,19 @@ namespace InventoryManagementSystem
         //Add parts shows, data of currentObj shows, edit data, ask confirm, update list obj.property = newData, 
         private void buttonModifyParts_Click(object sender, EventArgs e) 
         {
-            showModifyParts();
+            if (!(currentObj is null))
+            {
+                showModifyParts();
+            }
+            else
+            {
+                string message = "Please click a part to modify";
+                string caption = "Modify Which Part?";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+            }
+
         }
 
         private void buttonExitFromMain_Click(object sender, EventArgs e)
@@ -185,7 +213,7 @@ namespace InventoryManagementSystem
             }
         }
 
-        private void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentPIdx = dataGridViewProducts.CurrentCell.RowIndex;
 
@@ -197,12 +225,9 @@ namespace InventoryManagementSystem
                     break;
                 }
             }
-            string message = "Current PIdx = " + currentPIdx + "; current Pobj = " + currentPObj + ".";
-            string caption = "Currents";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            result = MessageBox.Show(message, caption, buttons);
-
+            ModifyProducts.currentProductID = (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value;
+            ModifyProducts.currentProduct = currentPObj;
+            ModifyProducts.currentPModIdx = currentIdx;
         }
 
         private void buttonAddProducts_Click(object sender, EventArgs e)
@@ -232,32 +257,20 @@ namespace InventoryManagementSystem
                 }
             }
         }
-    }
-
-
-
-
-
-
-
-
-
-
-    /* This is code to use for DGV products for deleting products.
-     * 
-     * for (int i = 0; i < Inventory.ProductBL.Count; i++)
+        private void buttonModifyProducts_Click(object sender, EventArgs e)
+        {
+            if (!(currentPObj is null)) 
             {
-                if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value)
-                {
-                    currentPObj = Inventory.ProductBL[i];
-                    break;
-                }
+                showModifyProducts(); 
             }
-
-    currentPIdx = dataGridViewProducts.CurrentCell.RowIndex;
-
-
-    Need to make a cell click event for products DGv then add this code to handle the event.
-     
-     */
+            else
+            {
+                string message = "Please click a product to modify";
+                string caption = "Modify Which Product?";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+    }
 }

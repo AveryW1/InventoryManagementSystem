@@ -53,11 +53,11 @@ namespace InventoryManagementSystem
             this.labelAssociatedParts01 = new System.Windows.Forms.Label();
             this.labelAddProduct = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewCParts = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAProducts = new System.Windows.Forms.DataGridView();
             this.panelAddProducts1.SuspendLayout();
             this.panelAddProducts02.SuspendLayout();
             this.panelAddProducts03.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAddProducts1
@@ -304,19 +304,19 @@ namespace InventoryManagementSystem
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewCParts
+            // dataGridViewAProducts
             // 
-            this.dataGridViewCParts.AllowUserToAddRows = false;
-            this.dataGridViewCParts.AllowUserToDeleteRows = false;
-            this.dataGridViewCParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewCParts.Location = new System.Drawing.Point(479, 134);
-            this.dataGridViewCParts.Name = "dataGridViewCParts";
-            this.dataGridViewCParts.RowHeadersVisible = false;
-            this.dataGridViewCParts.RowTemplate.Height = 25;
-            this.dataGridViewCParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCParts.Size = new System.Drawing.Size(615, 274);
-            this.dataGridViewCParts.TabIndex = 18;
+            this.dataGridViewAProducts.AllowUserToAddRows = false;
+            this.dataGridViewAProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewAProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAProducts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewAProducts.Location = new System.Drawing.Point(479, 134);
+            this.dataGridViewAProducts.Name = "dataGridViewAProducts";
+            this.dataGridViewAProducts.RowHeadersVisible = false;
+            this.dataGridViewAProducts.RowTemplate.Height = 25;
+            this.dataGridViewAProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAProducts.Size = new System.Drawing.Size(615, 274);
+            this.dataGridViewAProducts.TabIndex = 18;
             // 
             // AddProducts
             // 
@@ -324,7 +324,7 @@ namespace InventoryManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 827);
-            this.Controls.Add(this.dataGridViewCParts);
+            this.Controls.Add(this.dataGridViewAProducts);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelAddProduct);
             this.Controls.Add(this.labelAssociatedParts01);
@@ -341,7 +341,7 @@ namespace InventoryManagementSystem
             this.panelAddProducts02.ResumeLayout(false);
             this.panelAddProducts03.ResumeLayout(false);
             this.panelAddProducts03.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,6 +374,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Label labelAssociatedParts01;
         private System.Windows.Forms.Label labelAddProduct;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridViewCParts;
+        private System.Windows.Forms.DataGridView dataGridViewAProducts;
     }
 }

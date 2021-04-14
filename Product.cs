@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace InventoryManagementSystem
 {//not inheriting from part. only similar attributes
-    class Product 
+    public class Product 
     {
         //Not stitic since its not the only instance
         public BindingList<Part> AssociatedParts = new BindingList<Part>();

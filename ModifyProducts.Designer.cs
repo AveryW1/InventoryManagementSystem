@@ -29,154 +29,34 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelAddProducts1 = new System.Windows.Forms.Panel();
-            this.textBoxPartMin = new System.Windows.Forms.TextBox();
-            this.textBoxPartMax = new System.Windows.Forms.TextBox();
-            this.textBoxPartPriceCost = new System.Windows.Forms.TextBox();
-            this.textBoxPartName = new System.Windows.Forms.TextBox();
-            this.textBoxPartInventory = new System.Windows.Forms.TextBox();
-            this.textBoxPartID = new System.Windows.Forms.TextBox();
-            this.labelProductMin = new System.Windows.Forms.Label();
-            this.labelProductMax = new System.Windows.Forms.Label();
-            this.labelProductPrice = new System.Windows.Forms.Label();
-            this.labelProductInventory = new System.Windows.Forms.Label();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.labelProductID = new System.Windows.Forms.Label();
             this.labelModifyProducts01 = new System.Windows.Forms.Label();
             this.panelAddProducts03 = new System.Windows.Forms.Panel();
             this.buttonSearchProducts01 = new System.Windows.Forms.Button();
             this.textBoxSearchProducts01 = new System.Windows.Forms.TextBox();
             this.panelAddProducts02 = new System.Windows.Forms.Panel();
-            this.buttonAddProductsSave01 = new System.Windows.Forms.Button();
-            this.buttonAddProductsCancel01 = new System.Windows.Forms.Button();
+            this.buttonMProductsSave01 = new System.Windows.Forms.Button();
+            this.buttonMProductsCancel01 = new System.Windows.Forms.Button();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.buttonDeleteProduct = new System.Windows.Forms.Button();
-            this.panelAddProducts1.SuspendLayout();
+            this.panelAddProducts1 = new System.Windows.Forms.Panel();
+            this.textBoxMProductMin = new System.Windows.Forms.TextBox();
+            this.textBoxMProductMax = new System.Windows.Forms.TextBox();
+            this.textBoxMProductPrice = new System.Windows.Forms.TextBox();
+            this.textBoxMProductName = new System.Windows.Forms.TextBox();
+            this.textBoxMProductInventory = new System.Windows.Forms.TextBox();
+            this.textBoxMProductID = new System.Windows.Forms.TextBox();
+            this.labelMProductMin = new System.Windows.Forms.Label();
+            this.labelMProductMax = new System.Windows.Forms.Label();
+            this.labelMProductPriceCost = new System.Windows.Forms.Label();
+            this.labelMProductInventory = new System.Windows.Forms.Label();
+            this.labelMProductName = new System.Windows.Forms.Label();
+            this.labelMProductID = new System.Windows.Forms.Label();
+            this.dataGridViewMProducts = new System.Windows.Forms.DataGridView();
             this.panelAddProducts03.SuspendLayout();
             this.panelAddProducts02.SuspendLayout();
+            this.panelAddProducts1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMProducts)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelAddProducts1
-            // 
-            this.panelAddProducts1.Controls.Add(this.textBoxPartMin);
-            this.panelAddProducts1.Controls.Add(this.textBoxPartMax);
-            this.panelAddProducts1.Controls.Add(this.textBoxPartPriceCost);
-            this.panelAddProducts1.Controls.Add(this.textBoxPartName);
-            this.panelAddProducts1.Controls.Add(this.textBoxPartInventory);
-            this.panelAddProducts1.Controls.Add(this.textBoxPartID);
-            this.panelAddProducts1.Controls.Add(this.labelProductMin);
-            this.panelAddProducts1.Controls.Add(this.labelProductMax);
-            this.panelAddProducts1.Controls.Add(this.labelProductPrice);
-            this.panelAddProducts1.Controls.Add(this.labelProductInventory);
-            this.panelAddProducts1.Controls.Add(this.labelProductName);
-            this.panelAddProducts1.Controls.Add(this.labelProductID);
-            this.panelAddProducts1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panelAddProducts1.Location = new System.Drawing.Point(55, 143);
-            this.panelAddProducts1.Name = "panelAddProducts1";
-            this.panelAddProducts1.Size = new System.Drawing.Size(276, 218);
-            this.panelAddProducts1.TabIndex = 3;
-            // 
-            // textBoxPartMin
-            // 
-            this.textBoxPartMin.Location = new System.Drawing.Point(207, 169);
-            this.textBoxPartMin.Name = "textBoxPartMin";
-            this.textBoxPartMin.Size = new System.Drawing.Size(54, 29);
-            this.textBoxPartMin.TabIndex = 15;
-            // 
-            // textBoxPartMax
-            // 
-            this.textBoxPartMax.Location = new System.Drawing.Point(106, 169);
-            this.textBoxPartMax.Name = "textBoxPartMax";
-            this.textBoxPartMax.Size = new System.Drawing.Size(54, 29);
-            this.textBoxPartMax.TabIndex = 14;
-            // 
-            // textBoxPartPriceCost
-            // 
-            this.textBoxPartPriceCost.Location = new System.Drawing.Point(106, 130);
-            this.textBoxPartPriceCost.Name = "textBoxPartPriceCost";
-            this.textBoxPartPriceCost.Size = new System.Drawing.Size(155, 29);
-            this.textBoxPartPriceCost.TabIndex = 12;
-            // 
-            // textBoxPartName
-            // 
-            this.textBoxPartName.Location = new System.Drawing.Point(106, 60);
-            this.textBoxPartName.Name = "textBoxPartName";
-            this.textBoxPartName.Size = new System.Drawing.Size(155, 29);
-            this.textBoxPartName.TabIndex = 11;
-            // 
-            // textBoxPartInventory
-            // 
-            this.textBoxPartInventory.Location = new System.Drawing.Point(106, 95);
-            this.textBoxPartInventory.Name = "textBoxPartInventory";
-            this.textBoxPartInventory.Size = new System.Drawing.Size(155, 29);
-            this.textBoxPartInventory.TabIndex = 10;
-            // 
-            // textBoxPartID
-            // 
-            this.textBoxPartID.Location = new System.Drawing.Point(106, 25);
-            this.textBoxPartID.Name = "textBoxPartID";
-            this.textBoxPartID.Size = new System.Drawing.Size(155, 29);
-            this.textBoxPartID.TabIndex = 9;
-            // 
-            // labelProductMin
-            // 
-            this.labelProductMin.AutoSize = true;
-            this.labelProductMin.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductMin.Location = new System.Drawing.Point(166, 174);
-            this.labelProductMin.Name = "labelProductMin";
-            this.labelProductMin.Size = new System.Drawing.Size(35, 19);
-            this.labelProductMin.TabIndex = 5;
-            this.labelProductMin.Text = "Min";
-            // 
-            // labelProductMax
-            // 
-            this.labelProductMax.AutoSize = true;
-            this.labelProductMax.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductMax.Location = new System.Drawing.Point(59, 174);
-            this.labelProductMax.Name = "labelProductMax";
-            this.labelProductMax.Size = new System.Drawing.Size(39, 19);
-            this.labelProductMax.TabIndex = 4;
-            this.labelProductMax.Text = "Max";
-            // 
-            // labelProductPrice
-            // 
-            this.labelProductPrice.AutoSize = true;
-            this.labelProductPrice.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductPrice.Location = new System.Drawing.Point(56, 135);
-            this.labelProductPrice.Name = "labelProductPrice";
-            this.labelProductPrice.Size = new System.Drawing.Size(42, 19);
-            this.labelProductPrice.TabIndex = 3;
-            this.labelProductPrice.Text = "Price";
-            // 
-            // labelProductInventory
-            // 
-            this.labelProductInventory.AutoSize = true;
-            this.labelProductInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductInventory.Location = new System.Drawing.Point(25, 100);
-            this.labelProductInventory.Name = "labelProductInventory";
-            this.labelProductInventory.Size = new System.Drawing.Size(75, 19);
-            this.labelProductInventory.TabIndex = 2;
-            this.labelProductInventory.Text = "Inventory";
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductName.Location = new System.Drawing.Point(51, 65);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(49, 19);
-            this.labelProductName.TabIndex = 1;
-            this.labelProductName.Text = "Name";
-            // 
-            // labelProductID
-            // 
-            this.labelProductID.AutoSize = true;
-            this.labelProductID.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductID.Location = new System.Drawing.Point(75, 30);
-            this.labelProductID.Name = "labelProductID";
-            this.labelProductID.Size = new System.Drawing.Size(23, 19);
-            this.labelProductID.TabIndex = 0;
-            this.labelProductID.Text = "ID";
             // 
             // labelModifyProducts01
             // 
@@ -184,7 +64,7 @@ namespace InventoryManagementSystem
             this.labelModifyProducts01.BackColor = System.Drawing.Color.Silver;
             this.labelModifyProducts01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelModifyProducts01.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyProducts01.Location = new System.Drawing.Point(12, 9);
+            this.labelModifyProducts01.Location = new System.Drawing.Point(22, 23);
             this.labelModifyProducts01.Name = "labelModifyProducts01";
             this.labelModifyProducts01.Size = new System.Drawing.Size(150, 26);
             this.labelModifyProducts01.TabIndex = 17;
@@ -218,40 +98,42 @@ namespace InventoryManagementSystem
             // 
             // panelAddProducts02
             // 
-            this.panelAddProducts02.Controls.Add(this.buttonAddProductsSave01);
-            this.panelAddProducts02.Controls.Add(this.buttonAddProductsCancel01);
-            this.panelAddProducts02.Location = new System.Drawing.Point(789, 580);
+            this.panelAddProducts02.Controls.Add(this.buttonMProductsSave01);
+            this.panelAddProducts02.Controls.Add(this.buttonMProductsCancel01);
+            this.panelAddProducts02.Location = new System.Drawing.Point(883, 777);
             this.panelAddProducts02.Name = "panelAddProducts02";
             this.panelAddProducts02.Size = new System.Drawing.Size(169, 25);
             this.panelAddProducts02.TabIndex = 19;
             // 
-            // buttonAddProductsSave01
+            // buttonMProductsSave01
             // 
-            this.buttonAddProductsSave01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddProductsSave01.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddProductsSave01.Location = new System.Drawing.Point(0, 0);
-            this.buttonAddProductsSave01.Name = "buttonAddProductsSave01";
-            this.buttonAddProductsSave01.Size = new System.Drawing.Size(75, 25);
-            this.buttonAddProductsSave01.TabIndex = 5;
-            this.buttonAddProductsSave01.Text = "Save";
-            this.buttonAddProductsSave01.UseVisualStyleBackColor = true;
+            this.buttonMProductsSave01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMProductsSave01.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonMProductsSave01.Location = new System.Drawing.Point(0, 0);
+            this.buttonMProductsSave01.Name = "buttonMProductsSave01";
+            this.buttonMProductsSave01.Size = new System.Drawing.Size(75, 25);
+            this.buttonMProductsSave01.TabIndex = 5;
+            this.buttonMProductsSave01.Text = "Save";
+            this.buttonMProductsSave01.UseVisualStyleBackColor = true;
+            this.buttonMProductsSave01.Click += new System.EventHandler(this.buttonMProductsSave01_Click);
             // 
-            // buttonAddProductsCancel01
+            // buttonMProductsCancel01
             // 
-            this.buttonAddProductsCancel01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddProductsCancel01.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddProductsCancel01.Location = new System.Drawing.Point(94, 0);
-            this.buttonAddProductsCancel01.Name = "buttonAddProductsCancel01";
-            this.buttonAddProductsCancel01.Size = new System.Drawing.Size(75, 25);
-            this.buttonAddProductsCancel01.TabIndex = 6;
-            this.buttonAddProductsCancel01.Text = "Cancel";
-            this.buttonAddProductsCancel01.UseVisualStyleBackColor = true;
+            this.buttonMProductsCancel01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMProductsCancel01.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonMProductsCancel01.Location = new System.Drawing.Point(94, 0);
+            this.buttonMProductsCancel01.Name = "buttonMProductsCancel01";
+            this.buttonMProductsCancel01.Size = new System.Drawing.Size(75, 25);
+            this.buttonMProductsCancel01.TabIndex = 6;
+            this.buttonMProductsCancel01.Text = "Cancel";
+            this.buttonMProductsCancel01.UseVisualStyleBackColor = true;
+            this.buttonMProductsCancel01.Click += new System.EventHandler(this.buttonMProductsCancel01_Click);
             // 
             // buttonAddProduct
             // 
             this.buttonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAddProduct.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddProduct.Location = new System.Drawing.Point(883, 268);
+            this.buttonAddProduct.Location = new System.Drawing.Point(943, 424);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(75, 25);
             this.buttonAddProduct.TabIndex = 20;
@@ -262,60 +144,203 @@ namespace InventoryManagementSystem
             // 
             this.buttonDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeleteProduct.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonDeleteProduct.Location = new System.Drawing.Point(883, 497);
+            this.buttonDeleteProduct.Location = new System.Drawing.Point(977, 726);
             this.buttonDeleteProduct.Name = "buttonDeleteProduct";
             this.buttonDeleteProduct.Size = new System.Drawing.Size(75, 25);
             this.buttonDeleteProduct.TabIndex = 21;
             this.buttonDeleteProduct.Text = "Delete";
             this.buttonDeleteProduct.UseVisualStyleBackColor = true;
             // 
+            // panelAddProducts1
+            // 
+            this.panelAddProducts1.Controls.Add(this.textBoxMProductMin);
+            this.panelAddProducts1.Controls.Add(this.textBoxMProductMax);
+            this.panelAddProducts1.Controls.Add(this.textBoxMProductPrice);
+            this.panelAddProducts1.Controls.Add(this.textBoxMProductName);
+            this.panelAddProducts1.Controls.Add(this.textBoxMProductInventory);
+            this.panelAddProducts1.Controls.Add(this.textBoxMProductID);
+            this.panelAddProducts1.Controls.Add(this.labelMProductMin);
+            this.panelAddProducts1.Controls.Add(this.labelMProductMax);
+            this.panelAddProducts1.Controls.Add(this.labelMProductPriceCost);
+            this.panelAddProducts1.Controls.Add(this.labelMProductInventory);
+            this.panelAddProducts1.Controls.Add(this.labelMProductName);
+            this.panelAddProducts1.Controls.Add(this.labelMProductID);
+            this.panelAddProducts1.Location = new System.Drawing.Point(22, 134);
+            this.panelAddProducts1.Name = "panelAddProducts1";
+            this.panelAddProducts1.Size = new System.Drawing.Size(318, 236);
+            this.panelAddProducts1.TabIndex = 22;
+            // 
+            // textBoxMProductMin
+            // 
+            this.textBoxMProductMin.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMProductMin.Location = new System.Drawing.Point(241, 192);
+            this.textBoxMProductMin.Name = "textBoxMProductMin";
+            this.textBoxMProductMin.Size = new System.Drawing.Size(54, 30);
+            this.textBoxMProductMin.TabIndex = 15;
+            // 
+            // textBoxMProductMax
+            // 
+            this.textBoxMProductMax.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMProductMax.Location = new System.Drawing.Point(140, 192);
+            this.textBoxMProductMax.Name = "textBoxMProductMax";
+            this.textBoxMProductMax.Size = new System.Drawing.Size(54, 30);
+            this.textBoxMProductMax.TabIndex = 14;
+            // 
+            // textBoxMProductPrice
+            // 
+            this.textBoxMProductPrice.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMProductPrice.Location = new System.Drawing.Point(140, 150);
+            this.textBoxMProductPrice.Name = "textBoxMProductPrice";
+            this.textBoxMProductPrice.Size = new System.Drawing.Size(155, 30);
+            this.textBoxMProductPrice.TabIndex = 12;
+            // 
+            // textBoxMProductName
+            // 
+            this.textBoxMProductName.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMProductName.Location = new System.Drawing.Point(140, 68);
+            this.textBoxMProductName.Name = "textBoxMProductName";
+            this.textBoxMProductName.Size = new System.Drawing.Size(155, 30);
+            this.textBoxMProductName.TabIndex = 11;
+            // 
+            // textBoxMProductInventory
+            // 
+            this.textBoxMProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMProductInventory.Location = new System.Drawing.Point(140, 109);
+            this.textBoxMProductInventory.Name = "textBoxMProductInventory";
+            this.textBoxMProductInventory.Size = new System.Drawing.Size(155, 30);
+            this.textBoxMProductInventory.TabIndex = 10;
+            // 
+            // textBoxMProductID
+            // 
+            this.textBoxMProductID.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMProductID.Location = new System.Drawing.Point(140, 28);
+            this.textBoxMProductID.Name = "textBoxMProductID";
+            this.textBoxMProductID.Size = new System.Drawing.Size(155, 30);
+            this.textBoxMProductID.TabIndex = 9;
+            // 
+            // labelMProductMin
+            // 
+            this.labelMProductMin.AutoSize = true;
+            this.labelMProductMin.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMProductMin.Location = new System.Drawing.Point(200, 195);
+            this.labelMProductMin.Name = "labelMProductMin";
+            this.labelMProductMin.Size = new System.Drawing.Size(40, 23);
+            this.labelMProductMin.TabIndex = 5;
+            this.labelMProductMin.Text = "Min";
+            // 
+            // labelMProductMax
+            // 
+            this.labelMProductMax.AutoSize = true;
+            this.labelMProductMax.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMProductMax.Location = new System.Drawing.Point(62, 199);
+            this.labelMProductMax.Name = "labelMProductMax";
+            this.labelMProductMax.Size = new System.Drawing.Size(45, 23);
+            this.labelMProductMax.TabIndex = 4;
+            this.labelMProductMax.Text = "Max";
+            // 
+            // labelMProductPriceCost
+            // 
+            this.labelMProductPriceCost.AutoSize = true;
+            this.labelMProductPriceCost.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMProductPriceCost.Location = new System.Drawing.Point(56, 153);
+            this.labelMProductPriceCost.Name = "labelMProductPriceCost";
+            this.labelMProductPriceCost.Size = new System.Drawing.Size(51, 23);
+            this.labelMProductPriceCost.TabIndex = 3;
+            this.labelMProductPriceCost.Text = "Price";
+            // 
+            // labelMProductInventory
+            // 
+            this.labelMProductInventory.AutoSize = true;
+            this.labelMProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMProductInventory.Location = new System.Drawing.Point(18, 112);
+            this.labelMProductInventory.Name = "labelMProductInventory";
+            this.labelMProductInventory.Size = new System.Drawing.Size(88, 23);
+            this.labelMProductInventory.TabIndex = 2;
+            this.labelMProductInventory.Text = "Inventory";
+            // 
+            // labelMProductName
+            // 
+            this.labelMProductName.AutoSize = true;
+            this.labelMProductName.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMProductName.Location = new System.Drawing.Point(48, 68);
+            this.labelMProductName.Name = "labelMProductName";
+            this.labelMProductName.Size = new System.Drawing.Size(58, 23);
+            this.labelMProductName.TabIndex = 1;
+            this.labelMProductName.Text = "Name";
+            // 
+            // labelMProductID
+            // 
+            this.labelMProductID.AutoSize = true;
+            this.labelMProductID.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMProductID.Location = new System.Drawing.Point(79, 31);
+            this.labelMProductID.Name = "labelMProductID";
+            this.labelMProductID.Size = new System.Drawing.Size(27, 23);
+            this.labelMProductID.TabIndex = 0;
+            this.labelMProductID.Text = "ID";
+            // 
+            // dataGridViewMProducts
+            // 
+            this.dataGridViewMProducts.AllowUserToAddRows = false;
+            this.dataGridViewMProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewMProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMProducts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewMProducts.Location = new System.Drawing.Point(479, 134);
+            this.dataGridViewMProducts.Name = "dataGridViewMProducts";
+            this.dataGridViewMProducts.RowHeadersVisible = false;
+            this.dataGridViewMProducts.RowTemplate.Height = 25;
+            this.dataGridViewMProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMProducts.Size = new System.Drawing.Size(615, 274);
+            this.dataGridViewMProducts.TabIndex = 23;
+            // 
             // ModifyProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1006, 617);
+            this.ClientSize = new System.Drawing.Size(1123, 827);
+            this.Controls.Add(this.dataGridViewMProducts);
+            this.Controls.Add(this.panelAddProducts1);
             this.Controls.Add(this.buttonDeleteProduct);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.panelAddProducts02);
             this.Controls.Add(this.panelAddProducts03);
             this.Controls.Add(this.labelModifyProducts01);
-            this.Controls.Add(this.panelAddProducts1);
             this.Name = "ModifyProducts";
             this.Text = "ModifyProducts";
-            this.panelAddProducts1.ResumeLayout(false);
-            this.panelAddProducts1.PerformLayout();
             this.panelAddProducts03.ResumeLayout(false);
             this.panelAddProducts03.PerformLayout();
             this.panelAddProducts02.ResumeLayout(false);
+            this.panelAddProducts1.ResumeLayout(false);
+            this.panelAddProducts1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelAddProducts1;
-        private System.Windows.Forms.TextBox textBoxPartMin;
-        private System.Windows.Forms.TextBox textBoxPartMax;
-        private System.Windows.Forms.TextBox textBoxPartPriceCost;
-        private System.Windows.Forms.TextBox textBoxPartName;
-        private System.Windows.Forms.TextBox textBoxPartInventory;
-        private System.Windows.Forms.TextBox textBoxPartID;
-        private System.Windows.Forms.Label labelProductMin;
-        private System.Windows.Forms.Label labelProductMax;
-        private System.Windows.Forms.Label labelProductPrice;
-        private System.Windows.Forms.Label labelProductInventory;
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.Label labelProductID;
         private System.Windows.Forms.Label labelModifyProducts01;
         private System.Windows.Forms.Panel panelAddProducts03;
         private System.Windows.Forms.Button buttonSearchProducts01;
         private System.Windows.Forms.TextBox textBoxSearchProducts01;
         private System.Windows.Forms.Panel panelAddProducts02;
-        private System.Windows.Forms.Button buttonAddProductsSave01;
-        private System.Windows.Forms.Button buttonAddProductsCancel01;
+        private System.Windows.Forms.Button buttonMProductsSave01;
+        private System.Windows.Forms.Button buttonMProductsCancel01;
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.Button buttonDeleteProduct;
+        private System.Windows.Forms.Panel panelAddProducts1;
+        private System.Windows.Forms.TextBox textBoxMProductMin;
+        private System.Windows.Forms.TextBox textBoxMProductMax;
+        private System.Windows.Forms.TextBox textBoxMProductPrice;
+        private System.Windows.Forms.TextBox textBoxMProductName;
+        private System.Windows.Forms.TextBox textBoxMProductInventory;
+        private System.Windows.Forms.TextBox textBoxMProductID;
+        private System.Windows.Forms.Label labelMProductMin;
+        private System.Windows.Forms.Label labelMProductMax;
+        private System.Windows.Forms.Label labelMProductPriceCost;
+        private System.Windows.Forms.Label labelMProductInventory;
+        private System.Windows.Forms.Label labelMProductName;
+        private System.Windows.Forms.Label labelMProductID;
+        private System.Windows.Forms.DataGridView dataGridViewMProducts;
     }
 }

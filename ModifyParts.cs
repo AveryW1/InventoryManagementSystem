@@ -18,10 +18,11 @@ namespace InventoryManagementSystem
         //Use variable for current part selected
         public ModifyParts() 
         {
+            InitializeComponent();
+
             //Delete this try/catch once program open auto select is completed.
             try
             {
-                InitializeComponent();
                 textBoxModifyID.Text = currentPart.PartID.ToString();
                 textBoxModifyName.Text = currentPart.Name;
                 textBoxModifyInventory.Text = currentPart.InStock.ToString();

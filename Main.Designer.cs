@@ -195,7 +195,7 @@ namespace InventoryManagementSystem
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(655, 336);
             this.dataGridViewProducts.TabIndex = 11;
-            this.dataGridViewProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellContentClick);
+            this.dataGridViewProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellClick);
             // 
             // buttonSearchProducts
             // 
@@ -234,6 +234,7 @@ namespace InventoryManagementSystem
             this.buttonModifyProducts.TabIndex = 6;
             this.buttonModifyProducts.Text = "Modify";
             this.buttonModifyProducts.UseVisualStyleBackColor = true;
+            this.buttonModifyProducts.Click += new System.EventHandler(this.buttonModifyProducts_Click);
             // 
             // buttonAddProducts
             // 
