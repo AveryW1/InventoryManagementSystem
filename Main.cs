@@ -185,6 +185,26 @@ namespace InventoryManagementSystem
             }
         }
 
+        private void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentPIdx = dataGridViewProducts.CurrentCell.RowIndex;
+
+            for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            {
+                if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value)
+                {
+                    currentPObj = Inventory.ProductBL[i];
+                    break;
+                }
+            }
+            string message = "Current PIdx = " + currentPIdx + "; current Pobj = " + currentPObj + ".";
+            string caption = "Currents";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+
+        }
+
         private void buttonAddProducts_Click(object sender, EventArgs e)
         {
             showAddProducts();
@@ -203,7 +223,7 @@ namespace InventoryManagementSystem
                 {
                     for (int i = 0; i < Inventory.ProductBL.Count; i++)
                     {
-                        if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentIdx].Cells[0].Value)
+                        if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value)
                         {
                             Inventory.removeProduct(i);
                         }

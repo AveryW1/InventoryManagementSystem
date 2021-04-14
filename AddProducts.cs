@@ -22,7 +22,19 @@ namespace InventoryManagementSystem
 
         private void buttonAddProductsSave01_Click(object sender, EventArgs e)
         {
-            Inventory.addProduct(new Product(Convert.ToInt32(textBoxProductID.Text), textBoxProductName.Text, Convert.ToInt32(textBoxProductPrice.Text), Convert.ToInt32(textBoxProductInventory.Text), Convert.ToInt32(textBoxProductMax.Text), Convert.ToInt32(textBoxProductMin.Text)));
+            try
+            {
+                Inventory.addProduct(new Product(Convert.ToInt32(textBoxProductID.Text), textBoxProductName.Text, Convert.ToInt32(textBoxProductPrice.Text), Convert.ToInt32(textBoxProductInventory.Text), Convert.ToInt32(textBoxProductMax.Text), Convert.ToInt32(textBoxProductMin.Text)));
+            }
+            catch (FormatException)
+            {
+                string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers.";
+                string caption = "Input Format Error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+            }
+
             this.Close();
         }
 

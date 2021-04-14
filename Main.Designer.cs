@@ -195,6 +195,7 @@ namespace InventoryManagementSystem
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(655, 336);
             this.dataGridViewProducts.TabIndex = 11;
+            this.dataGridViewProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellContentClick);
             // 
             // buttonSearchProducts
             // 
