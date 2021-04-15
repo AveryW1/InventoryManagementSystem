@@ -14,7 +14,8 @@ namespace InventoryManagementSystem
         public static int currentProductID { get; set; }
         public static int currentPModIdx { get; set; }
 
-        
+        int currentIdx = 0;
+        Part currentPart = null;
         public ModifyProducts()
         {
             InitializeComponent();
@@ -32,12 +33,33 @@ namespace InventoryManagementSystem
             this.Close();
         }
 
-        //Updates wrong index atm.
         private void buttonMProductsSave01_Click(object sender, EventArgs e)
         {
             currentProduct = new Product(Convert.ToInt32(textBoxMProductID.Text), textBoxMProductName.Text, Convert.ToDecimal(textBoxMProductPrice.Text), Convert.ToInt32(textBoxMProductInventory.Text), Convert.ToInt32(textBoxMProductMax.Text), Convert.ToInt32(textBoxMProductMin.Text));
             Inventory.updateProduct(currentPModIdx, currentProduct);
             this.Close();
+        }
+
+        //Needs to know current part. Use cell click event from parts DGV on Product page.
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            //Product.addAssociatedPart();
+        }
+        
+        //Need to adjust code for top DGV being PartsBL list.
+        
+        private void dataGridViewMProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //currentIdx = dataGridViewMProducts.CurrentCell.RowIndex;
+            //
+            //for (int i = 0; i < Product.AssociatedParts; i++)
+            //{
+            //    if (Inventory.AssociatedParts[i].PartID == (int)dataGridViewMProducts.Rows[currentIdx].Cells[0].Value)
+            //    {
+            //        currentPart = Inventory.PartBL[i];
+            //        break;
+            //    }
+            //}
         }
     }
 }

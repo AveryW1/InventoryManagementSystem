@@ -100,7 +100,31 @@ namespace InventoryManagementSystem
                 result = MessageBox.Show(message, caption, buttons);
                 return null;
             }
-        }        
+        }
+        
+        public static Product lookupProduct(int productID)
+        {
+            try
+            {
+                for (int i = 0; i <= ProductBL.Count; i++)
+                {
+                    if (ProductBL[i].ProductID == productID)
+                    {
+                        return ProductBL[i];
+                    }
+                }
+                return null;
+            }
+            catch
+            {
+                string message = "Product was not found by given product ID.";
+                string caption = "Product not found";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                return null;
+            }
+        }
     }
 
 }

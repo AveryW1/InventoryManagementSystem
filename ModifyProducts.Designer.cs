@@ -133,12 +133,13 @@ namespace InventoryManagementSystem
             // 
             this.buttonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAddProduct.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddProduct.Location = new System.Drawing.Point(943, 424);
+            this.buttonAddProduct.Location = new System.Drawing.Point(1019, 427);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(75, 25);
             this.buttonAddProduct.TabIndex = 20;
             this.buttonAddProduct.Text = "Add";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
             // buttonDeleteProduct
             // 
@@ -291,6 +292,7 @@ namespace InventoryManagementSystem
             this.dataGridViewMProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMProducts.Size = new System.Drawing.Size(615, 274);
             this.dataGridViewMProducts.TabIndex = 23;
+            this.dataGridViewMProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMProducts_CellClick);
             // 
             // ModifyProducts
             // 

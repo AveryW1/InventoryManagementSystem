@@ -40,10 +40,6 @@ namespace InventoryManagementSystem
             InitializeComponent();
             buildBindingParts();
             buildBindingProducts();
-            
-            //This "temporary" fix for setting currentPart at load to prevent null selection modify exception.
-            //Delete after solving DGV selection changed.
-            ModifyParts.currentPart = Inventory.PartBL[0];
         }
 
         //Helper function: Shows Add Part screen.
@@ -191,7 +187,6 @@ namespace InventoryManagementSystem
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
             }
-
         }
 
         private void buttonExitFromMain_Click(object sender, EventArgs e)
@@ -225,9 +220,10 @@ namespace InventoryManagementSystem
                     break;
                 }
             }
+
             ModifyProducts.currentProductID = (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value;
             ModifyProducts.currentProduct = currentPObj;
-            ModifyProducts.currentPModIdx = currentIdx;
+            ModifyProducts.currentPModIdx = currentPIdx;
         }
 
         private void buttonAddProducts_Click(object sender, EventArgs e)
@@ -270,6 +266,19 @@ namespace InventoryManagementSystem
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void buttonSearchProducts_Click(object sender, EventArgs e)
+        {
+            Product searchResult = Inventory.lookupProduct(Int32.Parse(textBoxSearchProducts01.Text));
+            for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            {
+                if (Inventory.ProductBL[i] == searchResult)
+                {
+                    dataGridViewProducts.ClearSelection();
+                    dataGridViewProducts.Rows[i].Selected = true;
+                }
             }
         }
     }

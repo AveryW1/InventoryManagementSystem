@@ -206,11 +206,13 @@ namespace InventoryManagementSystem
             this.buttonSearchProducts.TabIndex = 10;
             this.buttonSearchProducts.Text = "Search";
             this.buttonSearchProducts.UseVisualStyleBackColor = true;
+            this.buttonSearchProducts.Click += new System.EventHandler(this.buttonSearchProducts_Click);
             // 
             // textBoxSearchProducts01
             // 
             this.textBoxSearchProducts01.Location = new System.Drawing.Point(99, 394);
             this.textBoxSearchProducts01.Name = "textBoxSearchProducts01";
+            this.textBoxSearchProducts01.PlaceholderText = "Search by Product ID here";
             this.textBoxSearchProducts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchProducts01.TabIndex = 9;
             // 
