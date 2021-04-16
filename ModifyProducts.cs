@@ -40,26 +40,26 @@ namespace InventoryManagementSystem
             this.Close();
         }
 
-        //Needs to know current part. Use cell click event from parts DGV on Product page.
+        //Will need to use same method as add parts but we're getting object reference warning.
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            //Product.addAssociatedPart();
+            //Product.addAssociatedPart(currentPart);
         }
         
         //Need to adjust code for top DGV being PartsBL list.
         
         private void dataGridViewMProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //currentIdx = dataGridViewMProducts.CurrentCell.RowIndex;
-            //
-            //for (int i = 0; i < Product.AssociatedParts; i++)
-            //{
-            //    if (Inventory.AssociatedParts[i].PartID == (int)dataGridViewMProducts.Rows[currentIdx].Cells[0].Value)
-            //    {
-            //        currentPart = Inventory.PartBL[i];
-            //        break;
-            //    }
-            //}
+            currentIdx = dataGridViewMProducts.CurrentCell.RowIndex;
+            
+            for (int i = 0; i < Inventory.PartBL.Count; i++)
+            {
+                if (Inventory.PartBL[i].PartID == (int)dataGridViewMProducts.Rows[currentIdx].Cells[0].Value)
+                {
+                    currentPart = Inventory.PartBL[i];
+                    break;
+                }
+            }
         }
     }
 }

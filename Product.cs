@@ -17,6 +17,8 @@ namespace InventoryManagementSystem
         public int Min { get; set; }
         public int Max { get; set; }
         
+        
+        
         //Constructor
         public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
@@ -28,7 +30,8 @@ namespace InventoryManagementSystem
             Max = max;
         }
        
-       public void addAssociatedPart(Part part)
+       //Getting 'an object reference is required for the non-static field, method, or property Product.addAssociatedPart'.
+        public void addAssociatedPart(Part part)
         {
             
             AssociatedParts.Add(part);
