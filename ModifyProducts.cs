@@ -16,10 +16,13 @@ namespace InventoryManagementSystem
 
         int currentIdx = 0;
         Part currentPart = null;
+        
+        //Product tempProduct = null;
         public ModifyProducts()
         {
             InitializeComponent();
             dataGridViewMProducts.DataSource = Inventory.PartBL;
+            dataGridViewAssoParts.DataSource = currentProduct.AssociatedParts;
             textBoxMProductID.Text = currentProduct.ProductID.ToString();
             textBoxMProductName.Text = currentProduct.Name;
             textBoxMProductInventory.Text = currentProduct.InStock.ToString();
@@ -40,13 +43,11 @@ namespace InventoryManagementSystem
             this.Close();
         }
 
-        //Will need to use same method as add parts but we're getting object reference warning.
+        //Tip to remember: This had to reference an instnce of the Product class since Product is not static. 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            //Product.addAssociatedPart(currentPart);
+            currentProduct.addAssociatedPart(currentPart);
         }
-        
-        //Need to adjust code for top DGV being PartsBL list.
         
         private void dataGridViewMProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {

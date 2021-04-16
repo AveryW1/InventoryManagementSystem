@@ -12,6 +12,5 @@ namespace InventoryManagementSystem
         {
             MachineID = machineID;
         }
-
     }
 }

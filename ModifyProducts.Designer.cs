@@ -52,10 +52,12 @@ namespace InventoryManagementSystem
             this.labelMProductName = new System.Windows.Forms.Label();
             this.labelMProductID = new System.Windows.Forms.Label();
             this.dataGridViewMProducts = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAssoParts = new System.Windows.Forms.DataGridView();
             this.panelAddProducts03.SuspendLayout();
             this.panelAddProducts02.SuspendLayout();
             this.panelAddProducts1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssoParts)).BeginInit();
             this.SuspendLayout();
             // 
             // labelModifyProducts01
@@ -100,7 +102,7 @@ namespace InventoryManagementSystem
             // 
             this.panelAddProducts02.Controls.Add(this.buttonMProductsSave01);
             this.panelAddProducts02.Controls.Add(this.buttonMProductsCancel01);
-            this.panelAddProducts02.Location = new System.Drawing.Point(883, 777);
+            this.panelAddProducts02.Location = new System.Drawing.Point(925, 790);
             this.panelAddProducts02.Name = "panelAddProducts02";
             this.panelAddProducts02.Size = new System.Drawing.Size(169, 25);
             this.panelAddProducts02.TabIndex = 19;
@@ -133,7 +135,7 @@ namespace InventoryManagementSystem
             // 
             this.buttonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAddProduct.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAddProduct.Location = new System.Drawing.Point(1019, 427);
+            this.buttonAddProduct.Location = new System.Drawing.Point(1019, 414);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(75, 25);
             this.buttonAddProduct.TabIndex = 20;
@@ -145,7 +147,7 @@ namespace InventoryManagementSystem
             // 
             this.buttonDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeleteProduct.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonDeleteProduct.Location = new System.Drawing.Point(977, 726);
+            this.buttonDeleteProduct.Location = new System.Drawing.Point(1019, 738);
             this.buttonDeleteProduct.Name = "buttonDeleteProduct";
             this.buttonDeleteProduct.Size = new System.Drawing.Size(75, 25);
             this.buttonDeleteProduct.TabIndex = 21;
@@ -294,12 +296,27 @@ namespace InventoryManagementSystem
             this.dataGridViewMProducts.TabIndex = 23;
             this.dataGridViewMProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMProducts_CellClick);
             // 
+            // dataGridViewAssoParts
+            // 
+            this.dataGridViewAssoParts.AllowUserToAddRows = false;
+            this.dataGridViewAssoParts.AllowUserToDeleteRows = false;
+            this.dataGridViewAssoParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAssoParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewAssoParts.Location = new System.Drawing.Point(479, 458);
+            this.dataGridViewAssoParts.Name = "dataGridViewAssoParts";
+            this.dataGridViewAssoParts.RowHeadersVisible = false;
+            this.dataGridViewAssoParts.RowTemplate.Height = 25;
+            this.dataGridViewAssoParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAssoParts.Size = new System.Drawing.Size(615, 274);
+            this.dataGridViewAssoParts.TabIndex = 24;
+            // 
             // ModifyProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 827);
+            this.Controls.Add(this.dataGridViewAssoParts);
             this.Controls.Add(this.dataGridViewMProducts);
             this.Controls.Add(this.panelAddProducts1);
             this.Controls.Add(this.buttonDeleteProduct);
@@ -315,6 +332,7 @@ namespace InventoryManagementSystem
             this.panelAddProducts1.ResumeLayout(false);
             this.panelAddProducts1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAssoParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +362,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Label labelMProductName;
         private System.Windows.Forms.Label labelMProductID;
         private System.Windows.Forms.DataGridView dataGridViewMProducts;
+        private System.Windows.Forms.DataGridView dataGridViewAssoParts;
     }
 }

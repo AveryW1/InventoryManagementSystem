@@ -220,7 +220,6 @@ namespace InventoryManagementSystem
                     break;
                 }
             }
-
             ModifyProducts.currentProductID = (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value;
             ModifyProducts.currentProduct = currentPObj;
             ModifyProducts.currentPModIdx = currentPIdx;
