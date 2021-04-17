@@ -46,7 +46,7 @@ namespace InventoryManagementSystem
         {
             if (PartBL.Remove(part))
             {
-                string message = "Part has been successfully removed.";
+                string message = "Part has been removed.";
                 string caption = "Success!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;

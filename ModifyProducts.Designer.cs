@@ -153,6 +153,7 @@ namespace InventoryManagementSystem
             this.buttonDeleteProduct.TabIndex = 21;
             this.buttonDeleteProduct.Text = "Delete";
             this.buttonDeleteProduct.UseVisualStyleBackColor = true;
+            this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
             // 
             // panelAddProducts1
             // 
@@ -309,6 +310,7 @@ namespace InventoryManagementSystem
             this.dataGridViewAssoParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAssoParts.Size = new System.Drawing.Size(615, 274);
             this.dataGridViewAssoParts.TabIndex = 24;
+            this.dataGridViewAssoParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAssoParts_CellClick);
             // 
             // ModifyProducts
             // 

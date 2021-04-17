@@ -38,17 +38,5 @@ namespace InventoryManagementSystem
             AssociatedParts.RemoveAt(partID);
             return true;
         }
-        
-        /*
-        public bool removeAssociatedPart(int s)
-        {
-
-        }
-
-        public Part lookupAssociatedPart(int c)
-        {
-
-        }
-        */
     }
 }

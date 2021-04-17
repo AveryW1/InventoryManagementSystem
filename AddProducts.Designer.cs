@@ -52,12 +52,14 @@ namespace InventoryManagementSystem
             this.labelCandidateParts = new System.Windows.Forms.Label();
             this.labelAssociatedParts01 = new System.Windows.Forms.Label();
             this.labelAddProduct = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewAProducts = new System.Windows.Forms.DataGridView();
+            this.buttonAddProductPart = new System.Windows.Forms.Button();
+            this.dataGridViewAParts = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAAParts = new System.Windows.Forms.DataGridView();
             this.panelAddProducts1.SuspendLayout();
             this.panelAddProducts02.SuspendLayout();
             this.panelAddProducts03.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAAParts)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAddProducts1
@@ -191,7 +193,7 @@ namespace InventoryManagementSystem
             // 
             this.panelAddProducts02.Controls.Add(this.buttonAddProductsSave01);
             this.panelAddProducts02.Controls.Add(this.buttonAddProductsCancel01);
-            this.panelAddProducts02.Location = new System.Drawing.Point(872, 790);
+            this.panelAddProducts02.Location = new System.Drawing.Point(925, 790);
             this.panelAddProducts02.Name = "panelAddProducts02";
             this.panelAddProducts02.Size = new System.Drawing.Size(169, 25);
             this.panelAddProducts02.TabIndex = 8;
@@ -250,7 +252,7 @@ namespace InventoryManagementSystem
             // 
             this.buttonDeleteProducts01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeleteProducts01.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonDeleteProducts01.Location = new System.Drawing.Point(966, 747);
+            this.buttonDeleteProducts01.Location = new System.Drawing.Point(1019, 747);
             this.buttonDeleteProducts01.Name = "buttonDeleteProducts01";
             this.buttonDeleteProducts01.Size = new System.Drawing.Size(75, 25);
             this.buttonDeleteProducts01.TabIndex = 13;
@@ -263,7 +265,7 @@ namespace InventoryManagementSystem
             this.labelCandidateParts.BackColor = System.Drawing.Color.Silver;
             this.labelCandidateParts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelCandidateParts.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCandidateParts.Location = new System.Drawing.Point(712, 99);
+            this.labelCandidateParts.Location = new System.Drawing.Point(711, 110);
             this.labelCandidateParts.Name = "labelCandidateParts";
             this.labelCandidateParts.Size = new System.Drawing.Size(140, 21);
             this.labelCandidateParts.TabIndex = 14;
@@ -275,7 +277,7 @@ namespace InventoryManagementSystem
             this.labelAssociatedParts01.BackColor = System.Drawing.Color.Silver;
             this.labelAssociatedParts01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelAssociatedParts01.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAssociatedParts01.Location = new System.Drawing.Point(675, 472);
+            this.labelAssociatedParts01.Location = new System.Drawing.Point(675, 444);
             this.labelAssociatedParts01.Name = "labelAssociatedParts01";
             this.labelAssociatedParts01.Size = new System.Drawing.Size(243, 21);
             this.labelAssociatedParts01.TabIndex = 15;
@@ -293,30 +295,46 @@ namespace InventoryManagementSystem
             this.labelAddProduct.TabIndex = 16;
             this.labelAddProduct.Text = "Add Product";
             // 
-            // button1
+            // buttonAddProductPart
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(943, 424);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAddProductPart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddProductPart.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAddProductPart.Location = new System.Drawing.Point(1019, 414);
+            this.buttonAddProductPart.Name = "buttonAddProductPart";
+            this.buttonAddProductPart.Size = new System.Drawing.Size(75, 25);
+            this.buttonAddProductPart.TabIndex = 17;
+            this.buttonAddProductPart.Text = "Add";
+            this.buttonAddProductPart.UseVisualStyleBackColor = true;
+            this.buttonAddProductPart.Click += new System.EventHandler(this.buttonAddProductPart_Click);
             // 
-            // dataGridViewAProducts
+            // dataGridViewAParts
             // 
-            this.dataGridViewAProducts.AllowUserToAddRows = false;
-            this.dataGridViewAProducts.AllowUserToDeleteRows = false;
-            this.dataGridViewAProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAProducts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewAProducts.Location = new System.Drawing.Point(479, 134);
-            this.dataGridViewAProducts.Name = "dataGridViewAProducts";
-            this.dataGridViewAProducts.RowHeadersVisible = false;
-            this.dataGridViewAProducts.RowTemplate.Height = 25;
-            this.dataGridViewAProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAProducts.Size = new System.Drawing.Size(615, 274);
-            this.dataGridViewAProducts.TabIndex = 18;
+            this.dataGridViewAParts.AllowUserToAddRows = false;
+            this.dataGridViewAParts.AllowUserToDeleteRows = false;
+            this.dataGridViewAParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewAParts.Location = new System.Drawing.Point(479, 134);
+            this.dataGridViewAParts.Name = "dataGridViewAParts";
+            this.dataGridViewAParts.RowHeadersVisible = false;
+            this.dataGridViewAParts.RowTemplate.Height = 25;
+            this.dataGridViewAParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAParts.Size = new System.Drawing.Size(615, 274);
+            this.dataGridViewAParts.TabIndex = 18;
+            this.dataGridViewAParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAParts_CellClick);
+            // 
+            // dataGridViewAAParts
+            // 
+            this.dataGridViewAAParts.AllowUserToAddRows = false;
+            this.dataGridViewAAParts.AllowUserToDeleteRows = false;
+            this.dataGridViewAAParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAAParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewAAParts.Location = new System.Drawing.Point(479, 467);
+            this.dataGridViewAAParts.Name = "dataGridViewAAParts";
+            this.dataGridViewAAParts.RowHeadersVisible = false;
+            this.dataGridViewAAParts.RowTemplate.Height = 25;
+            this.dataGridViewAAParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAAParts.Size = new System.Drawing.Size(615, 274);
+            this.dataGridViewAAParts.TabIndex = 19;
             // 
             // AddProducts
             // 
@@ -324,8 +342,9 @@ namespace InventoryManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 827);
-            this.Controls.Add(this.dataGridViewAProducts);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridViewAAParts);
+            this.Controls.Add(this.dataGridViewAParts);
+            this.Controls.Add(this.buttonAddProductPart);
             this.Controls.Add(this.labelAddProduct);
             this.Controls.Add(this.labelAssociatedParts01);
             this.Controls.Add(this.labelCandidateParts);
@@ -341,7 +360,8 @@ namespace InventoryManagementSystem
             this.panelAddProducts02.ResumeLayout(false);
             this.panelAddProducts03.ResumeLayout(false);
             this.panelAddProducts03.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAAParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,7 +393,8 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Label labelCandidateParts;
         private System.Windows.Forms.Label labelAssociatedParts01;
         private System.Windows.Forms.Label labelAddProduct;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridViewAProducts;
+        private System.Windows.Forms.Button buttonAddProductPart;
+        private System.Windows.Forms.DataGridView dataGridViewAParts;
+        private System.Windows.Forms.DataGridView dataGridViewAAParts;
     }
 }

@@ -16,6 +16,8 @@ namespace InventoryManagementSystem
 
         int currentIdx = 0;
         Part currentPart = null;
+        int currentAPIdx = 0;
+        Part currentAPart = null;
         
         //Product tempProduct = null;
         public ModifyProducts()
@@ -43,7 +45,7 @@ namespace InventoryManagementSystem
             this.Close();
         }
 
-        //Tip to remember: This had to reference an instnce of the Product class since Product is not static. 
+        //Tip to remember: This had to reference an instnce of the Product class (currentProduct) since Product is not static. 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
             currentProduct.addAssociatedPart(currentPart);
@@ -58,6 +60,45 @@ namespace InventoryManagementSystem
                 if (Inventory.PartBL[i].PartID == (int)dataGridViewMProducts.Rows[currentIdx].Cells[0].Value)
                 {
                     currentPart = Inventory.PartBL[i];
+                    break;
+                }
+            }
+        }
+
+        private void buttonDeleteProduct_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to delete this part?";
+            string caption = "Delete Associated Part?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (currentAPIdx >= 0)
+                {
+                    currentProduct.removeAssociatePart(currentAPIdx);
+                    currentAPIdx = -1;
+                }
+                else
+                {
+                    string message1 = "Part not found. Please click a part in the list.";
+                    string caption1 = "Failed";
+                    MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                    DialogResult result1;
+                    result1 = MessageBox.Show(message1, caption1, buttons1);
+                }
+            }
+        }
+
+        private void dataGridViewAssoParts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentAPIdx = dataGridViewAssoParts.CurrentCell.RowIndex;
+
+            for (int i = 0; i < currentProduct.AssociatedParts.Count; i++)
+            {
+                if (currentProduct.AssociatedParts[i].PartID == (int)dataGridViewAssoParts.Rows[currentAPIdx].Cells[0].Value)
+                {
+                    currentAPart = currentProduct.AssociatedParts[i];
                     break;
                 }
             }
