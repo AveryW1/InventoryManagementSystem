@@ -247,6 +247,7 @@ namespace InventoryManagementSystem
             this.buttonSearchProducts01.TabIndex = 12;
             this.buttonSearchProducts01.Text = "Search";
             this.buttonSearchProducts01.UseVisualStyleBackColor = true;
+            this.buttonSearchProducts01.Click += new System.EventHandler(this.buttonSearchProducts01_Click);
             // 
             // buttonDeleteProducts01
             // 
@@ -258,6 +259,7 @@ namespace InventoryManagementSystem
             this.buttonDeleteProducts01.TabIndex = 13;
             this.buttonDeleteProducts01.Text = "Delete";
             this.buttonDeleteProducts01.UseVisualStyleBackColor = true;
+            this.buttonDeleteProducts01.Click += new System.EventHandler(this.buttonDeleteProducts01_Click);
             // 
             // labelCandidateParts
             // 
@@ -335,6 +337,7 @@ namespace InventoryManagementSystem
             this.dataGridViewAAParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAAParts.Size = new System.Drawing.Size(615, 274);
             this.dataGridViewAAParts.TabIndex = 19;
+            this.dataGridViewAAParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAAParts_CellClick);
             // 
             // AddProducts
             // 
