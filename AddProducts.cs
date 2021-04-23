@@ -14,6 +14,7 @@ namespace InventoryManagementSystem
         Part currentPart = null;
         int currentAAIdx = 0;
         Part currentAAPart = null;
+        Product currentProduct = null;
 
         //Used to track Product ids in use.
         List<int> ProductIDs = new List<int>();
@@ -75,6 +76,8 @@ namespace InventoryManagementSystem
                         Inventory.ProductBL[i].AssociatedParts.Add(currentPart);
                     }
                 }
+                //Sets current product
+                findCurrentProduct();
             }
             else
             {
@@ -82,6 +85,7 @@ namespace InventoryManagementSystem
                 Inventory.addProduct(tempProduct);
                 tempProduct.AssociatedParts.Add(currentPart);
                 dataGridViewAAParts.DataSource = tempProduct.AssociatedParts;
+                findCurrentProduct();
             }
         }
 
@@ -99,7 +103,7 @@ namespace InventoryManagementSystem
             }
         }
 
-        //helper function
+        //helper function. Creates a list of Product IDs to check for existing parts before making a new one.
         public void populateIDlist()
         {
             for (int i = 0; i < Inventory.ProductBL.Count; i++)
@@ -154,10 +158,16 @@ namespace InventoryManagementSystem
             }
         }
 
-        //Need to look up associated part without having to click in DGV first.
-        //private void buttonSearchProducts01_Click(object sender, EventArgs e)
-        //{
-        //    Convert.ToInt32(textBoxSearchProducts01.Text)
-        //}
+        //Helper Function. Sets current Product for later use.
+        private void findCurrentProduct()
+        {
+            for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            {
+                if (Inventory.ProductBL[i].ProductID == Convert.ToInt32(textBoxProductID.Text))
+                {
+                    currentProduct = Inventory.ProductBL[i];
+                }
+            }
+        }
     }
 }

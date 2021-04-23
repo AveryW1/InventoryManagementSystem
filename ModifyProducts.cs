@@ -103,5 +103,18 @@ namespace InventoryManagementSystem
                 }
             }
         }
+
+        private void buttonSearchProducts01_Click(object sender, EventArgs e)
+        {
+            Part searchResult = currentProduct.lookupAssociatedPart(Int32.Parse(textBoxSearchProducts01.Text));
+            for (int i = 0; i < currentProduct.AssociatedParts.Count; i++)
+            {
+                if (currentProduct.AssociatedParts[i] == searchResult)
+                {
+                    dataGridViewAssoParts.ClearSelection();
+                    dataGridViewAssoParts.Rows[i].Selected = true;
+                }
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace InventoryManagementSystem
 {
@@ -39,9 +40,29 @@ namespace InventoryManagementSystem
             return true;
         }
 
-        //public Part lookupAssociatedPart(int partID)
-        //{
-        //
-        //}
+        //Written to work for ModifyProducts search. Will not work with Add Products search.
+        public Part lookupAssociatedPart(int partID)
+        {
+            try
+            {
+                for (int i = 0; i <= ModifyProducts.currentProduct.AssociatedParts.Count; i++)
+                {
+                    if (AssociatedParts[i].PartID == partID)
+                    {
+                        return AssociatedParts[i];
+                    }
+                }
+                return null;
+            }
+            catch
+            {
+                string message = "Part was not found by given part ID.";
+                string caption = "Part not found";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                return null;
+            }
+        }
     }
 }

@@ -45,9 +45,6 @@ namespace InventoryManagementSystem
             this.panelAddProducts02 = new System.Windows.Forms.Panel();
             this.buttonAddProductsSave01 = new System.Windows.Forms.Button();
             this.buttonAddProductsCancel01 = new System.Windows.Forms.Button();
-            this.textBoxSearchProducts01 = new System.Windows.Forms.TextBox();
-            this.panelAddProducts03 = new System.Windows.Forms.Panel();
-            this.buttonSearchProducts01 = new System.Windows.Forms.Button();
             this.buttonDeleteProducts01 = new System.Windows.Forms.Button();
             this.labelCandidateParts = new System.Windows.Forms.Label();
             this.labelAssociatedParts01 = new System.Windows.Forms.Label();
@@ -55,11 +52,14 @@ namespace InventoryManagementSystem
             this.buttonAddProductPart = new System.Windows.Forms.Button();
             this.dataGridViewAParts = new System.Windows.Forms.DataGridView();
             this.dataGridViewAAParts = new System.Windows.Forms.DataGridView();
+            this.panelAddProducts03 = new System.Windows.Forms.Panel();
+            this.buttonSearchAssoPart = new System.Windows.Forms.Button();
+            this.textBoxSearchAssoPart = new System.Windows.Forms.TextBox();
             this.panelAddProducts1.SuspendLayout();
             this.panelAddProducts02.SuspendLayout();
-            this.panelAddProducts03.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAAParts)).BeginInit();
+            this.panelAddProducts03.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAddProducts1
@@ -222,33 +222,6 @@ namespace InventoryManagementSystem
             this.buttonAddProductsCancel01.UseVisualStyleBackColor = true;
             this.buttonAddProductsCancel01.Click += new System.EventHandler(this.buttonAddProductsCancel01_Click);
             // 
-            // textBoxSearchProducts01
-            // 
-            this.textBoxSearchProducts01.Location = new System.Drawing.Point(90, 9);
-            this.textBoxSearchProducts01.Name = "textBoxSearchProducts01";
-            this.textBoxSearchProducts01.Size = new System.Drawing.Size(253, 22);
-            this.textBoxSearchProducts01.TabIndex = 11;
-            // 
-            // panelAddProducts03
-            // 
-            this.panelAddProducts03.Controls.Add(this.buttonSearchProducts01);
-            this.panelAddProducts03.Controls.Add(this.textBoxSearchProducts01);
-            this.panelAddProducts03.Location = new System.Drawing.Point(675, 23);
-            this.panelAddProducts03.Name = "panelAddProducts03";
-            this.panelAddProducts03.Size = new System.Drawing.Size(366, 38);
-            this.panelAddProducts03.TabIndex = 12;
-            // 
-            // buttonSearchProducts01
-            // 
-            this.buttonSearchProducts01.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSearchProducts01.Location = new System.Drawing.Point(9, 9);
-            this.buttonSearchProducts01.Name = "buttonSearchProducts01";
-            this.buttonSearchProducts01.Size = new System.Drawing.Size(75, 25);
-            this.buttonSearchProducts01.TabIndex = 12;
-            this.buttonSearchProducts01.Text = "Search";
-            this.buttonSearchProducts01.UseVisualStyleBackColor = true;
-            this.buttonSearchProducts01.Click += new System.EventHandler(this.buttonSearchProducts01_Click);
-            // 
             // buttonDeleteProducts01
             // 
             this.buttonDeleteProducts01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -339,12 +312,39 @@ namespace InventoryManagementSystem
             this.dataGridViewAAParts.TabIndex = 19;
             this.dataGridViewAAParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAAParts_CellClick);
             // 
+            // panelAddProducts03
+            // 
+            this.panelAddProducts03.Controls.Add(this.buttonSearchAssoPart);
+            this.panelAddProducts03.Controls.Add(this.textBoxSearchAssoPart);
+            this.panelAddProducts03.Location = new System.Drawing.Point(479, 747);
+            this.panelAddProducts03.Name = "panelAddProducts03";
+            this.panelAddProducts03.Size = new System.Drawing.Size(366, 38);
+            this.panelAddProducts03.TabIndex = 20;
+            // 
+            // buttonSearchAssoPart
+            // 
+            this.buttonSearchAssoPart.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSearchAssoPart.Location = new System.Drawing.Point(9, 9);
+            this.buttonSearchAssoPart.Name = "buttonSearchAssoPart";
+            this.buttonSearchAssoPart.Size = new System.Drawing.Size(75, 25);
+            this.buttonSearchAssoPart.TabIndex = 12;
+            this.buttonSearchAssoPart.Text = "Search";
+            this.buttonSearchAssoPart.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSearchAssoPart
+            // 
+            this.textBoxSearchAssoPart.Location = new System.Drawing.Point(90, 9);
+            this.textBoxSearchAssoPart.Name = "textBoxSearchAssoPart";
+            this.textBoxSearchAssoPart.Size = new System.Drawing.Size(253, 22);
+            this.textBoxSearchAssoPart.TabIndex = 11;
+            // 
             // AddProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 827);
+            this.Controls.Add(this.panelAddProducts03);
             this.Controls.Add(this.dataGridViewAAParts);
             this.Controls.Add(this.dataGridViewAParts);
             this.Controls.Add(this.buttonAddProductPart);
@@ -352,7 +352,6 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.labelAssociatedParts01);
             this.Controls.Add(this.labelCandidateParts);
             this.Controls.Add(this.buttonDeleteProducts01);
-            this.Controls.Add(this.panelAddProducts03);
             this.Controls.Add(this.panelAddProducts02);
             this.Controls.Add(this.panelAddProducts1);
             this.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -361,10 +360,10 @@ namespace InventoryManagementSystem
             this.panelAddProducts1.ResumeLayout(false);
             this.panelAddProducts1.PerformLayout();
             this.panelAddProducts02.ResumeLayout(false);
-            this.panelAddProducts03.ResumeLayout(false);
-            this.panelAddProducts03.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAAParts)).EndInit();
+            this.panelAddProducts03.ResumeLayout(false);
+            this.panelAddProducts03.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,9 +388,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Button buttonAddProductsSave01;
         private System.Windows.Forms.Button buttonAddProductsCancel01;
         private System.Windows.Forms.Panel Add;
-        private System.Windows.Forms.TextBox textBoxSearchProducts01;
-        private System.Windows.Forms.Panel panelAddProducts03;
-        private System.Windows.Forms.Button buttonSearchProducts01;
         private System.Windows.Forms.Button buttonDeleteProducts01;
         private System.Windows.Forms.Label labelCandidateParts;
         private System.Windows.Forms.Label labelAssociatedParts01;
@@ -399,5 +395,8 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Button buttonAddProductPart;
         private System.Windows.Forms.DataGridView dataGridViewAParts;
         private System.Windows.Forms.DataGridView dataGridViewAAParts;
+        private System.Windows.Forms.Panel panelAddProducts03;
+        private System.Windows.Forms.Button buttonSearchAssoPart;
+        private System.Windows.Forms.TextBox textBoxSearchAssoPart;
     }
 }

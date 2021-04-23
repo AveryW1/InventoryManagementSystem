@@ -13,6 +13,7 @@ namespace InventoryManagementSystem
         public AddParts()
         {
             InitializeComponent();
+            checkBoxes();
         }
         
         private void radioButtonOutsourced_CheckedChanged(object sender, EventArgs e)
@@ -53,5 +54,25 @@ namespace InventoryManagementSystem
         {
             this.Close();
         }
+
+        /*Checks if textboxes are validated before allowing save. Can run this function anytime focus is lost from a textbox.
+        Use another method called allowSave to determine if save is enabled */
+        private void checkBoxes()
+        {
+            int someNumber;
+            if (!Int32.TryParse(textBoxPartID.Text, out someNumber))
+            {
+                textBoxPartID.BackColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                textBoxPartID.BackColor = System.Drawing.Color.White;
+            }
+        }
     }
 }
+
+
+/*
+ Check condition, set background to red, add textboxes to list, check if value of background is red, enable/disable save
+ */
