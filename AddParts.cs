@@ -13,7 +13,6 @@ namespace InventoryManagementSystem
         public AddParts()
         {
             InitializeComponent();
-            checkBoxes();
         }
         
         private void radioButtonOutsourced_CheckedChanged(object sender, EventArgs e)
@@ -55,24 +54,49 @@ namespace InventoryManagementSystem
             this.Close();
         }
 
-        /*Checks if textboxes are validated before allowing save. Can run this function anytime focus is lost from a textbox.
-        Use another method called allowSave to determine if save is enabled */
-        private void checkBoxes()
+        /*The below fucntions validate the textboxes and enables/disables save. Can run this function anytime focus is lost from a textbox.
+        Use another method called allowSave to determine if save is enabled. 1 checkbox method for each field.
+        Called seperately by lost focus events.
+        Have to find a way to disable save if any are wrong. create save enabled function that checks color or textboxes.
+        */
+        private void checkBoxes_IntergersAP(Control boxName)
         {
             int someNumber;
-            if (!Int32.TryParse(textBoxPartID.Text, out someNumber))
+            if (!Int32.TryParse(boxName.Text, out someNumber))
             {
-                textBoxPartID.BackColor = System.Drawing.Color.Red;
+                boxName.BackColor = System.Drawing.Color.Red;
+                buttonPartSave.Enabled = false;
             }
             else
             {
-                textBoxPartID.BackColor = System.Drawing.Color.White;
+                boxName.BackColor = System.Drawing.Color.White;
+                buttonPartSave.Enabled = true;
             }
+        }
+        private void textBoxPartID_LostFocus (object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxPartID);
+        }
+
+        private void textBoxPartInventory_LostFocus(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxPartInventory);
+        }
+
+        private void textBoxPartMax_LostFocus(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxPartMax);
+        }
+
+        private void textBoxPartMin_LostFocus(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxPartMin);
         }
     }
 }
 
 
 /*
- Check condition, set background to red, add textboxes to list, check if value of background is red, enable/disable save
+ machineID/name can be handled with an if statement for radiobutton checked. others with strings or decimals.
+Min Max can be handled with if statements
  */

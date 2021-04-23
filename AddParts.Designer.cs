@@ -81,6 +81,7 @@ namespace InventoryManagementSystem
             this.textBoxPartMin.Name = "textBoxPartMin";
             this.textBoxPartMin.Size = new System.Drawing.Size(62, 23);
             this.textBoxPartMin.TabIndex = 15;
+            this.textBoxPartMin.LostFocus += new System.EventHandler(this.textBoxPartMin_LostFocus);
             // 
             // textBoxPartMax
             // 
@@ -88,6 +89,7 @@ namespace InventoryManagementSystem
             this.textBoxPartMax.Name = "textBoxPartMax";
             this.textBoxPartMax.Size = new System.Drawing.Size(62, 23);
             this.textBoxPartMax.TabIndex = 14;
+            this.textBoxPartMax.LostFocus += new System.EventHandler(this.textBoxPartMax_LostFocus);
             // 
             // textBoxPartMachineID
             // 
@@ -116,6 +118,7 @@ namespace InventoryManagementSystem
             this.textBoxPartInventory.Name = "textBoxPartInventory";
             this.textBoxPartInventory.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartInventory.TabIndex = 10;
+            this.textBoxPartInventory.LostFocus += new System.EventHandler(this.textBoxPartInventory_LostFocus);
             // 
             // textBoxPartID
             // 
@@ -123,6 +126,7 @@ namespace InventoryManagementSystem
             this.textBoxPartID.Name = "textBoxPartID";
             this.textBoxPartID.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartID.TabIndex = 9;
+            this.textBoxPartID.LostFocus += new System.EventHandler(this.textBoxPartID_LostFocus);
             // 
             // radioButtonPartOutsourced
             // 
