@@ -1,23 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+using System.ComponentModel;
 
 namespace InventoryManagementSystem
 {
     public partial class AddParts : Form
     {
+        //Binding list of Controls
+        BindingList<Control> controls = new BindingList<Control>();
+        
         public AddParts()
         {
             InitializeComponent();
+            controls.Add(textBoxPartID);
+            controls.Add(textBoxPartInventory);
+            controls.Add(textBoxPartName);
+            controls.Add(textBoxPartPriceCost);
+            controls.Add(textBoxPartMachineID);
+            controls.Add(textBoxPartMax);
+            controls.Add(textBoxPartMin);
+            buttonPartSave.Enabled = false;
         }
         
         private void radioButtonOutsourced_CheckedChanged(object sender, EventArgs e)
         {
             labelPartMacIDComNA.Text = "Company Name";
+            checkBoxes_RadioAP(textBoxPartMachineID);
+            button_SaveEnabledCheck();
+        }
+        private void radioButtonPartInHouse_CheckedChanged(object sender, EventArgs e)
+        {
+            labelPartMacIDComNA.Text = "Machine ID";
+            checkBoxes_RadioAP(textBoxPartMachineID);
+            button_SaveEnabledCheck();
         }
 
         private void buttonPartSave_Click(object sender, EventArgs e)
@@ -32,6 +49,7 @@ namespace InventoryManagementSystem
                 {
                     Inventory.addPart(new Outsourced(Convert.ToInt32(textBoxPartID.Text), textBoxPartName.Text, Convert.ToDecimal(textBoxPartPriceCost.Text), Convert.ToInt32(textBoxPartInventory.Text), Convert.ToInt32(textBoxPartMax.Text), Convert.ToInt32(textBoxPartMin.Text), textBoxPartMachineID.Text));
                 }
+                this.Close();
             }
             catch(FormatException)
             { 
@@ -41,56 +59,133 @@ namespace InventoryManagementSystem
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
             }
-            this.Close();
         }
 
-        private void radioButtonPartInHouse_CheckedChanged(object sender, EventArgs e)
-        {
-            labelPartMacIDComNA.Text = "Machine ID";
-        }
-
+       
         private void buttonPartCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        /*The below fucntions validate the textboxes and enables/disables save. Can run this function anytime focus is lost from a textbox.
-        Use another method called allowSave to determine if save is enabled. 1 checkbox method for each field.
-        Called seperately by lost focus events.
-        Have to find a way to disable save if any are wrong. create save enabled function that checks color or textboxes.
-        */
+        /*The below fucntions validate the textboxes and enables/disables save. 
+        Iterates through list of controls and checks color of background.
+        
+         Not working. If Min is satisfied then save is enabled regardless of other boxes.
+         */
+        private void button_SaveEnabledCheck()
+        {
+            for (int i = 0; i < controls.Count; i++)
+            {
+                if (controls[i].BackColor != System.Drawing.Color.White)
+                {
+                    buttonPartSave.Enabled = false;
+                }
+                else
+                {
+                    buttonPartSave.Enabled = true;
+                }
+            }
+        }
+
+        //Checks if input is an interger.
         private void checkBoxes_IntergersAP(Control boxName)
         {
             int someNumber;
             if (!Int32.TryParse(boxName.Text, out someNumber))
             {
-                boxName.BackColor = System.Drawing.Color.Red;
-                buttonPartSave.Enabled = false;
+                boxName.BackColor = System.Drawing.Color.MistyRose;
             }
             else
             {
                 boxName.BackColor = System.Drawing.Color.White;
-                buttonPartSave.Enabled = true;
             }
         }
-        private void textBoxPartID_LostFocus (object sender, System.EventArgs e)
+        //Checks if input is not null.
+        private void checkBoxes_StringAP(Control boxName)
+        {
+            if (String.IsNullOrWhiteSpace(boxName.Text))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks if input is a decimal. All inputs are either passing or failing due to the req of "m"
+        private void checkBoxes_DecimalAP(Control boxName)
+        {
+            decimal someNumber;
+            NumberStyles styles = NumberStyles.Currency;
+            CultureInfo culture = CultureInfo.CurrentUICulture;
+
+            if (!decimal.TryParse(boxName.Text, styles, culture, out someNumber))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks radio button state and then checks string or int.
+        private void checkBoxes_RadioAP(Control boxName)
+        {
+            //checks state of radio button
+            if (radioButtonPartOutsourced.Checked)
+            {
+                checkBoxes_StringAP(boxName);
+                button_SaveEnabledCheck();
+            }
+            else
+            {
+                checkBoxes_IntergersAP(boxName);
+                button_SaveEnabledCheck();
+            }
+        }
+
+        private void textBoxPartID_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartID);
+            button_SaveEnabledCheck();
         }
 
-        private void textBoxPartInventory_LostFocus(object sender, System.EventArgs e)
+        private void textBoxPartInventory_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartInventory);
+            button_SaveEnabledCheck();
         }
 
-        private void textBoxPartMax_LostFocus(object sender, System.EventArgs e)
+        private void textBoxPartMax_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartMax);
+            button_SaveEnabledCheck();
         }
 
-        private void textBoxPartMin_LostFocus(object sender, System.EventArgs e)
+        private void textBoxPartMin_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartMin);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxPartName_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_StringAP(textBoxPartName);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxPartPriceCost_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_DecimalAP(textBoxPartPriceCost);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxPartMachineID_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_RadioAP(textBoxPartMachineID);
+            button_SaveEnabledCheck();
         }
     }
 }
@@ -99,4 +194,6 @@ namespace InventoryManagementSystem
 /*
  machineID/name can be handled with an if statement for radiobutton checked. others with strings or decimals.
 Min Max can be handled with if statements
+
+load with save disabled and textboxes colored grey for wrong. have function that checks boxes each time lost focus (create control list and iterate)
  */

@@ -34,8 +34,9 @@ namespace InventoryManagementSystem
             this.textBoxPartMax = new System.Windows.Forms.TextBox();
             this.textBoxPartMachineID = new System.Windows.Forms.TextBox();
             this.textBoxPartPriceCost = new System.Windows.Forms.TextBox();
-            this.textBoxPartName = new System.Windows.Forms.TextBox();
             this.textBoxPartInventory = new System.Windows.Forms.TextBox();
+            this.labelPartInventory = new System.Windows.Forms.Label();
+            this.textBoxPartName = new System.Windows.Forms.TextBox();
             this.textBoxPartID = new System.Windows.Forms.TextBox();
             this.radioButtonPartOutsourced = new System.Windows.Forms.RadioButton();
             this.radioButtonPartInHouse = new System.Windows.Forms.RadioButton();
@@ -43,7 +44,6 @@ namespace InventoryManagementSystem
             this.labelPartMin = new System.Windows.Forms.Label();
             this.labelPartMax = new System.Windows.Forms.Label();
             this.labelPartPriceCost = new System.Windows.Forms.Label();
-            this.labelPartInventory = new System.Windows.Forms.Label();
             this.labelPartName = new System.Windows.Forms.Label();
             this.labelPartID = new System.Windows.Forms.Label();
             this.labelAddPart = new System.Windows.Forms.Label();
@@ -77,56 +77,76 @@ namespace InventoryManagementSystem
             // 
             // textBoxPartMin
             // 
+            this.textBoxPartMin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPartMin.Location = new System.Drawing.Point(243, 161);
             this.textBoxPartMin.Name = "textBoxPartMin";
             this.textBoxPartMin.Size = new System.Drawing.Size(62, 23);
             this.textBoxPartMin.TabIndex = 15;
-            this.textBoxPartMin.LostFocus += new System.EventHandler(this.textBoxPartMin_LostFocus);
+            this.textBoxPartMin.TextChanged += new System.EventHandler(this.textBoxPartMin_TextChanged);
             // 
             // textBoxPartMax
             // 
+            this.textBoxPartMax.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPartMax.Location = new System.Drawing.Point(124, 161);
             this.textBoxPartMax.Name = "textBoxPartMax";
             this.textBoxPartMax.Size = new System.Drawing.Size(62, 23);
             this.textBoxPartMax.TabIndex = 14;
-            this.textBoxPartMax.LostFocus += new System.EventHandler(this.textBoxPartMax_LostFocus);
+            this.textBoxPartMax.TextChanged += new System.EventHandler(this.textBoxPartMax_TextChanged);
             // 
             // textBoxPartMachineID
             // 
+            this.textBoxPartMachineID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPartMachineID.Location = new System.Drawing.Point(124, 192);
             this.textBoxPartMachineID.Name = "textBoxPartMachineID";
             this.textBoxPartMachineID.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartMachineID.TabIndex = 13;
+            this.textBoxPartMachineID.TextChanged += new System.EventHandler(textBoxPartMachineID_TextChanged);
             // 
             // textBoxPartPriceCost
             // 
+            this.textBoxPartPriceCost.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPartPriceCost.Location = new System.Drawing.Point(124, 103);
             this.textBoxPartPriceCost.Name = "textBoxPartPriceCost";
             this.textBoxPartPriceCost.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartPriceCost.TabIndex = 12;
-            // 
-            // textBoxPartName
-            // 
-            this.textBoxPartName.Location = new System.Drawing.Point(124, 74);
-            this.textBoxPartName.Name = "textBoxPartName";
-            this.textBoxPartName.Size = new System.Drawing.Size(180, 23);
-            this.textBoxPartName.TabIndex = 11;
+            this.textBoxPartPriceCost.TextChanged += new System.EventHandler(this.textBoxPartPriceCost_TextChanged);
             // 
             // textBoxPartInventory
             // 
+            this.textBoxPartInventory.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPartInventory.Location = new System.Drawing.Point(124, 132);
             this.textBoxPartInventory.Name = "textBoxPartInventory";
             this.textBoxPartInventory.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartInventory.TabIndex = 10;
-            this.textBoxPartInventory.LostFocus += new System.EventHandler(this.textBoxPartInventory_LostFocus);
+            this.textBoxPartInventory.TextChanged += new System.EventHandler(this.textBoxPartInventory_TextChanged);
+            // 
+            // labelPartInventory
+            // 
+            this.labelPartInventory.AutoSize = true;
+            this.labelPartInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPartInventory.Location = new System.Drawing.Point(31, 136);
+            this.labelPartInventory.Name = "labelPartInventory";
+            this.labelPartInventory.Size = new System.Drawing.Size(75, 19);
+            this.labelPartInventory.TabIndex = 2;
+            this.labelPartInventory.Text = "Inventory";
+            // 
+            // textBoxPartName
+            // 
+            this.textBoxPartName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxPartName.Location = new System.Drawing.Point(124, 74);
+            this.textBoxPartName.Name = "textBoxPartName";
+            this.textBoxPartName.Size = new System.Drawing.Size(180, 23);
+            this.textBoxPartName.TabIndex = 11;
+            this.textBoxPartName.TextChanged += new System.EventHandler(this.textBoxPartName_TextChanged);
             // 
             // textBoxPartID
             // 
+            this.textBoxPartID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxPartID.Location = new System.Drawing.Point(124, 45);
             this.textBoxPartID.Name = "textBoxPartID";
             this.textBoxPartID.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartID.TabIndex = 9;
-            this.textBoxPartID.LostFocus += new System.EventHandler(this.textBoxPartID_LostFocus);
+            this.textBoxPartID.TextChanged += new System.EventHandler(this.textBoxPartID_TextChanged);
             // 
             // radioButtonPartOutsourced
             // 
@@ -193,16 +213,6 @@ namespace InventoryManagementSystem
             this.labelPartPriceCost.Size = new System.Drawing.Size(77, 19);
             this.labelPartPriceCost.TabIndex = 3;
             this.labelPartPriceCost.Text = "Price/Cost";
-            // 
-            // labelPartInventory
-            // 
-            this.labelPartInventory.AutoSize = true;
-            this.labelPartInventory.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPartInventory.Location = new System.Drawing.Point(31, 136);
-            this.labelPartInventory.Name = "labelPartInventory";
-            this.labelPartInventory.Size = new System.Drawing.Size(75, 19);
-            this.labelPartInventory.TabIndex = 2;
-            this.labelPartInventory.Text = "Inventory";
             // 
             // labelPartName
             // 
