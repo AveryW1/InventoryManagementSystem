@@ -73,67 +73,74 @@ namespace InventoryManagementSystem
             this.panelAddProducts1.Controls.Add(this.labelProductMin);
             this.panelAddProducts1.Controls.Add(this.labelProductMax);
             this.panelAddProducts1.Controls.Add(this.labelProductPriceCost);
-            this.panelAddProducts1.Controls.Add(this.labelProductInventory);
             this.panelAddProducts1.Controls.Add(this.labelProductName);
             this.panelAddProducts1.Controls.Add(this.labelProductID);
+            this.panelAddProducts1.Controls.Add(this.labelProductInventory);
             this.panelAddProducts1.Location = new System.Drawing.Point(22, 134);
             this.panelAddProducts1.Name = "panelAddProducts1";
-            this.panelAddProducts1.Size = new System.Drawing.Size(318, 236);
+            this.panelAddProducts1.Size = new System.Drawing.Size(291, 213);
             this.panelAddProducts1.TabIndex = 2;
             // 
             // textBoxProductMin
             // 
             this.textBoxProductMin.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductMin.Location = new System.Drawing.Point(241, 192);
+            this.textBoxProductMin.Location = new System.Drawing.Point(224, 172);
             this.textBoxProductMin.Name = "textBoxProductMin";
             this.textBoxProductMin.Size = new System.Drawing.Size(54, 30);
             this.textBoxProductMin.TabIndex = 15;
+            this.textBoxProductMin.TextChanged += new System.EventHandler(textBoxProductMin_TextChanged);
             // 
             // textBoxProductMax
             // 
             this.textBoxProductMax.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductMax.Location = new System.Drawing.Point(140, 192);
+            this.textBoxProductMax.Location = new System.Drawing.Point(123, 172);
             this.textBoxProductMax.Name = "textBoxProductMax";
             this.textBoxProductMax.Size = new System.Drawing.Size(54, 30);
             this.textBoxProductMax.TabIndex = 14;
+            this.textBoxProductMax.TextChanged += new System.EventHandler(textBoxProductMax_TextChanged);
+
             // 
             // textBoxProductPrice
             // 
             this.textBoxProductPrice.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductPrice.Location = new System.Drawing.Point(140, 150);
+            this.textBoxProductPrice.Location = new System.Drawing.Point(123, 100);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
             this.textBoxProductPrice.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductPrice.TabIndex = 12;
+            this.textBoxProductPrice.TextChanged += new System.EventHandler(textBoxProductPrice_TextChanged);
             // 
             // textBoxProductName
             // 
             this.textBoxProductName.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductName.Location = new System.Drawing.Point(140, 68);
+            this.textBoxProductName.Location = new System.Drawing.Point(123, 64);
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductName.TabIndex = 11;
+            this.textBoxProductName.TextChanged += new System.EventHandler(textBoxProductName_TextChanged);
             // 
             // textBoxProductInventory
             // 
             this.textBoxProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductInventory.Location = new System.Drawing.Point(140, 109);
+            this.textBoxProductInventory.Location = new System.Drawing.Point(123, 136);
             this.textBoxProductInventory.Name = "textBoxProductInventory";
             this.textBoxProductInventory.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductInventory.TabIndex = 10;
+            this.textBoxProductInventory.TextChanged += new System.EventHandler(textBoxProductInventory_TextChanged);
             // 
             // textBoxProductID
             // 
             this.textBoxProductID.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxProductID.Location = new System.Drawing.Point(140, 28);
+            this.textBoxProductID.Location = new System.Drawing.Point(123, 28);
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductID.TabIndex = 9;
+            this.textBoxProductID.TextChanged += new System.EventHandler(textBoxProductID_TextChanged);
             // 
             // labelProductMin
             // 
             this.labelProductMin.AutoSize = true;
             this.labelProductMin.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductMin.Location = new System.Drawing.Point(200, 195);
+            this.labelProductMin.Location = new System.Drawing.Point(183, 175);
             this.labelProductMin.Name = "labelProductMin";
             this.labelProductMin.Size = new System.Drawing.Size(40, 23);
             this.labelProductMin.TabIndex = 5;
@@ -143,7 +150,7 @@ namespace InventoryManagementSystem
             // 
             this.labelProductMax.AutoSize = true;
             this.labelProductMax.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductMax.Location = new System.Drawing.Point(62, 195);
+            this.labelProductMax.Location = new System.Drawing.Point(44, 175);
             this.labelProductMax.Name = "labelProductMax";
             this.labelProductMax.Size = new System.Drawing.Size(45, 23);
             this.labelProductMax.TabIndex = 4;
@@ -153,7 +160,7 @@ namespace InventoryManagementSystem
             // 
             this.labelProductPriceCost.AutoSize = true;
             this.labelProductPriceCost.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductPriceCost.Location = new System.Drawing.Point(56, 153);
+            this.labelProductPriceCost.Location = new System.Drawing.Point(38, 103);
             this.labelProductPriceCost.Name = "labelProductPriceCost";
             this.labelProductPriceCost.Size = new System.Drawing.Size(51, 23);
             this.labelProductPriceCost.TabIndex = 3;
@@ -163,7 +170,7 @@ namespace InventoryManagementSystem
             // 
             this.labelProductInventory.AutoSize = true;
             this.labelProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductInventory.Location = new System.Drawing.Point(18, 112);
+            this.labelProductInventory.Location = new System.Drawing.Point(1, 139);
             this.labelProductInventory.Name = "labelProductInventory";
             this.labelProductInventory.Size = new System.Drawing.Size(88, 23);
             this.labelProductInventory.TabIndex = 2;
@@ -173,7 +180,7 @@ namespace InventoryManagementSystem
             // 
             this.labelProductName.AutoSize = true;
             this.labelProductName.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductName.Location = new System.Drawing.Point(48, 68);
+            this.labelProductName.Location = new System.Drawing.Point(31, 67);
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(58, 23);
             this.labelProductName.TabIndex = 1;
@@ -183,7 +190,7 @@ namespace InventoryManagementSystem
             // 
             this.labelProductID.AutoSize = true;
             this.labelProductID.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductID.Location = new System.Drawing.Point(79, 31);
+            this.labelProductID.Location = new System.Drawing.Point(62, 31);
             this.labelProductID.Name = "labelProductID";
             this.labelProductID.Size = new System.Drawing.Size(27, 23);
             this.labelProductID.TabIndex = 0;

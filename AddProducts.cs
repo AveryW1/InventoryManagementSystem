@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace InventoryManagementSystem
@@ -19,10 +17,20 @@ namespace InventoryManagementSystem
         //Used to track Product ids in use.
         List<int> ProductIDs = new List<int>();
 
+        //Used to track textbox controls
+        private BindingList<Control> appcontrols = new BindingList<Control>();
+
         public AddProducts()
         {
             InitializeComponent();
             buildDGVs();
+            appcontrols.Add(textBoxProductID);
+            appcontrols.Add(textBoxProductName);
+            appcontrols.Add(textBoxProductPrice);
+            appcontrols.Add(textBoxProductInventory);
+            appcontrols.Add(textBoxProductMax);
+            appcontrols.Add(textBoxProductMin);
+            buttonAddProductsSave01.Enabled = false;
         }
 
         public void buildDGVs()
@@ -168,6 +176,104 @@ namespace InventoryManagementSystem
                     currentProduct = Inventory.ProductBL[i];
                 }
             }
+        }
+
+        /*The below fucntions validate the textboxes and enables/disables save. 
+        Iterates through list of controls and checks color of background.*/
+        private void button_SaveEnabledCheck()
+        {
+            for (int i = 0; i < appcontrols.Count; i++)
+            {
+                if (appcontrols[i].BackColor != System.Drawing.Color.White)
+                {
+                    buttonAddProductsSave01.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    buttonAddProductsSave01.Enabled = true;
+                }
+            }
+        }
+
+        //Checks if input is an interger.
+        private void checkBoxes_IntergersAP(Control boxName)
+        {
+            int someNumber;
+            if (!Int32.TryParse(boxName.Text, out someNumber))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks if input is not null.
+        private void checkBoxes_StringAP(Control boxName)
+        {
+            if (String.IsNullOrWhiteSpace(boxName.Text))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks if input is a decimal. All inputs are either passing or failing due to the req of "m"
+        private void checkBoxes_DecimalAP(Control boxName)
+        {
+            decimal someNumber;
+            NumberStyles styles = NumberStyles.Currency;
+            CultureInfo culture = CultureInfo.CurrentUICulture;
+
+            if (!decimal.TryParse(boxName.Text, styles, culture, out someNumber))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        private void textBoxProductID_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxProductID);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxProductInventory_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxProductInventory);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxProductMax_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxProductMax);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxProductMin_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxProductMin);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxProductName_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_StringAP(textBoxProductName);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxProductPrice_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_DecimalAP(textBoxProductPrice);
+            button_SaveEnabledCheck();
         }
     }
 }

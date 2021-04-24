@@ -100,7 +100,7 @@ namespace InventoryManagementSystem
             this.textBoxPartMachineID.Name = "textBoxPartMachineID";
             this.textBoxPartMachineID.Size = new System.Drawing.Size(180, 23);
             this.textBoxPartMachineID.TabIndex = 13;
-            this.textBoxPartMachineID.TextChanged += new System.EventHandler(textBoxPartMachineID_TextChanged);
+            this.textBoxPartMachineID.TextChanged += new System.EventHandler(this.textBoxPartMachineID_TextChanged);
             // 
             // textBoxPartPriceCost
             // 
@@ -178,7 +178,7 @@ namespace InventoryManagementSystem
             // 
             this.labelPartMacIDComNA.AutoSize = true;
             this.labelPartMacIDComNA.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPartMacIDComNA.Location = new System.Drawing.Point(22, 196);
+            this.labelPartMacIDComNA.Location = new System.Drawing.Point(24, 192);
             this.labelPartMacIDComNA.Name = "labelPartMacIDComNA";
             this.labelPartMacIDComNA.Size = new System.Drawing.Size(84, 19);
             this.labelPartMacIDComNA.TabIndex = 6;

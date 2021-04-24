@@ -241,11 +241,25 @@ namespace InventoryManagementSystem
             {
                 if (currentPIdx >= 0)
                 {
+                    //Can't use currentPObj here since removeProduct requires type INT. Requirements constraint.
                     for (int i = 0; i < Inventory.ProductBL.Count; i++)
                     {
                         if (Inventory.ProductBL[i].ProductID == (int)dataGridViewProducts.Rows[currentPIdx].Cells[0].Value)
                         {
-                            Inventory.removeProduct(i);
+                            //Checks if Associated parts list is populated. Prevents delete if so.
+                            if (Inventory.ProductBL[i].AssociatedParts.Count == 0)
+                            {
+                                Inventory.removeProduct(i);
+                            }
+                            else
+                            {
+                                string message1 = "Product has associated parts. Please delete the parts to delete the product.";
+                                string caption1 = "Product has Associated Parts";
+                                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                                DialogResult result1;
+                                result1 = MessageBox.Show(message1, caption1, buttons1);
+                            }
+                            
                         }
                     }
                     currentPIdx = -1;

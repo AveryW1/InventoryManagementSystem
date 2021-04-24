@@ -95,6 +95,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyMin.Name = "textBoxModifyMin";
             this.textBoxModifyMin.Size = new System.Drawing.Size(62, 23);
             this.textBoxModifyMin.TabIndex = 15;
+            this.textBoxModifyMin.TextChanged += new System.EventHandler(this.textBoxModifyMin_TextChanged);
             // 
             // textBoxModifyMax
             // 
@@ -102,6 +103,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyMax.Name = "textBoxModifyMax";
             this.textBoxModifyMax.Size = new System.Drawing.Size(62, 23);
             this.textBoxModifyMax.TabIndex = 14;
+            this.textBoxModifyMax.TextChanged += new System.EventHandler(this.textBoxModifyMax_TextChanged);
             // 
             // textBoxModifyMachineID
             // 
@@ -109,6 +111,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyMachineID.Name = "textBoxModifyMachineID";
             this.textBoxModifyMachineID.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyMachineID.TabIndex = 13;
+            this.textBoxModifyMachineID.TextChanged += new System.EventHandler(this.textBoxModifyMachineID_TextChanged);
             // 
             // textBoxModifyInventory
             // 
@@ -116,6 +119,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyInventory.Name = "textBoxModifyInventory";
             this.textBoxModifyInventory.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyInventory.TabIndex = 10;
+            this.textBoxModifyInventory.TextChanged += new System.EventHandler(this.textBoxModifyInventory_TextChanged);
             // 
             // labelModifyInventory
             // 
@@ -133,6 +137,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyPriceCost.Name = "textBoxModifyPriceCost";
             this.textBoxModifyPriceCost.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyPriceCost.TabIndex = 12;
+            this.textBoxModifyPriceCost.TextChanged += new System.EventHandler(this.textBoxModifyPriceCost_TextChanged);
             // 
             // textBoxModifyName
             // 
@@ -140,6 +145,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyName.Name = "textBoxModifyName";
             this.textBoxModifyName.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyName.TabIndex = 11;
+            this.textBoxModifyName.TextChanged += new System.EventHandler(this.textBoxModifyName_TextChanged);
             // 
             // textBoxModifyID
             // 
@@ -147,6 +153,7 @@ namespace InventoryManagementSystem
             this.textBoxModifyID.Name = "textBoxModifyID";
             this.textBoxModifyID.Size = new System.Drawing.Size(180, 23);
             this.textBoxModifyID.TabIndex = 9;
+            this.textBoxModifyID.TextChanged += new System.EventHandler(this.textBoxModifyID_TextChanged);
             // 
             // radioButtonModifyOutsourced
             // 
@@ -159,6 +166,7 @@ namespace InventoryManagementSystem
             this.radioButtonModifyOutsourced.TabStop = true;
             this.radioButtonModifyOutsourced.Text = "Outsourced";
             this.radioButtonModifyOutsourced.UseVisualStyleBackColor = true;
+            this.radioButtonModifyOutsourced.CheckedChanged += new System.EventHandler(this.radioButtonModifyOutsourced_CheckedChanged);
             // 
             // radioButtonModifyInHouse
             // 
@@ -171,6 +179,7 @@ namespace InventoryManagementSystem
             this.radioButtonModifyInHouse.TabStop = true;
             this.radioButtonModifyInHouse.Text = "In-House";
             this.radioButtonModifyInHouse.UseVisualStyleBackColor = true;
+            this.radioButtonModifyInHouse.CheckedChanged += new System.EventHandler(this.radioButtonModifyInHouse_CheckedChanged);
             // 
             // labelModifyMacIDComNA
             // 

@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace InventoryManagementSystem
 {
     public partial class ModifyParts : Form
     {
+        //Binding list for controls
+        private BindingList<Control> mpcontrols = new BindingList<Control>();
+
         //Properties created to access information from Main.cs
         public static Part currentPart { get; set; }
         public static int currentPartID { get; set; }
@@ -20,9 +20,21 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
 
+            //Adds textboxes to list and disables save at load
+            mpcontrols.Add(textBoxModifyID);
+            mpcontrols.Add(textBoxModifyName);
+            mpcontrols.Add(textBoxModifyPriceCost);
+            mpcontrols.Add(textBoxModifyInventory);
+            mpcontrols.Add(textBoxModifyMax);
+            mpcontrols.Add(textBoxModifyMin);
+            mpcontrols.Add(textBoxModifyMachineID);
+            buttonModifySave.Enabled = false;
+
+
             //Delete this try/catch once program open auto select is completed.
             try
             {
+                //Populates text boxes with current part information
                 textBoxModifyID.Text = currentPart.PartID.ToString();
                 textBoxModifyName.Text = currentPart.Name;
                 textBoxModifyInventory.Text = currentPart.InStock.ToString();
@@ -56,6 +68,19 @@ namespace InventoryManagementSystem
             }
         }
 
+        private void radioButtonModifyInHouse_CheckedChanged(object sender, EventArgs e)
+        {
+            labelModifyMacIDComNA.Text = "Machine ID";
+            checkBoxes_RadioAP(textBoxModifyMachineID);
+        }
+
+        private void radioButtonModifyOutsourced_CheckedChanged(object sender, EventArgs e)
+        {
+            labelModifyMacIDComNA.Text = "Company Name";
+            checkBoxes_RadioAP(textBoxModifyMachineID);
+
+        }
+
         private void buttonModifyCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -77,5 +102,127 @@ namespace InventoryManagementSystem
                 this.Close();
             }
         }
+
+        /*The below fucntions validate the textboxes and enables/disables save. 
+        Iterates through list of controls and checks color of background.*/
+        private void button_SaveEnabledCheck()
+        {
+            for (int i = 0; i < mpcontrols.Count; i++)
+            {
+                if (mpcontrols[i].BackColor != System.Drawing.Color.White)
+                {
+                    buttonModifySave.Enabled = false;
+                    break;
+                }
+                else
+                {
+                    buttonModifySave.Enabled = true;
+                }
+            }
+        }
+
+        //Checks if input is an interger.
+        private void checkBoxes_IntergersAP(Control boxName)
+        {
+            int someNumber;
+            if (!Int32.TryParse(boxName.Text, out someNumber))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks if input is not null.
+        private void checkBoxes_StringAP(Control boxName)
+        {
+            if (String.IsNullOrWhiteSpace(boxName.Text))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks if input is a decimal. All inputs are either passing or failing due to the req of "m"
+        private void checkBoxes_DecimalAP(Control boxName)
+        {
+            decimal someNumber;
+            NumberStyles styles = NumberStyles.Currency;
+            CultureInfo culture = CultureInfo.CurrentUICulture;
+
+            if (!decimal.TryParse(boxName.Text, styles, culture, out someNumber))
+            {
+                boxName.BackColor = System.Drawing.Color.MistyRose;
+            }
+            else
+            {
+                boxName.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        //Checks radio button state and then checks string or int.
+        private void checkBoxes_RadioAP(Control boxName)
+        {
+            //checks state of radio button
+            if (radioButtonModifyOutsourced.Checked)
+            {
+                checkBoxes_StringAP(boxName);
+                button_SaveEnabledCheck();
+            }
+            else
+            {
+                checkBoxes_IntergersAP(boxName);
+                button_SaveEnabledCheck();
+            }
+        }
+        
+        //Text changed events to trigger validation.
+        private void textBoxModifyID_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxModifyID);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxModifyInventory_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxModifyInventory);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxModifyMax_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxModifyMax);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxModifyMin_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_IntergersAP(textBoxModifyMin);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxModifyName_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_StringAP(textBoxModifyName);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxModifyPriceCost_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_DecimalAP(textBoxModifyPriceCost);
+            button_SaveEnabledCheck();
+        }
+
+        private void textBoxModifyMachineID_TextChanged(object sender, System.EventArgs e)
+        {
+            checkBoxes_RadioAP(textBoxModifyMachineID);
+            button_SaveEnabledCheck();
+        }
+
     }
 }

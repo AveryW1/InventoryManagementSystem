@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Globalization;
 using System.ComponentModel;
@@ -8,12 +7,14 @@ namespace InventoryManagementSystem
 {
     public partial class AddParts : Form
     {
-        //Binding list of Controls
-        BindingList<Control> controls = new BindingList<Control>();
-        
+        //Binding list of Controls. Usable only by addparts.
+        private BindingList<Control> controls = new BindingList<Control>();
+
         public AddParts()
         {
             InitializeComponent();
+
+            //Adds textboxes to list and disables save at load
             controls.Add(textBoxPartID);
             controls.Add(textBoxPartInventory);
             controls.Add(textBoxPartName);
@@ -23,18 +24,16 @@ namespace InventoryManagementSystem
             controls.Add(textBoxPartMin);
             buttonPartSave.Enabled = false;
         }
-        
+
         private void radioButtonOutsourced_CheckedChanged(object sender, EventArgs e)
         {
             labelPartMacIDComNA.Text = "Company Name";
             checkBoxes_RadioAP(textBoxPartMachineID);
-            button_SaveEnabledCheck();
         }
         private void radioButtonPartInHouse_CheckedChanged(object sender, EventArgs e)
         {
             labelPartMacIDComNA.Text = "Machine ID";
             checkBoxes_RadioAP(textBoxPartMachineID);
-            button_SaveEnabledCheck();
         }
 
         private void buttonPartSave_Click(object sender, EventArgs e)
@@ -51,8 +50,8 @@ namespace InventoryManagementSystem
                 }
                 this.Close();
             }
-            catch(FormatException)
-            { 
+            catch (FormatException)
+            {
                 string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers. Name is a string.";
                 string caption = "Input Format Error";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -61,17 +60,13 @@ namespace InventoryManagementSystem
             }
         }
 
-       
         private void buttonPartCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         /*The below fucntions validate the textboxes and enables/disables save. 
-        Iterates through list of controls and checks color of background.
-        
-         Not working. If Min is satisfied then save is enabled regardless of other boxes.
-         */
+        Iterates through list of controls and checks color of background.*/
         private void button_SaveEnabledCheck()
         {
             for (int i = 0; i < controls.Count; i++)
@@ -79,6 +74,7 @@ namespace InventoryManagementSystem
                 if (controls[i].BackColor != System.Drawing.Color.White)
                 {
                     buttonPartSave.Enabled = false;
+                    break;
                 }
                 else
                 {
@@ -100,6 +96,7 @@ namespace InventoryManagementSystem
                 boxName.BackColor = System.Drawing.Color.White;
             }
         }
+
         //Checks if input is not null.
         private void checkBoxes_StringAP(Control boxName)
         {
@@ -189,11 +186,3 @@ namespace InventoryManagementSystem
         }
     }
 }
-
-
-/*
- machineID/name can be handled with an if statement for radiobutton checked. others with strings or decimals.
-Min Max can be handled with if statements
-
-load with save disabled and textboxes colored grey for wrong. have function that checks boxes each time lost focus (create control list and iterate)
- */
