@@ -29,6 +29,8 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelModifyProducts01 = new System.Windows.Forms.Label();
             this.panelAddProducts02 = new System.Windows.Forms.Panel();
             this.buttonMProductsSave01 = new System.Windows.Forms.Button();
@@ -267,6 +269,14 @@ namespace InventoryManagementSystem
             this.dataGridViewMProducts.AllowUserToAddRows = false;
             this.dataGridViewMProducts.AllowUserToDeleteRows = false;
             this.dataGridViewMProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMProducts.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewMProducts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewMProducts.Location = new System.Drawing.Point(479, 134);
             this.dataGridViewMProducts.Name = "dataGridViewMProducts";
@@ -282,6 +292,14 @@ namespace InventoryManagementSystem
             this.dataGridViewAssoParts.AllowUserToAddRows = false;
             this.dataGridViewAssoParts.AllowUserToDeleteRows = false;
             this.dataGridViewAssoParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAssoParts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewAssoParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewAssoParts.Location = new System.Drawing.Point(479, 458);
             this.dataGridViewAssoParts.Name = "dataGridViewAssoParts";

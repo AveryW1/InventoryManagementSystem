@@ -29,6 +29,8 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelAddProducts1 = new System.Windows.Forms.Panel();
             this.textBoxProductMin = new System.Windows.Forms.TextBox();
             this.textBoxProductMax = new System.Windows.Forms.TextBox();
@@ -293,6 +295,14 @@ namespace InventoryManagementSystem
             this.dataGridViewAParts.AllowUserToAddRows = false;
             this.dataGridViewAParts.AllowUserToDeleteRows = false;
             this.dataGridViewAParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAParts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewAParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewAParts.Location = new System.Drawing.Point(479, 134);
             this.dataGridViewAParts.Name = "dataGridViewAParts";
@@ -308,6 +318,14 @@ namespace InventoryManagementSystem
             this.dataGridViewAAParts.AllowUserToAddRows = false;
             this.dataGridViewAAParts.AllowUserToDeleteRows = false;
             this.dataGridViewAAParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewAAParts.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewAAParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewAAParts.Location = new System.Drawing.Point(479, 467);
             this.dataGridViewAAParts.Name = "dataGridViewAAParts";

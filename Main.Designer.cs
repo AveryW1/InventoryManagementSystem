@@ -177,7 +177,7 @@ namespace InventoryManagementSystem
             this.panel2.Controls.Add(this.buttonModifyProducts);
             this.panel2.Controls.Add(this.buttonAddProducts);
             this.panel2.Controls.Add(this.labelProductsDGV);
-            this.panel2.Location = new System.Drawing.Point(777, 104);
+            this.panel2.Location = new System.Drawing.Point(750, 104);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(700, 450);
             this.panel2.TabIndex = 4;
@@ -252,7 +252,7 @@ namespace InventoryManagementSystem
             // buttonExitFromMain
             // 
             this.buttonExitFromMain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonExitFromMain.Location = new System.Drawing.Point(1375, 570);
+            this.buttonExitFromMain.Location = new System.Drawing.Point(1347, 560);
             this.buttonExitFromMain.Name = "buttonExitFromMain";
             this.buttonExitFromMain.Size = new System.Drawing.Size(75, 25);
             this.buttonExitFromMain.TabIndex = 5;
@@ -264,10 +264,10 @@ namespace InventoryManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1499, 616);
+            this.ClientSize = new System.Drawing.Size(1461, 599);
             this.Controls.Add(this.buttonExitFromMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
