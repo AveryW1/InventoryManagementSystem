@@ -39,9 +39,9 @@ namespace InventoryManagementSystem
             this.labelProductMin = new System.Windows.Forms.Label();
             this.labelProductMax = new System.Windows.Forms.Label();
             this.labelProductPriceCost = new System.Windows.Forms.Label();
-            this.labelProductInventory = new System.Windows.Forms.Label();
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelProductID = new System.Windows.Forms.Label();
+            this.labelProductInventory = new System.Windows.Forms.Label();
             this.panelAddProducts02 = new System.Windows.Forms.Panel();
             this.buttonAddProductsSave01 = new System.Windows.Forms.Button();
             this.buttonAddProductsCancel01 = new System.Windows.Forms.Button();
@@ -88,7 +88,7 @@ namespace InventoryManagementSystem
             this.textBoxProductMin.Name = "textBoxProductMin";
             this.textBoxProductMin.Size = new System.Drawing.Size(54, 30);
             this.textBoxProductMin.TabIndex = 15;
-            this.textBoxProductMin.TextChanged += new System.EventHandler(textBoxProductMin_TextChanged);
+            this.textBoxProductMin.TextChanged += new System.EventHandler(this.textBoxProductMin_TextChanged);
             // 
             // textBoxProductMax
             // 
@@ -97,8 +97,7 @@ namespace InventoryManagementSystem
             this.textBoxProductMax.Name = "textBoxProductMax";
             this.textBoxProductMax.Size = new System.Drawing.Size(54, 30);
             this.textBoxProductMax.TabIndex = 14;
-            this.textBoxProductMax.TextChanged += new System.EventHandler(textBoxProductMax_TextChanged);
-
+            this.textBoxProductMax.TextChanged += new System.EventHandler(this.textBoxProductMax_TextChanged);
             // 
             // textBoxProductPrice
             // 
@@ -107,7 +106,7 @@ namespace InventoryManagementSystem
             this.textBoxProductPrice.Name = "textBoxProductPrice";
             this.textBoxProductPrice.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductPrice.TabIndex = 12;
-            this.textBoxProductPrice.TextChanged += new System.EventHandler(textBoxProductPrice_TextChanged);
+            this.textBoxProductPrice.TextChanged += new System.EventHandler(this.textBoxProductPrice_TextChanged);
             // 
             // textBoxProductName
             // 
@@ -116,7 +115,7 @@ namespace InventoryManagementSystem
             this.textBoxProductName.Name = "textBoxProductName";
             this.textBoxProductName.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductName.TabIndex = 11;
-            this.textBoxProductName.TextChanged += new System.EventHandler(textBoxProductName_TextChanged);
+            this.textBoxProductName.TextChanged += new System.EventHandler(this.textBoxProductName_TextChanged);
             // 
             // textBoxProductInventory
             // 
@@ -125,7 +124,7 @@ namespace InventoryManagementSystem
             this.textBoxProductInventory.Name = "textBoxProductInventory";
             this.textBoxProductInventory.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductInventory.TabIndex = 10;
-            this.textBoxProductInventory.TextChanged += new System.EventHandler(textBoxProductInventory_TextChanged);
+            this.textBoxProductInventory.TextChanged += new System.EventHandler(this.textBoxProductInventory_TextChanged);
             // 
             // textBoxProductID
             // 
@@ -134,7 +133,7 @@ namespace InventoryManagementSystem
             this.textBoxProductID.Name = "textBoxProductID";
             this.textBoxProductID.Size = new System.Drawing.Size(155, 30);
             this.textBoxProductID.TabIndex = 9;
-            this.textBoxProductID.TextChanged += new System.EventHandler(textBoxProductID_TextChanged);
+            this.textBoxProductID.TextChanged += new System.EventHandler(this.textBoxProductID_TextChanged);
             // 
             // labelProductMin
             // 
@@ -166,16 +165,6 @@ namespace InventoryManagementSystem
             this.labelProductPriceCost.TabIndex = 3;
             this.labelProductPriceCost.Text = "Price";
             // 
-            // labelProductInventory
-            // 
-            this.labelProductInventory.AutoSize = true;
-            this.labelProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelProductInventory.Location = new System.Drawing.Point(1, 139);
-            this.labelProductInventory.Name = "labelProductInventory";
-            this.labelProductInventory.Size = new System.Drawing.Size(88, 23);
-            this.labelProductInventory.TabIndex = 2;
-            this.labelProductInventory.Text = "Inventory";
-            // 
             // labelProductName
             // 
             this.labelProductName.AutoSize = true;
@@ -195,6 +184,16 @@ namespace InventoryManagementSystem
             this.labelProductID.Size = new System.Drawing.Size(27, 23);
             this.labelProductID.TabIndex = 0;
             this.labelProductID.Text = "ID";
+            // 
+            // labelProductInventory
+            // 
+            this.labelProductInventory.AutoSize = true;
+            this.labelProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelProductInventory.Location = new System.Drawing.Point(1, 139);
+            this.labelProductInventory.Name = "labelProductInventory";
+            this.labelProductInventory.Size = new System.Drawing.Size(88, 23);
+            this.labelProductInventory.TabIndex = 2;
+            this.labelProductInventory.Text = "Inventory";
             // 
             // panelAddProducts02
             // 
@@ -363,6 +362,7 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.panelAddProducts1);
             this.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "AddProducts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProducts";
             this.panelAddProducts1.ResumeLayout(false);
             this.panelAddProducts1.PerformLayout();

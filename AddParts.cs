@@ -127,6 +127,8 @@ namespace InventoryManagementSystem
             }
         }
 
+
+
         //Checks radio button state and then checks string or int.
         private void checkBoxes_RadioAP(Control boxName)
         {
@@ -143,6 +145,61 @@ namespace InventoryManagementSystem
             }
         }
 
+        //Checks if Max > min
+        private void checkBoxes_MinMax(Control minBox, Control maxBox)
+        {
+            try
+            {
+                if ((Int32.Parse(minBox.Text) & Int32.Parse(maxBox.Text)) >= 0)
+                {
+                    if (Int32.Parse(maxBox.Text) > Int32.Parse(minBox.Text))
+                    {
+                        minBox.BackColor = System.Drawing.Color.White;
+                        maxBox.BackColor = System.Drawing.Color.White;
+                    }
+                    else
+                    {
+                        minBox.BackColor = System.Drawing.Color.MistyRose;
+                        maxBox.BackColor = System.Drawing.Color.MistyRose;
+                    }
+                }
+            }
+            catch(System.FormatException)
+            {
+                string message = "The minimum must be less than the maximum.\nNeither field can be blank.";
+                string caption = "Min VS Max";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
+        private void checkBoxes_InvOK(Control minBox, Control maxBox, Control invBox)
+        {
+            try
+            {
+                if ((Int32.Parse(minBox.Text) & Int32.Parse(maxBox.Text)) >= 0)
+                {
+                    if((Int32.Parse(maxBox.Text) > Int32.Parse(invBox.Text)) & (Int32.Parse(invBox.Text) > Int32.Parse(minBox.Text)))
+                    {
+                        invBox.BackColor = System.Drawing.Color.White;
+                    }
+                    else
+                    {
+                        invBox.BackColor = System.Drawing.Color.MistyRose;
+                    }
+                }
+            }
+            catch(System.FormatException)
+            {
+                string message = "Amount in Inventory must be between the Max and Minimum values. \nInventory cannot be empty.";
+                string caption = "Inventory";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+            }
+        }
+
         private void textBoxPartID_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartID);
@@ -152,18 +209,21 @@ namespace InventoryManagementSystem
         private void textBoxPartInventory_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartInventory);
+            checkBoxes_InvOK(textBoxPartMin, textBoxPartMax, textBoxPartInventory);
             button_SaveEnabledCheck();
         }
 
         private void textBoxPartMax_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartMax);
+            checkBoxes_MinMax(textBoxPartMin, textBoxPartMax);
             button_SaveEnabledCheck();
         }
 
         private void textBoxPartMin_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartMin);
+            checkBoxes_MinMax(textBoxPartMin, textBoxPartMax);
             button_SaveEnabledCheck();
         }
 

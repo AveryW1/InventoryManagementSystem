@@ -284,6 +284,7 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.panelModifyParts1);
             this.Controls.Add(this.labelModifyPart);
             this.Name = "ModifyParts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifyParts";
             this.panelModifyParts1.ResumeLayout(false);
             this.panelModifyParts1.PerformLayout();

@@ -155,7 +155,7 @@ namespace InventoryManagementSystem
             this.textBoxMProductMin.Name = "textBoxMProductMin";
             this.textBoxMProductMin.Size = new System.Drawing.Size(54, 30);
             this.textBoxMProductMin.TabIndex = 15;
-            this.textBoxMProductMin.TextChanged += new System.EventHandler(textBoxMProductMin_TextChanged);
+            this.textBoxMProductMin.TextChanged += new System.EventHandler(this.textBoxMProductMin_TextChanged);
             // 
             // textBoxMProductMax
             // 
@@ -164,7 +164,7 @@ namespace InventoryManagementSystem
             this.textBoxMProductMax.Name = "textBoxMProductMax";
             this.textBoxMProductMax.Size = new System.Drawing.Size(54, 30);
             this.textBoxMProductMax.TabIndex = 14;
-            this.textBoxMProductMax.TextChanged += new System.EventHandler(textBoxMProductMax_TextChanged);
+            this.textBoxMProductMax.TextChanged += new System.EventHandler(this.textBoxMProductMax_TextChanged);
             // 
             // textBoxMProductPrice
             // 
@@ -173,7 +173,7 @@ namespace InventoryManagementSystem
             this.textBoxMProductPrice.Name = "textBoxMProductPrice";
             this.textBoxMProductPrice.Size = new System.Drawing.Size(155, 30);
             this.textBoxMProductPrice.TabIndex = 12;
-            this.textBoxMProductPrice.TextChanged += new System.EventHandler(textBoxMProductPrice_TextChanged);
+            this.textBoxMProductPrice.TextChanged += new System.EventHandler(this.textBoxMProductPrice_TextChanged);
             // 
             // textBoxMProductName
             // 
@@ -182,7 +182,7 @@ namespace InventoryManagementSystem
             this.textBoxMProductName.Name = "textBoxMProductName";
             this.textBoxMProductName.Size = new System.Drawing.Size(155, 30);
             this.textBoxMProductName.TabIndex = 11;
-            this.textBoxMProductName.TextChanged += new System.EventHandler(textBoxMProductName_TextChanged);
+            this.textBoxMProductName.TextChanged += new System.EventHandler(this.textBoxMProductName_TextChanged);
             // 
             // textBoxMProductInventory
             // 
@@ -191,7 +191,7 @@ namespace InventoryManagementSystem
             this.textBoxMProductInventory.Name = "textBoxMProductInventory";
             this.textBoxMProductInventory.Size = new System.Drawing.Size(155, 30);
             this.textBoxMProductInventory.TabIndex = 10;
-            this.textBoxMProductInventory.TextChanged += new System.EventHandler(textBoxMProductInventory_TextChanged);
+            this.textBoxMProductInventory.TextChanged += new System.EventHandler(this.textBoxMProductInventory_TextChanged);
             // 
             // textBoxMProductID
             // 
@@ -200,7 +200,7 @@ namespace InventoryManagementSystem
             this.textBoxMProductID.Name = "textBoxMProductID";
             this.textBoxMProductID.Size = new System.Drawing.Size(155, 30);
             this.textBoxMProductID.TabIndex = 9;
-            this.textBoxMProductID.TextChanged += new System.EventHandler(textBoxMProductID_TextChanged);
+            this.textBoxMProductID.TextChanged += new System.EventHandler(this.textBoxMProductID_TextChanged);
             // 
             // labelMProductMin
             // 
@@ -334,6 +334,7 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.panelAddProducts02);
             this.Controls.Add(this.labelModifyProducts01);
             this.Name = "ModifyProducts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifyProducts";
             this.panelAddProducts02.ResumeLayout(false);
             this.panelAddProducts1.ResumeLayout(false);

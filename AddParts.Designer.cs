@@ -178,7 +178,7 @@ namespace InventoryManagementSystem
             // 
             this.labelPartMacIDComNA.AutoSize = true;
             this.labelPartMacIDComNA.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPartMacIDComNA.Location = new System.Drawing.Point(24, 192);
+            this.labelPartMacIDComNA.Location = new System.Drawing.Point(11, 192);
             this.labelPartMacIDComNA.Name = "labelPartMacIDComNA";
             this.labelPartMacIDComNA.Size = new System.Drawing.Size(84, 19);
             this.labelPartMacIDComNA.TabIndex = 6;
@@ -281,6 +281,7 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.labelAddPart);
             this.Controls.Add(this.panelAddParts);
             this.Name = "AddParts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddParts";
             this.panelAddParts.ResumeLayout(false);
             this.panelAddParts.PerformLayout();
