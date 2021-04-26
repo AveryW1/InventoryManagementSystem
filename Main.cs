@@ -195,16 +195,28 @@ namespace InventoryManagementSystem
         }
 
         //Button click takes in partID, returns part, checks the list where id matches result, and highlights result.
+        //add try catch for system.formatexception or disable search unless int is entered.
         private void buttonSearchParts_Click(object sender, EventArgs e)
         {
-            Part searchResult = Inventory.lookupPart(Int32.Parse(textBoxSearchParts01.Text));
-            for (int i = 0; i < Inventory.PartBL.Count; i++)
+            try
             {
-                if (Inventory.PartBL[i] == searchResult)
+                Part searchResult = Inventory.lookupPart(Int32.Parse(textBoxSearchParts01.Text));
+                for (int i = 0; i < Inventory.PartBL.Count; i++)
                 {
-                    dataGridViewParts.ClearSelection();
-                    dataGridViewParts.Rows[i].Selected = true;
+                    if (Inventory.PartBL[i] == searchResult)
+                    {
+                        dataGridViewParts.ClearSelection();
+                        dataGridViewParts.Rows[i].Selected = true;
+                    }
                 }
+            }
+            catch (System.FormatException)
+            {
+                string message = "Please enter the part ID (a number).";
+                string caption = "Please use Part ID";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
 
@@ -284,14 +296,25 @@ namespace InventoryManagementSystem
 
         private void buttonSearchProducts_Click(object sender, EventArgs e)
         {
-            Product searchResult = Inventory.lookupProduct(Int32.Parse(textBoxSearchProducts01.Text));
-            for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            try
             {
-                if (Inventory.ProductBL[i] == searchResult)
+                Product searchResult = Inventory.lookupProduct(Int32.Parse(textBoxSearchProducts01.Text));
+                for (int i = 0; i < Inventory.ProductBL.Count; i++)
                 {
-                    dataGridViewProducts.ClearSelection();
-                    dataGridViewProducts.Rows[i].Selected = true;
+                    if (Inventory.ProductBL[i] == searchResult)
+                    {
+                        dataGridViewProducts.ClearSelection();
+                        dataGridViewProducts.Rows[i].Selected = true;
+                    }
                 }
+            }
+            catch (System.FormatException)
+            {
+                string message = "Please enter the product ID";
+                string caption = "Enter a Product ID (a number)";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
     }
