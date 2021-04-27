@@ -196,24 +196,47 @@ namespace InventoryManagementSystem
 
         //Button click takes in partID, returns part, checks the list where id matches result, and highlights result.
         //add try catch for system.formatexception or disable search unless int is entered.
+        //FINISH THIS search through DGV
         private void buttonSearchParts_Click(object sender, EventArgs e)
         {
             try
             {
-                Part searchResult = Inventory.lookupPart(Int32.Parse(textBoxSearchParts01.Text));
+                //Takes user input
+                string userInput = textBoxSearchParts01.Text;
+                Part searchResult = null;
+
+                //Take name input, finds corresponding part ID from list, passes it to lookup, sets results as searchresults.
                 for (int i = 0; i < Inventory.PartBL.Count; i++)
                 {
-                    if (Inventory.PartBL[i] == searchResult)
+                    if (userInput == Inventory.PartBL[i].Name)
                     {
-                        dataGridViewParts.ClearSelection();
-                        dataGridViewParts.Rows[i].Selected = true;
+                        searchResult = Inventory.lookupPart(Inventory.PartBL[i].PartID);
+
+                        //Finds the search result in the DGV.
+                        for (int j = 0; j < Inventory.PartBL.Count; j++)
+                        {
+                            if (searchResult.PartID == (int)dataGridViewParts.Rows[j].Cells[0].Value)
+                            {
+                                dataGridViewParts.ClearSelection();
+                                dataGridViewParts.Rows[j].Selected = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string message2 = "Part not found by name OR a valid name not entered. \n Please check your input";
+                        string caption2 = "Check Input";
+                        MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                        DialogResult result2;
+                        result2 = MessageBox.Show(message2, caption2, buttons2);
+                        break;
                     }
                 }
             }
             catch (System.FormatException)
             {
-                string message = "Please enter the part ID (a number).";
-                string caption = "Please use Part ID";
+                string message = "Please enter the part name (A string).";
+                string caption = "Please enter a name";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
