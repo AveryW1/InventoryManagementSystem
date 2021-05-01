@@ -15,6 +15,9 @@ namespace InventoryManagementSystem
         public int Min { get; set; }
         public int Max { get; set; }
 
+        //Used to auto increment part IDs
+        public static int increment = 1;
+
         public Part(int partID, string name, decimal price, int inStock, int min, int max)
         {
             PartID = partID;
@@ -24,5 +27,16 @@ namespace InventoryManagementSystem
             Min = min;
             Max = max;
         }
+
+        public Part(string name, decimal price, int inStock, int min, int max)
+        {
+            PartID = increment++;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+        }
     }
+
 }

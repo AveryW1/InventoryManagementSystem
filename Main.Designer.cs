@@ -131,7 +131,7 @@ namespace InventoryManagementSystem
             // 
             this.textBoxSearchParts01.Location = new System.Drawing.Point(101, 394);
             this.textBoxSearchParts01.Name = "textBoxSearchParts01";
-            this.textBoxSearchParts01.PlaceholderText = "Search by Part ID here";
+            this.textBoxSearchParts01.PlaceholderText = "Search by part name here.";
             this.textBoxSearchParts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchParts01.TabIndex = 6;
             // 
@@ -212,7 +212,7 @@ namespace InventoryManagementSystem
             // 
             this.textBoxSearchProducts01.Location = new System.Drawing.Point(99, 394);
             this.textBoxSearchProducts01.Name = "textBoxSearchProducts01";
-            this.textBoxSearchProducts01.PlaceholderText = "Search by Product ID here";
+            this.textBoxSearchProducts01.PlaceholderText = "Search by product name here.";
             this.textBoxSearchProducts01.Size = new System.Drawing.Size(253, 29);
             this.textBoxSearchProducts01.TabIndex = 9;
             // 

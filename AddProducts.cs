@@ -12,7 +12,8 @@ namespace InventoryManagementSystem
         Part currentPart = null;
         int currentAAIdx = 0;
         Part currentAAPart = null;
-        Product currentProduct = null;
+
+        private static Product currentProduct = null;
 
         //Used to track Product ids in use.
         List<int> ProductIDs = new List<int>();
@@ -30,7 +31,7 @@ namespace InventoryManagementSystem
             appcontrols.Add(textBoxProductInventory);
             appcontrols.Add(textBoxProductMax);
             appcontrols.Add(textBoxProductMin);
-            buttonAddProductsSave01.Enabled = false;
+            button_SaveEnabledCheck();
         }
 
         public void buildDGVs()
@@ -39,29 +40,52 @@ namespace InventoryManagementSystem
             dataGridViewAAParts.DataSource = null;
         }
 
-        //Prevent adding doubles with if statement
+        //Prevent adding doubles with if statement. check if id in use with if statement to check in popilated list
         private void buttonAddProductsSave01_Click(object sender, EventArgs e)
         {
             populateIDlist();
-            
-            if (ProductIDs.Contains(Convert.ToInt32(textBoxProductID.Text))) 
+            try
             {
-                this.Close();
-            }
-            else
-            {
-                try
+                if (currentProduct != null) 
                 {
-                    Inventory.addProduct(new Product(Convert.ToInt32(textBoxProductID.Text), textBoxProductName.Text, Convert.ToInt32(textBoxProductPrice.Text), Convert.ToInt32(textBoxProductInventory.Text), Convert.ToInt32(textBoxProductMax.Text), Convert.ToInt32(textBoxProductMin.Text)));
+                    if ((currentProduct.ProductID == Convert.ToInt32(textBoxProductID.Text)) & (currentProduct.Name == textBoxProductName.Text))
+                    {
+                        this.Close();
+                    }
                 }
-                catch (FormatException)
+                
+                if (ProductIDs.Contains(Convert.ToInt32(textBoxProductID.Text)))
                 {
-                    string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers.";
-                    string caption = "Input Format Error";
+                    string message = "This product ID is currently in use. Please choose another ID.";
+                    string caption = "ID in Use";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     DialogResult result;
                     result = MessageBox.Show(message, caption, buttons);
                 }
+                else
+                {
+                    try
+                    {
+                        Inventory.addProduct(new Product(Convert.ToInt32(textBoxProductID.Text), textBoxProductName.Text, Convert.ToInt32(textBoxProductPrice.Text), Convert.ToInt32(textBoxProductInventory.Text), Convert.ToInt32(textBoxProductMin.Text), Convert.ToInt32(textBoxProductMax.Text)));
+                        this.Close();
+                    }
+                    catch (FormatException)
+                    {
+                        string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers.";
+                        string caption = "Input Format Error";
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        DialogResult result;
+                        result = MessageBox.Show(message, caption, buttons);
+                    }
+                }
+            }
+            catch (FormatException)
+            {
+                string message1 = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers.";
+                string caption1 = "Input Format Error";
+                MessageBoxButtons buttons1 = MessageBoxButtons.OK;
+                DialogResult result1;
+                result1 = MessageBox.Show(message1, caption1, buttons1);
             }
         }
 
@@ -74,26 +98,36 @@ namespace InventoryManagementSystem
         {
             populateIDlist();
 
-            //Needs exception handling for when user tries to add associated part with no text input in product iD
-            if (ProductIDs.Contains(Convert.ToInt32(textBoxProductID.Text)))
+            //Checks if product with ID exist, if not, creates product and adds part.
+            try
             {
-                for (int i = 0; i < Inventory.ProductBL.Count; i++)
+                if (currentProduct != null)
                 {
-                    if (Inventory.ProductBL[i].ProductID == Convert.ToInt32(textBoxProductID.Text))
-                    {
-                        Inventory.ProductBL[i].AssociatedParts.Add(currentPart);
-                    }
+                    currentProduct.AssociatedParts.Add(currentPart);
                 }
-                //Sets current product
-                findCurrentProduct();
+                else if (ProductIDs.Contains(Convert.ToInt32(textBoxProductID.Text)))
+                {
+                    string message = "This product ID is currently in use. \nIf you wish to edit the associated parts for this product, please use Modify instead.";
+                    string caption = "ID in Use";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    result = MessageBox.Show(message, caption, buttons);
+                }
+                else
+                {
+                    currentProduct = new Product(Convert.ToInt32(textBoxProductID.Text), textBoxProductName.Text, Convert.ToInt32(textBoxProductPrice.Text), Convert.ToInt32(textBoxProductInventory.Text), Convert.ToInt32(textBoxProductMin.Text), Convert.ToInt32(textBoxProductMax.Text));
+                    Inventory.addProduct(currentProduct);
+                    currentProduct.AssociatedParts.Add(currentPart);
+                    dataGridViewAAParts.DataSource = currentProduct.AssociatedParts;
+                }
             }
-            else
+            catch (System.FormatException)
             {
-                Product tempProduct = new Product(Convert.ToInt32(textBoxProductID.Text), textBoxProductName.Text, Convert.ToInt32(textBoxProductPrice.Text), Convert.ToInt32(textBoxProductInventory.Text), Convert.ToInt32(textBoxProductMax.Text), Convert.ToInt32(textBoxProductMin.Text));
-                Inventory.addProduct(tempProduct);
-                tempProduct.AssociatedParts.Add(currentPart);
-                dataGridViewAAParts.DataSource = tempProduct.AssociatedParts;
-                findCurrentProduct();
+                string message = "Please enter a product ID.";
+                string caption = "No ID";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
 
@@ -123,14 +157,14 @@ namespace InventoryManagementSystem
         //Deletes associated Part NOT PRODUCT!
         private void buttonDeleteProducts01_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure you want to delete this part?";
-            string caption = "Delete Associated Part?";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-            result = MessageBox.Show(message, caption, buttons);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            if (currentPart != null)
             {
-                try
+                string message = "Are you sure you want to delete this part?";
+                string caption = "Delete Associated Part?";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
                 {
                     for (int i = 0; i < Inventory.ProductBL.Count; i++)
                     {
@@ -141,15 +175,16 @@ namespace InventoryManagementSystem
                         }
                     }
                 }
-                catch
-                {
-                    string message2 = "Please select a part in the associated parts list.";
-                    string caption2 = "Select Part";
-                    MessageBoxButtons buttons2 = MessageBoxButtons.OK;
-                    DialogResult result2;
-                    result2 = MessageBox.Show(message2, caption2, buttons2);
-                }
             }
+            else
+            {
+                string message2 = "No part selected.";
+                string caption2 = "Select Part";
+                MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                DialogResult result2;
+                result2 = MessageBox.Show(message2, caption2, buttons2);
+            }
+            button_SaveEnabledCheck();
         }
 
         private void dataGridViewAAParts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -166,19 +201,53 @@ namespace InventoryManagementSystem
             }
         }
 
-        //Helper Function. Sets current Product for later use.
-        private void findCurrentProduct()
+        private void buttonSearchAssoPart_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            try
             {
-                if (Inventory.ProductBL[i].ProductID == Convert.ToInt32(textBoxProductID.Text))
+                //Takes user input
+                string userInput = textBoxSearchAssoPart.Text.ToLower();
+                Part searchResult = null;
+
+                //Take name input, finds corresponding part ID from list, passes it to lookup, sets results as searchresults.
+                for (int i = 0; i < Product.currentProduct.AssociatedParts.Count; i++)
                 {
-                    currentProduct = Inventory.ProductBL[i];
+                    if (userInput == Product.currentProduct.AssociatedParts[i].Name.ToLower())
+                    {
+                        searchResult = Product.currentProduct.lookupAssociatedPart(Product.currentProduct.AssociatedParts[i].PartID);
+
+                        //Finds the search result in the DGV.
+                        for (int j = 0; j < Product.currentProduct.AssociatedParts.Count; j++)
+                        {
+                            if (searchResult.PartID == (int)dataGridViewAAParts.Rows[j].Cells[0].Value)
+                            {
+                                dataGridViewAAParts.ClearSelection();
+                                dataGridViewAAParts.Rows[j].Selected = true;
+                                break;
+                            }
+                        }
+                    }
                 }
+                if (searchResult == null)
+                {
+                    string message2 = "Part not found by name OR a valid name not entered. \nPlease check your input";
+                    string caption2 = "Check Input";
+                    MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                    DialogResult result2;
+                    result2 = MessageBox.Show(message2, caption2, buttons2);
+                }
+            }
+            catch (System.FormatException)
+            {
+                string message = "Please enter the part name (A string).";
+                string caption = "Please enter a name";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
 
-        /*The below fucntions validate the textboxes and enables/disables save. 
+        /*The below fucntions validate the textboxes and enables/disables save/add. 
         Iterates through list of controls and checks color of background.*/
         private void button_SaveEnabledCheck()
         {
@@ -187,11 +256,13 @@ namespace InventoryManagementSystem
                 if (appcontrols[i].BackColor != System.Drawing.Color.White)
                 {
                     buttonAddProductsSave01.Enabled = false;
+                    buttonAddProductPart.Enabled = false;
                     break;
                 }
                 else
                 {
                     buttonAddProductsSave01.Enabled = true;
+                    buttonAddProductPart.Enabled = true;
                 }
             }
         }

@@ -17,11 +17,26 @@ namespace InventoryManagementSystem
         public int InStock { get; set; }
         public int Min { get; set; }
         public int Max { get; set; }
-        
+        //Used to track current product for Add Products.
+        public static Product currentProduct { get; set; }
+
+        //Used to auto-increament product IDs
+        public static int increment = 1;
+
         //Constructor
         public Product(int productID, string name, decimal price, int inStock, int min, int max)
         {
             ProductID = productID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+        }
+
+        public Product(string name, decimal price, int inStock, int min, int max)
+        {
+            ProductID = increment++;
             Name = name;
             Price = price;
             InStock = inStock;
@@ -40,12 +55,11 @@ namespace InventoryManagementSystem
             return true;
         }
 
-        //Written to work for ModifyProducts search. Will not work with Add Products search.
         public Part lookupAssociatedPart(int partID)
         {
             try
             {
-                for (int i = 0; i <= ModifyProducts.currentProduct.AssociatedParts.Count; i++)
+                for (int i = 0; i <= Product.currentProduct.AssociatedParts.Count; i++)
                 {
                     if (AssociatedParts[i].PartID == partID)
                     {

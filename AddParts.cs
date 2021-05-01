@@ -2,13 +2,17 @@
 using System.Windows.Forms;
 using System.Globalization;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace InventoryManagementSystem
 {
     public partial class AddParts : Form
     {
-        //Binding list of Controls. Usable only by addparts.
+        //Used to track textbox controls
         private BindingList<Control> controls = new BindingList<Control>();
+
+        //Used to track part Ids in use.
+        List<int> PartIDs = new List<int>();
 
         public AddParts()
         {
@@ -38,31 +42,52 @@ namespace InventoryManagementSystem
 
         private void buttonPartSave_Click(object sender, EventArgs e)
         {
-            try
+            populatePartIDlist();
+            if (PartIDs.Contains(Convert.ToInt32(textBoxPartID.Text)))
             {
-                if (radioButtonPartInHouse.Checked)
-                {
-                    Inventory.addPart(new Inhouse(Convert.ToInt32(textBoxPartID.Text), textBoxPartName.Text, Convert.ToDecimal(textBoxPartPriceCost.Text), Convert.ToInt32(textBoxPartInventory.Text), Convert.ToInt32(textBoxPartMax.Text), Convert.ToInt32(textBoxPartMin.Text), Convert.ToInt32(textBoxPartMachineID.Text)));
-                }
-                else
-                {
-                    Inventory.addPart(new Outsourced(Convert.ToInt32(textBoxPartID.Text), textBoxPartName.Text, Convert.ToDecimal(textBoxPartPriceCost.Text), Convert.ToInt32(textBoxPartInventory.Text), Convert.ToInt32(textBoxPartMax.Text), Convert.ToInt32(textBoxPartMin.Text), textBoxPartMachineID.Text));
-                }
-                this.Close();
-            }
-            catch (FormatException)
-            {
-                string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers. Name is a string.";
-                string caption = "Input Format Error";
+                string message = "This part ID is currently in use. Please choose another ID.";
+                string caption = "ID in Use";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
             }
+            else
+            {
+                try
+                {
+                    if (radioButtonPartInHouse.Checked)
+                    {
+                        Inventory.addPart(new Inhouse(Convert.ToInt32(textBoxPartID.Text), textBoxPartName.Text, Convert.ToDecimal(textBoxPartPriceCost.Text), Convert.ToInt32(textBoxPartInventory.Text), Convert.ToInt32(textBoxPartMax.Text), Convert.ToInt32(textBoxPartMin.Text), Convert.ToInt32(textBoxPartMachineID.Text)));
+                    }
+                    else
+                    {
+                        Inventory.addPart(new Outsourced(Convert.ToInt32(textBoxPartID.Text), textBoxPartName.Text, Convert.ToDecimal(textBoxPartPriceCost.Text), Convert.ToInt32(textBoxPartInventory.Text), Convert.ToInt32(textBoxPartMax.Text), Convert.ToInt32(textBoxPartMin.Text), textBoxPartMachineID.Text));
+                    }
+                    this.Close();
+                }
+                catch (FormatException)
+                {
+                    string message = "Please check the format of your inputs. ID, Inventory, Price, Min, max, and machineID are intergers. Name is a string.";
+                    string caption = "Input Format Error";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    result = MessageBox.Show(message, caption, buttons);
+                }
+            }
+            
         }
 
         private void buttonPartCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void populatePartIDlist()
+        {
+            for (int i = 0; i < Inventory.PartBL.Count; i++)
+            {
+                PartIDs.Add(Inventory.PartBL[i].PartID);
+            }
         }
 
         /*The below fucntions validate the textboxes and enables/disables save. 
@@ -202,6 +227,7 @@ namespace InventoryManagementSystem
             }
         }
 
+        //Disabled due to auto-increment feature
         private void textBoxPartID_TextChanged(object sender, System.EventArgs e)
         {
             checkBoxes_IntergersAP(textBoxPartID);

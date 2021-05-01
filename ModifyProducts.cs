@@ -55,7 +55,7 @@ namespace InventoryManagementSystem
         {
             BindingList<Part> tempParts = new BindingList<Part>();
             tempParts = currentProduct.AssociatedParts;
-            currentProduct = new Product(Convert.ToInt32(textBoxMProductID.Text), textBoxMProductName.Text, Convert.ToDecimal(textBoxMProductPrice.Text), Convert.ToInt32(textBoxMProductInventory.Text), Convert.ToInt32(textBoxMProductMax.Text), Convert.ToInt32(textBoxMProductMin.Text));
+            currentProduct = new Product(Convert.ToInt32(textBoxMProductID.Text), textBoxMProductName.Text, Convert.ToDecimal(textBoxMProductPrice.Text), Convert.ToInt32(textBoxMProductInventory.Text), Convert.ToInt32(textBoxMProductMin.Text), Convert.ToInt32(textBoxMProductMax.Text));
             Inventory.updateProduct(currentPModIdx, currentProduct);
             currentProduct.AssociatedParts = tempParts;
             this.Close();
@@ -80,6 +80,7 @@ namespace InventoryManagementSystem
                     break;
                 }
             }
+            button_SaveEnabledCheck();
         }
 
         private void buttonDeleteProduct_Click(object sender, EventArgs e)
@@ -105,6 +106,7 @@ namespace InventoryManagementSystem
                     result1 = MessageBox.Show(message1, caption1, buttons1);
                 }
             }
+            button_SaveEnabledCheck();
         }
 
         private void dataGridViewAssoParts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -123,14 +125,47 @@ namespace InventoryManagementSystem
 
         private void buttonSearchProducts01_Click(object sender, EventArgs e)
         {
-            Part searchResult = currentProduct.lookupAssociatedPart(Int32.Parse(textBoxSearchProducts01.Text));
-            for (int i = 0; i < currentProduct.AssociatedParts.Count; i++)
+            try
             {
-                if (currentProduct.AssociatedParts[i] == searchResult)
+                //Takes user input
+                string userInput = textBoxSearchProducts01.Text.ToLower();
+                Part searchResult = null;
+
+                //Take name input, finds corresponding part ID from list, passes it to lookup, sets results as searchresults.
+                for (int i = 0; i < currentProduct.AssociatedParts.Count; i++)
                 {
-                    dataGridViewAssoParts.ClearSelection();
-                    dataGridViewAssoParts.Rows[i].Selected = true;
+                    if (userInput == currentProduct.AssociatedParts[i].Name.ToLower())
+                    {
+                        searchResult = currentProduct.lookupAssociatedPart(currentProduct.AssociatedParts[i].PartID);
+
+                        //Finds the search result in the DGV.
+                        for (int j = 0; j < currentProduct.AssociatedParts.Count; j++)
+                        {
+                            if (searchResult.PartID == (int)dataGridViewAssoParts.Rows[j].Cells[0].Value)
+                            {
+                                dataGridViewAssoParts.ClearSelection();
+                                dataGridViewAssoParts.Rows[j].Selected = true;
+                                break;
+                            }
+                        }
+                    }
                 }
+                if (searchResult == null)
+                {
+                    string message2 = "Part not found by name OR a valid name not entered. \nPlease check your input";
+                    string caption2 = "Check Input";
+                    MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                    DialogResult result2;
+                    result2 = MessageBox.Show(message2, caption2, buttons2);
+                }
+            }
+            catch (System.FormatException)
+            {
+                string message = "Please enter the part name (A string).";
+                string caption = "Please enter a name";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
             }
         }
 

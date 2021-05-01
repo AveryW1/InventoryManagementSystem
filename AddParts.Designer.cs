@@ -70,7 +70,7 @@ namespace InventoryManagementSystem
             this.panelAddParts.Controls.Add(this.labelPartPriceCost);
             this.panelAddParts.Controls.Add(this.labelPartName);
             this.panelAddParts.Controls.Add(this.labelPartID);
-            this.panelAddParts.Location = new System.Drawing.Point(28, 55);
+            this.panelAddParts.Location = new System.Drawing.Point(28, 47);
             this.panelAddParts.Name = "panelAddParts";
             this.panelAddParts.Size = new System.Drawing.Size(347, 222);
             this.panelAddParts.TabIndex = 1;
@@ -250,7 +250,7 @@ namespace InventoryManagementSystem
             // 
             this.buttonPartSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPartSave.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPartSave.Location = new System.Drawing.Point(219, 283);
+            this.buttonPartSave.Location = new System.Drawing.Point(219, 275);
             this.buttonPartSave.Name = "buttonPartSave";
             this.buttonPartSave.Size = new System.Drawing.Size(75, 25);
             this.buttonPartSave.TabIndex = 3;
@@ -262,7 +262,7 @@ namespace InventoryManagementSystem
             // 
             this.buttonPartCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPartCancel.Font = new System.Drawing.Font("Candara", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPartCancel.Location = new System.Drawing.Point(300, 283);
+            this.buttonPartCancel.Location = new System.Drawing.Point(300, 275);
             this.buttonPartCancel.Name = "buttonPartCancel";
             this.buttonPartCancel.Size = new System.Drawing.Size(75, 25);
             this.buttonPartCancel.TabIndex = 4;

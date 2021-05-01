@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows.Forms;
 
 
@@ -17,17 +14,17 @@ namespace InventoryManagementSystem
         {
             
             //This is test data added to pre-populate the DGVs. Can add parts here for testing. Add part method is from invetory.
-            addPart(new Inhouse(002, "bolt", 1.2M, 5, 0, 10, 11003));
-            addPart(new Outsourced(003, "seat", 13.2M, 5, 0, 10, "Tesla"));
-            addPart(new Inhouse(004, "net", 1.23M, 5, 0, 10, 11003));
-            addPart(new Outsourced(005, "post", 1.12M, 5, 0, 10, "Rain"));
-            addPart(new Outsourced(055, "string", 1.52M, 5, 0, 10, "Snow"));
-            addPart(new Outsourced(505, "pole", 1.3M, 5, 0, 10, "Sleet"));
-            addProduct(new Product(001, "Swing", 4.3M, 10, 0, 10));
-            addProduct(new Product(002, "Tent", 1.3M, 10, 0, 15));
-            addProduct(new Product(003, "Goal", 5.3M, 8, 0, 20));
-            addProduct(new Product(004, "Bow", 4.6M, 3, 0, 14));
-            addProduct(new Product(005, "Fishing Rod", 2.3M, 67, 0, 120));
+            addPart(new Inhouse("bolt", 1.2M, 5, 0, 10, 11003));
+            addPart(new Outsourced("seat", 13.2M, 5, 0, 10, "Tesla"));
+            addPart(new Inhouse("net", 1.23M, 5, 0, 10, 11003));
+            addPart(new Outsourced("post", 1.12M, 5, 0, 10, "Rain"));
+            addPart(new Outsourced("string", 1.52M, 5, 0, 10, "Snow"));
+            addPart(new Outsourced("pole", 1.3M, 5, 0, 10, "Sleet"));
+            addProduct(new Product("Swing", 4.3M, 10, 0, 10));
+            addProduct(new Product("Tent", 1.3M, 10, 0, 15));
+            addProduct(new Product("Goal", 5.3M, 8, 0, 20));
+            addProduct(new Product("Bow", 4.6M, 3, 0, 14));
+            addProduct(new Product("Fishing Rod", 2.3M, 67, 0, 120));
         }
 
         public static void addProduct(Product product)
@@ -93,7 +90,7 @@ namespace InventoryManagementSystem
             }
             catch
             {
-                string message = "Part was not found by given part ID.";
+                string message = "Part was not found by given part name.";
                 string caption = "Part not found";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
@@ -117,7 +114,7 @@ namespace InventoryManagementSystem
             }
             catch
             {
-                string message = "Product was not found by given product ID.";
+                string message = "Product was not found by given part name.";
                 string caption = "Product not found";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;

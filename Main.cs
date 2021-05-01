@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementSystem
@@ -202,13 +195,13 @@ namespace InventoryManagementSystem
             try
             {
                 //Takes user input
-                string userInput = textBoxSearchParts01.Text;
+                string userInput = textBoxSearchParts01.Text.ToLower();
                 Part searchResult = null;
 
                 //Take name input, finds corresponding part ID from list, passes it to lookup, sets results as searchresults.
                 for (int i = 0; i < Inventory.PartBL.Count; i++)
                 {
-                    if (userInput == Inventory.PartBL[i].Name)
+                    if (userInput == Inventory.PartBL[i].Name.ToLower())
                     {
                         searchResult = Inventory.lookupPart(Inventory.PartBL[i].PartID);
 
@@ -219,18 +212,18 @@ namespace InventoryManagementSystem
                             {
                                 dataGridViewParts.ClearSelection();
                                 dataGridViewParts.Rows[j].Selected = true;
+                                break;
                             }
                         }
                     }
-                    else
-                    {
-                        string message2 = "Part not found by name OR a valid name not entered. \n Please check your input";
-                        string caption2 = "Check Input";
-                        MessageBoxButtons buttons2 = MessageBoxButtons.OK;
-                        DialogResult result2;
-                        result2 = MessageBox.Show(message2, caption2, buttons2);
-                        break;
-                    }
+                }
+                if (searchResult == null)
+                {
+                    string message2 = "Part not found by name OR a valid name not entered. \n Please check your input";
+                    string caption2 = "Check Input";
+                    MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                    DialogResult result2;
+                    result2 = MessageBox.Show(message2, caption2, buttons2);
                 }
             }
             catch (System.FormatException)
@@ -321,24 +314,67 @@ namespace InventoryManagementSystem
         {
             try
             {
-                Product searchResult = Inventory.lookupProduct(Int32.Parse(textBoxSearchProducts01.Text));
+                //Takes user input
+                string userInput = textBoxSearchProducts01.Text.ToLower();
+                Product searchResult = null;
+
+                //Take name input, finds corresponding part ID from list, passes it to lookup, sets results as searchresults.
                 for (int i = 0; i < Inventory.ProductBL.Count; i++)
                 {
-                    if (Inventory.ProductBL[i] == searchResult)
+                    if (userInput == Inventory.ProductBL[i].Name.ToLower())
                     {
-                        dataGridViewProducts.ClearSelection();
-                        dataGridViewProducts.Rows[i].Selected = true;
+                        searchResult = Inventory.lookupProduct(Inventory.ProductBL[i].ProductID);
+
+                        //Finds the search result in the DGV.
+                        for (int j = 0; j < Inventory.ProductBL.Count; j++)
+                        {
+                            if (searchResult.ProductID == (int)dataGridViewProducts.Rows[j].Cells[0].Value)
+                            {
+                                dataGridViewProducts.ClearSelection();
+                                dataGridViewProducts.Rows[j].Selected = true;
+                                break;
+                            }
+                        }
                     }
+                }
+                if (searchResult == null)
+                {
+                    string message2 = "Product not found by name OR a valid name not entered. \n Please check your input";
+                    string caption2 = "Check Input";
+                    MessageBoxButtons buttons2 = MessageBoxButtons.OK;
+                    DialogResult result2;
+                    result2 = MessageBox.Show(message2, caption2, buttons2);
                 }
             }
             catch (System.FormatException)
             {
-                string message = "Please enter the product ID";
-                string caption = "Enter a Product ID (a number)";
+                string message = "Please enter the product name (A string).";
+                string caption = "Please enter a name";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
             }
+
+            //try
+            //{
+            //    Product searchResult = Inventory.lookupProduct(Int32.Parse(textBoxSearchProducts01.Text));
+            //    for (int i = 0; i < Inventory.ProductBL.Count; i++)
+            //    {
+            //        if (Inventory.ProductBL[i] == searchResult)
+            //        {
+            //            dataGridViewProducts.ClearSelection();
+            //            dataGridViewProducts.Rows[i].Selected = true;
+            //        }
+            //    }
+            //}
+            //catch (System.FormatException)
+            //{
+            //    string message = "Please enter the product ID";
+            //    string caption = "Enter a Product ID (a number)";
+            //    MessageBoxButtons buttons = MessageBoxButtons.OK;
+            //    DialogResult result;
+            //    result = MessageBox.Show(message, caption, buttons);
+            //}
         }
     }
 }

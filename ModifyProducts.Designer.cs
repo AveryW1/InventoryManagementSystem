@@ -55,6 +55,9 @@ namespace InventoryManagementSystem
             this.panelAddProducts03 = new System.Windows.Forms.Panel();
             this.buttonSearchProducts01 = new System.Windows.Forms.Button();
             this.textBoxSearchProducts01 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelCandidateParts = new System.Windows.Forms.Label();
+            this.labelAssociatedParts01 = new System.Windows.Forms.Label();
             this.panelAddProducts02.SuspendLayout();
             this.panelAddProducts1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMProducts)).BeginInit();
@@ -68,7 +71,7 @@ namespace InventoryManagementSystem
             this.labelModifyProducts01.BackColor = System.Drawing.Color.Silver;
             this.labelModifyProducts01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelModifyProducts01.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelModifyProducts01.Location = new System.Drawing.Point(22, 23);
+            this.labelModifyProducts01.Location = new System.Drawing.Point(12, 9);
             this.labelModifyProducts01.Name = "labelModifyProducts01";
             this.labelModifyProducts01.Size = new System.Drawing.Size(150, 26);
             this.labelModifyProducts01.TabIndex = 17;
@@ -145,7 +148,7 @@ namespace InventoryManagementSystem
             this.panelAddProducts1.Controls.Add(this.labelMProductInventory);
             this.panelAddProducts1.Controls.Add(this.labelMProductName);
             this.panelAddProducts1.Controls.Add(this.labelMProductID);
-            this.panelAddProducts1.Location = new System.Drawing.Point(22, 134);
+            this.panelAddProducts1.Location = new System.Drawing.Point(61, 134);
             this.panelAddProducts1.Name = "panelAddProducts1";
             this.panelAddProducts1.Size = new System.Drawing.Size(318, 236);
             this.panelAddProducts1.TabIndex = 22;
@@ -337,12 +340,49 @@ namespace InventoryManagementSystem
             this.textBoxSearchProducts01.Size = new System.Drawing.Size(253, 23);
             this.textBoxSearchProducts01.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(80, 373);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 19);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Please complete all fields before saving.";
+            // 
+            // labelCandidateParts
+            // 
+            this.labelCandidateParts.AutoSize = true;
+            this.labelCandidateParts.BackColor = System.Drawing.Color.Silver;
+            this.labelCandidateParts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCandidateParts.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCandidateParts.Location = new System.Drawing.Point(727, 110);
+            this.labelCandidateParts.Name = "labelCandidateParts";
+            this.labelCandidateParts.Size = new System.Drawing.Size(140, 21);
+            this.labelCandidateParts.TabIndex = 27;
+            this.labelCandidateParts.Text = "All Candidate Parts";
+            // 
+            // labelAssociatedParts01
+            // 
+            this.labelAssociatedParts01.AutoSize = true;
+            this.labelAssociatedParts01.BackColor = System.Drawing.Color.Silver;
+            this.labelAssociatedParts01.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelAssociatedParts01.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAssociatedParts01.Location = new System.Drawing.Point(668, 434);
+            this.labelAssociatedParts01.Name = "labelAssociatedParts01";
+            this.labelAssociatedParts01.Size = new System.Drawing.Size(243, 21);
+            this.labelAssociatedParts01.TabIndex = 28;
+            this.labelAssociatedParts01.Text = "Parts Associated with this Product";
+            // 
             // ModifyProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 827);
+            this.Controls.Add(this.labelAssociatedParts01);
+            this.Controls.Add(this.labelCandidateParts);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelAddProducts03);
             this.Controls.Add(this.dataGridViewAssoParts);
             this.Controls.Add(this.dataGridViewMProducts);
@@ -391,5 +431,8 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Panel panelAddProducts03;
         private System.Windows.Forms.Button buttonSearchProducts01;
         private System.Windows.Forms.TextBox textBoxSearchProducts01;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCandidateParts;
+        private System.Windows.Forms.Label labelAssociatedParts01;
     }
 }

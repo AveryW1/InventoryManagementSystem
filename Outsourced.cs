@@ -12,5 +12,10 @@ namespace InventoryManagementSystem
         {
             CompanyName = companyName;
         }
+
+        public Outsourced(string name, decimal price, int inStock, int min, int max, string companyName) : base(name, price, inStock, min, max)
+        {
+            CompanyName = companyName;
+        }
     }
 }

@@ -12,5 +12,10 @@ namespace InventoryManagementSystem
         {
             MachineID = machineID;
         }
+
+        public Inhouse(string name, decimal price, int inStock, int min, int max, int machineID) : base(name, price, inStock, min, max)
+        {
+            MachineID = machineID;
+        }
     }
 }

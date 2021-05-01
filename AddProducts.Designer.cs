@@ -29,8 +29,6 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelAddProducts1 = new System.Windows.Forms.Panel();
             this.textBoxProductMin = new System.Windows.Forms.TextBox();
             this.textBoxProductMax = new System.Windows.Forms.TextBox();
@@ -57,6 +55,7 @@ namespace InventoryManagementSystem
             this.panelAddProducts03 = new System.Windows.Forms.Panel();
             this.buttonSearchAssoPart = new System.Windows.Forms.Button();
             this.textBoxSearchAssoPart = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelAddProducts1.SuspendLayout();
             this.panelAddProducts02.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAParts)).BeginInit();
@@ -78,13 +77,14 @@ namespace InventoryManagementSystem
             this.panelAddProducts1.Controls.Add(this.labelProductName);
             this.panelAddProducts1.Controls.Add(this.labelProductID);
             this.panelAddProducts1.Controls.Add(this.labelProductInventory);
-            this.panelAddProducts1.Location = new System.Drawing.Point(22, 134);
+            this.panelAddProducts1.Location = new System.Drawing.Point(82, 134);
             this.panelAddProducts1.Name = "panelAddProducts1";
             this.panelAddProducts1.Size = new System.Drawing.Size(291, 213);
             this.panelAddProducts1.TabIndex = 2;
             // 
             // textBoxProductMin
             // 
+            this.textBoxProductMin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxProductMin.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductMin.Location = new System.Drawing.Point(224, 172);
             this.textBoxProductMin.Name = "textBoxProductMin";
@@ -94,6 +94,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxProductMax
             // 
+            this.textBoxProductMax.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxProductMax.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductMax.Location = new System.Drawing.Point(123, 172);
             this.textBoxProductMax.Name = "textBoxProductMax";
@@ -103,6 +104,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxProductPrice
             // 
+            this.textBoxProductPrice.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxProductPrice.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductPrice.Location = new System.Drawing.Point(123, 100);
             this.textBoxProductPrice.Name = "textBoxProductPrice";
@@ -112,6 +114,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxProductName
             // 
+            this.textBoxProductName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxProductName.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductName.Location = new System.Drawing.Point(123, 64);
             this.textBoxProductName.Name = "textBoxProductName";
@@ -121,6 +124,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxProductInventory
             // 
+            this.textBoxProductInventory.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxProductInventory.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductInventory.Location = new System.Drawing.Point(123, 136);
             this.textBoxProductInventory.Name = "textBoxProductInventory";
@@ -130,6 +134,7 @@ namespace InventoryManagementSystem
             // 
             // textBoxProductID
             // 
+            this.textBoxProductID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxProductID.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxProductID.Location = new System.Drawing.Point(123, 28);
             this.textBoxProductID.Name = "textBoxProductID";
@@ -295,14 +300,6 @@ namespace InventoryManagementSystem
             this.dataGridViewAParts.AllowUserToAddRows = false;
             this.dataGridViewAParts.AllowUserToDeleteRows = false;
             this.dataGridViewAParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAParts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewAParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewAParts.Location = new System.Drawing.Point(479, 134);
             this.dataGridViewAParts.Name = "dataGridViewAParts";
@@ -318,14 +315,6 @@ namespace InventoryManagementSystem
             this.dataGridViewAAParts.AllowUserToAddRows = false;
             this.dataGridViewAAParts.AllowUserToDeleteRows = false;
             this.dataGridViewAAParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Candara", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewAAParts.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewAAParts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewAAParts.Location = new System.Drawing.Point(479, 467);
             this.dataGridViewAAParts.Name = "dataGridViewAAParts";
@@ -354,6 +343,7 @@ namespace InventoryManagementSystem
             this.buttonSearchAssoPart.TabIndex = 12;
             this.buttonSearchAssoPart.Text = "Search";
             this.buttonSearchAssoPart.UseVisualStyleBackColor = true;
+            this.buttonSearchAssoPart.Click += new System.EventHandler(this.buttonSearchAssoPart_Click);
             // 
             // textBoxSearchAssoPart
             // 
@@ -362,12 +352,23 @@ namespace InventoryManagementSystem
             this.textBoxSearchAssoPart.Size = new System.Drawing.Size(253, 22);
             this.textBoxSearchAssoPart.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(3, 350);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(460, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Please complete all fields before saving or adding associated parts.";
+            // 
             // AddProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1123, 827);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelAddProducts03);
             this.Controls.Add(this.dataGridViewAAParts);
             this.Controls.Add(this.dataGridViewAParts);
@@ -423,5 +424,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Panel panelAddProducts03;
         private System.Windows.Forms.Button buttonSearchAssoPart;
         private System.Windows.Forms.TextBox textBoxSearchAssoPart;
+        private System.Windows.Forms.Label label1;
     }
 }
