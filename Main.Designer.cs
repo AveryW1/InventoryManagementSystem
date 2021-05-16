@@ -59,9 +59,9 @@ namespace InventoryManagementSystem
             this.labelMainScreen.BackColor = System.Drawing.Color.Silver;
             this.labelMainScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelMainScreen.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMainScreen.Location = new System.Drawing.Point(12, 9);
+            this.labelMainScreen.Location = new System.Drawing.Point(26, 26);
             this.labelMainScreen.Name = "labelMainScreen";
-            this.labelMainScreen.Size = new System.Drawing.Size(334, 31);
+            this.labelMainScreen.Size = new System.Drawing.Size(499, 46);
             this.labelMainScreen.TabIndex = 0;
             this.labelMainScreen.Text = "Inventory Management System";
             // 
@@ -70,9 +70,9 @@ namespace InventoryManagementSystem
             this.labelPartsDGV.AutoSize = true;
             this.labelPartsDGV.BackColor = System.Drawing.Color.Silver;
             this.labelPartsDGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelPartsDGV.Location = new System.Drawing.Point(293, 15);
+            this.labelPartsDGV.Location = new System.Drawing.Point(427, 15);
             this.labelPartsDGV.Name = "labelPartsDGV";
-            this.labelPartsDGV.Size = new System.Drawing.Size(51, 24);
+            this.labelPartsDGV.Size = new System.Drawing.Size(72, 34);
             this.labelPartsDGV.TabIndex = 1;
             this.labelPartsDGV.Text = "Parts";
             // 
@@ -81,9 +81,9 @@ namespace InventoryManagementSystem
             this.labelProductsDGV.AutoSize = true;
             this.labelProductsDGV.BackColor = System.Drawing.Color.Silver;
             this.labelProductsDGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelProductsDGV.Location = new System.Drawing.Point(298, 15);
+            this.labelProductsDGV.Location = new System.Drawing.Point(424, 15);
             this.labelProductsDGV.Name = "labelProductsDGV";
-            this.labelProductsDGV.Size = new System.Drawing.Size(80, 24);
+            this.labelProductsDGV.Size = new System.Drawing.Size(114, 34);
             this.labelProductsDGV.TabIndex = 2;
             this.labelProductsDGV.Text = "Products";
             // 
@@ -96,9 +96,9 @@ namespace InventoryManagementSystem
             this.panel1.Controls.Add(this.buttonModifyParts);
             this.panel1.Controls.Add(this.buttonAddParts);
             this.panel1.Controls.Add(this.labelPartsDGV);
-            this.panel1.Location = new System.Drawing.Point(13, 104);
+            this.panel1.Location = new System.Drawing.Point(26, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 450);
+            this.panel1.Size = new System.Drawing.Size(949, 611);
             this.panel1.TabIndex = 3;
             // 
             // dataGridViewParts
@@ -110,18 +110,19 @@ namespace InventoryManagementSystem
             this.dataGridViewParts.Location = new System.Drawing.Point(20, 54);
             this.dataGridViewParts.Name = "dataGridViewParts";
             this.dataGridViewParts.RowHeadersVisible = false;
-            this.dataGridViewParts.RowTemplate.Height = 25;
+            this.dataGridViewParts.RowHeadersWidth = 62;
+            this.dataGridViewParts.RowTemplate.Height = 35;
             this.dataGridViewParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewParts.Size = new System.Drawing.Size(655, 336);
+            this.dataGridViewParts.Size = new System.Drawing.Size(908, 426);
             this.dataGridViewParts.TabIndex = 8;
             this.dataGridViewParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewParts_CellClick);
             // 
             // buttonSearchParts
             // 
             this.buttonSearchParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearchParts.Location = new System.Drawing.Point(20, 396);
+            this.buttonSearchParts.Location = new System.Drawing.Point(20, 510);
             this.buttonSearchParts.Name = "buttonSearchParts";
-            this.buttonSearchParts.Size = new System.Drawing.Size(75, 27);
+            this.buttonSearchParts.Size = new System.Drawing.Size(107, 42);
             this.buttonSearchParts.TabIndex = 7;
             this.buttonSearchParts.Text = "Search";
             this.buttonSearchParts.UseVisualStyleBackColor = true;
@@ -129,18 +130,18 @@ namespace InventoryManagementSystem
             // 
             // textBoxSearchParts01
             // 
-            this.textBoxSearchParts01.Location = new System.Drawing.Point(101, 394);
+            this.textBoxSearchParts01.Location = new System.Drawing.Point(139, 510);
             this.textBoxSearchParts01.Name = "textBoxSearchParts01";
             this.textBoxSearchParts01.PlaceholderText = "Search by part name here.";
-            this.textBoxSearchParts01.Size = new System.Drawing.Size(253, 29);
+            this.textBoxSearchParts01.Size = new System.Drawing.Size(322, 39);
             this.textBoxSearchParts01.TabIndex = 6;
             // 
             // buttonDeleteParts
             // 
             this.buttonDeleteParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteParts.Location = new System.Drawing.Point(600, 396);
+            this.buttonDeleteParts.Location = new System.Drawing.Point(821, 510);
             this.buttonDeleteParts.Name = "buttonDeleteParts";
-            this.buttonDeleteParts.Size = new System.Drawing.Size(75, 29);
+            this.buttonDeleteParts.Size = new System.Drawing.Size(107, 42);
             this.buttonDeleteParts.TabIndex = 4;
             this.buttonDeleteParts.Text = "Delete";
             this.buttonDeleteParts.UseVisualStyleBackColor = true;
@@ -149,9 +150,9 @@ namespace InventoryManagementSystem
             // buttonModifyParts
             // 
             this.buttonModifyParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonModifyParts.Location = new System.Drawing.Point(520, 396);
+            this.buttonModifyParts.Location = new System.Drawing.Point(708, 510);
             this.buttonModifyParts.Name = "buttonModifyParts";
-            this.buttonModifyParts.Size = new System.Drawing.Size(74, 29);
+            this.buttonModifyParts.Size = new System.Drawing.Size(107, 42);
             this.buttonModifyParts.TabIndex = 3;
             this.buttonModifyParts.Text = "Modify";
             this.buttonModifyParts.UseVisualStyleBackColor = true;
@@ -160,9 +161,9 @@ namespace InventoryManagementSystem
             // buttonAddParts
             // 
             this.buttonAddParts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddParts.Location = new System.Drawing.Point(463, 396);
+            this.buttonAddParts.Location = new System.Drawing.Point(595, 510);
             this.buttonAddParts.Name = "buttonAddParts";
-            this.buttonAddParts.Size = new System.Drawing.Size(51, 29);
+            this.buttonAddParts.Size = new System.Drawing.Size(107, 42);
             this.buttonAddParts.TabIndex = 2;
             this.buttonAddParts.Text = "Add";
             this.buttonAddParts.UseVisualStyleBackColor = true;
@@ -177,9 +178,9 @@ namespace InventoryManagementSystem
             this.panel2.Controls.Add(this.buttonModifyProducts);
             this.panel2.Controls.Add(this.buttonAddProducts);
             this.panel2.Controls.Add(this.labelProductsDGV);
-            this.panel2.Location = new System.Drawing.Point(750, 104);
+            this.panel2.Location = new System.Drawing.Point(1019, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(700, 450);
+            this.panel2.Size = new System.Drawing.Size(949, 611);
             this.panel2.TabIndex = 4;
             // 
             // dataGridViewProducts
@@ -191,18 +192,19 @@ namespace InventoryManagementSystem
             this.dataGridViewProducts.Location = new System.Drawing.Point(18, 54);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.RowHeadersVisible = false;
-            this.dataGridViewProducts.RowTemplate.Height = 25;
+            this.dataGridViewProducts.RowHeadersWidth = 62;
+            this.dataGridViewProducts.RowTemplate.Height = 35;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(655, 336);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(908, 426);
             this.dataGridViewProducts.TabIndex = 11;
             this.dataGridViewProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellClick);
             // 
             // buttonSearchProducts
             // 
             this.buttonSearchProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSearchProducts.Location = new System.Drawing.Point(18, 394);
+            this.buttonSearchProducts.Location = new System.Drawing.Point(18, 510);
             this.buttonSearchProducts.Name = "buttonSearchProducts";
-            this.buttonSearchProducts.Size = new System.Drawing.Size(75, 27);
+            this.buttonSearchProducts.Size = new System.Drawing.Size(107, 42);
             this.buttonSearchProducts.TabIndex = 10;
             this.buttonSearchProducts.Text = "Search";
             this.buttonSearchProducts.UseVisualStyleBackColor = true;
@@ -210,18 +212,18 @@ namespace InventoryManagementSystem
             // 
             // textBoxSearchProducts01
             // 
-            this.textBoxSearchProducts01.Location = new System.Drawing.Point(99, 394);
+            this.textBoxSearchProducts01.Location = new System.Drawing.Point(131, 510);
             this.textBoxSearchProducts01.Name = "textBoxSearchProducts01";
             this.textBoxSearchProducts01.PlaceholderText = "Search by product name here.";
-            this.textBoxSearchProducts01.Size = new System.Drawing.Size(253, 29);
+            this.textBoxSearchProducts01.Size = new System.Drawing.Size(356, 39);
             this.textBoxSearchProducts01.TabIndex = 9;
             // 
             // buttonDeleteProducts
             // 
             this.buttonDeleteProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDeleteProducts.Location = new System.Drawing.Point(597, 396);
+            this.buttonDeleteProducts.Location = new System.Drawing.Point(817, 510);
             this.buttonDeleteProducts.Name = "buttonDeleteProducts";
-            this.buttonDeleteProducts.Size = new System.Drawing.Size(75, 29);
+            this.buttonDeleteProducts.Size = new System.Drawing.Size(107, 42);
             this.buttonDeleteProducts.TabIndex = 7;
             this.buttonDeleteProducts.Text = "Delete";
             this.buttonDeleteProducts.UseVisualStyleBackColor = true;
@@ -230,9 +232,9 @@ namespace InventoryManagementSystem
             // buttonModifyProducts
             // 
             this.buttonModifyProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonModifyProducts.Location = new System.Drawing.Point(517, 396);
+            this.buttonModifyProducts.Location = new System.Drawing.Point(704, 510);
             this.buttonModifyProducts.Name = "buttonModifyProducts";
-            this.buttonModifyProducts.Size = new System.Drawing.Size(74, 29);
+            this.buttonModifyProducts.Size = new System.Drawing.Size(107, 42);
             this.buttonModifyProducts.TabIndex = 6;
             this.buttonModifyProducts.Text = "Modify";
             this.buttonModifyProducts.UseVisualStyleBackColor = true;
@@ -241,9 +243,9 @@ namespace InventoryManagementSystem
             // buttonAddProducts
             // 
             this.buttonAddProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAddProducts.Location = new System.Drawing.Point(460, 396);
+            this.buttonAddProducts.Location = new System.Drawing.Point(591, 510);
             this.buttonAddProducts.Name = "buttonAddProducts";
-            this.buttonAddProducts.Size = new System.Drawing.Size(51, 29);
+            this.buttonAddProducts.Size = new System.Drawing.Size(107, 42);
             this.buttonAddProducts.TabIndex = 5;
             this.buttonAddProducts.Text = "Add";
             this.buttonAddProducts.UseVisualStyleBackColor = true;
@@ -252,9 +254,9 @@ namespace InventoryManagementSystem
             // buttonExitFromMain
             // 
             this.buttonExitFromMain.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonExitFromMain.Location = new System.Drawing.Point(1347, 560);
+            this.buttonExitFromMain.Location = new System.Drawing.Point(1861, 731);
             this.buttonExitFromMain.Name = "buttonExitFromMain";
-            this.buttonExitFromMain.Size = new System.Drawing.Size(75, 25);
+            this.buttonExitFromMain.Size = new System.Drawing.Size(107, 42);
             this.buttonExitFromMain.TabIndex = 5;
             this.buttonExitFromMain.Text = "Exit";
             this.buttonExitFromMain.UseVisualStyleBackColor = true;
@@ -262,12 +264,12 @@ namespace InventoryManagementSystem
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1461, 599);
+            this.ClientSize = new System.Drawing.Size(1998, 792);
             this.Controls.Add(this.buttonExitFromMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
